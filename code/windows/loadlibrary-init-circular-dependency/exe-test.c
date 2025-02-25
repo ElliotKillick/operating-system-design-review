@@ -1,6 +1,6 @@
 #include <windows.h>
 
-// Dynamically link to DLL
+// Dynamically link to test DLL
 __declspec(dllimport) void DummyExport();
 
 int main() {

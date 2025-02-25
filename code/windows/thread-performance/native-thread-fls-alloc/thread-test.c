@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <stdio.h>
 
-// Dynamically link to dummy DLL
+// Dynamically link to DLL
 __declspec(dllimport) void DummyExport();
 
 #define NUM_THREADS 10000

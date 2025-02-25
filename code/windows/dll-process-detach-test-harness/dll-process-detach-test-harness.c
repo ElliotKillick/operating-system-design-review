@@ -480,6 +480,9 @@ void startHarness() {
     // The UCRT (which modern Visual Studo links programs with by default) loads the kernel.appcore.dll library at CRT exit (after running atexit handlers) messing up the last DLL in the initialization order list
     // Load this DLL ahead of time to work around the issue
     // Loading this library also causes RPCRT4.dll and msvcrt.dll to load, thus loading two CRTs into every UCRT process...
+    // The library load is done to support the ucrtbase!__acrt_AppPolicyGetProcessTerminationMethodInternal function (bloatware alert)
+    //   - The CRT uses GetProcAddress to get the AppPolicyGetProcessTerminationMethod function from kernel.appcore.dll then calls that function
+    // This library loads happens after the CRT runs atexit routines and does not occur under the CRT exit lock (so at least the loader is not being placed at the bottom of a lock hierarchy here)
     LoadLibrary(L"kernel.appcore.dll");
 
     // Acquire loader lock for thread-safety:
