@@ -1,6 +1,6 @@
 # Microsoft Documentaion Search
 
-This section intends to document all the places where Microsoft documentation mentions `DllMain` or loader lock.
+Let's search Microsoft documentation Microsoft documentation for mentions of key terms.
 
 Get Microsoft documentation repos:
 
@@ -13,9 +13,9 @@ git clone https://github.com/MicrosoftDocs/cpp-docs
 Grep each repo:
 
 ```shell
-grep -rIni DllMain > ../<OUTPUT_FILE>
+grep -rinI 'DllMain' > ../<OUTPUT_FILE>
 ```
 
 ```shell
-grep -rIni "loader lock" > ../<OUTPUT_FILE>
+grep -rinI 'loader lock' > ../<OUTPUT_FILE>
 ```

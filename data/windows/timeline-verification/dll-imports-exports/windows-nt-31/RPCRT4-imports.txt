@@ -1,0 +1,103 @@
+Microsoft (R) COFF/PE Dumper Version 14.30.30706.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file RPCRT4.DLL
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    ADVAPI32.dll
+              76ED2154 Import Address Table
+              76ED2050 Import Name Table
+              2C44511E time date stamp Wed Jul 14 14:31:58 1993
+              FFFFFFFF Index of first forwarder reference
+
+      77F5AB50     16 CloseServiceHandle
+      77F5B040     A0 OpenSCManagerA
+      77F5B100     A2 OpenServiceA
+      77F5ACB0     AD QueryServiceStatus
+      77F6A1D0     B1 RegCloseKey
+      77F70F10     C1 RegEnumValueW
+      77F6A840     C8 RegOpenKeyExA
+      77F729D0     CB RegQueryInfoKeyA
+      77F73340     CF RegQueryValueExW
+      77F5B1B0     F2 StartServiceA
+
+    KERNEL32.dll
+              76ED2180 Import Address Table
+              76ED207C Import Name Table
+              2C4865A0 time date stamp Sat Jul 17 16:48:32 1993
+              FFFFFFFF Index of first forwarder reference
+
+      7787E6A0     16 CloseHandle
+      7788A450     39 CreateThread
+      778899E0     40 DeleteCriticalSection
+      77895140     4A EnterCriticalSection
+      7788A6F0     54 ExitThread
+      77880B10     7B FreeLibrary
+      77872DF0     8C GetComputerNameW
+      77879520     C1 GetLastError
+      77880F60     DC GetProcAddress
+      77873820     FC GetTickCount
+      778899D0    123 InitializeCriticalSection
+      77895110    124 InterlockedDecrement
+      778950F0    126 InterlockedIncrement
+      778951A0    132 LeaveCriticalSection
+      77880950    136 LoadLibraryW
+      7788A3E0    1C5 Sleep
+
+    ntdll.dll
+              76ED21C4 Import Address Table
+              76ED20C0 Import Name Table
+              2C4F15D7 time date stamp Thu Jul 22 18:33:59 1993
+              FFFFFFFF Index of first forwarder reference
+
+      771AC190     31 NtAcceptConnectPort
+      771AC240     3C NtClose
+      771AC260     3E NtCompleteConnectPort
+      771AC270     3F NtConnectPort
+      771AC2A0     42 NtCreateEvent
+      771AC320     4A NtCreatePort
+      771ADA40     53 NtCurrentTeb
+      771AC4D8     67 NtImpersonateClientOfPort
+      771AC830     9D NtQuerySystemTime
+      771AC8B0     A5 NtReadRequestData
+      771AC92C     AD NtReplyPort
+      771AC93C     AE NtReplyWaitReceivePort
+      771AC94C     AF NtReplyWaitReplyPort
+      771AC96C     B1 NtRequestWaitReplyPort
+      771AC97C     B2 NtResetEvent
+      771AC9FC     BA NtSetEvent
+      771ACA60     C1 NtSetInformationThread
+      771ACC1C     DF NtWaitForSingleObject
+      771ACC68     E3 NtWriteRequestData
+      771B5700     F7 RtlAllocateHeap
+      771B7CB0     FB RtlAnsiStringToUnicodeString
+      771AA3A0    12F RtlDeleteCriticalSection
+      771C8014    13C RtlEnlargedIntegerMultiply
+      771AC0D0    13F RtlEnterCriticalSection
+      771B85D0    15A RtlFreeAnsiString
+      771B6B40    15B RtlFreeHeap
+      771B85B0    15E RtlFreeUnicodeString
+      771B8C30    172 RtlInitAnsiString
+      771B8C70    176 RtlInitUnicodeString
+      771AA230    179 RtlInitializeCriticalSection
+      771AC130    18D RtlLeaveCriticalSection
+      771C0750    1B5 RtlRaiseException
+      771BFC70    1E0 RtlTimeToSecondsSince1980
+      771B7DD0    1E3 RtlUnicodeStringToAnsiString
+      771BDCC0    1EE RtlUnwind
+      771ACCA0     16 DbgBreakPoint
+
+  Summary
+
+        1000 .bss
+        3000 .data
+        2000 .edata
+        1000 .idata
+        1000 .rdata
+        3000 .reloc
+        1000 .rsrc
+       19000 .text

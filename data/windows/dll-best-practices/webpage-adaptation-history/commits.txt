@@ -1,0 +1,1166 @@
+commit 26465e18219d6311381977f154b0a5b7ed53c8d6
+Author: Saisang Cai <Saisang@users.noreply.github.com>
+Date:   Wed Mar 12 07:37:46 2025 +0800
+
+    Bulk update ms.topic, author: stwhi (#2718)
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index 6ba782e3b1..636a120f99 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -2,7 +2,7 @@
+ description: Creating DLLs presents a number of challenges for developers.
+ ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
+ title: Dynamic-Link Library Best Practices
+-ms.topic: article
++ms.topic: best-practice
+ ms.date: 05/31/2018
+ ---
+ 
+
+commit 9af678f9b3965b780fb0a4387d8851063bdb7d71
+Author: Nir Lichtman <nir@lichtman.org>
+Date:   Sun Dec 17 14:24:41 2023 +0200
+
+    DLL: Fix typo
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index 90dccb365f..6ba782e3b1 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -43,7 +43,7 @@ You should never perform the following tasks from within [**DllMain**](dllmain.m
+ -   Call [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+ -   Call [**ExitThread**](/windows/win32/api/libloaderapi/nf-libloaderapi-freelibraryandexitthread). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+ -   Call [**CreateThread**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+--   Call [**ShGetFolterPathW**](/windows/win32/api/shlobj_core/nf-shlobj_core-shgetfolderpathw). Calling shell/known folder APIs can result in thread synchronization, and can therefore cause deadlocks.
++-   Call [**ShGetFolderPathW**](/windows/win32/api/shlobj_core/nf-shlobj_core-shgetfolderpathw). Calling shell/known folder APIs can result in thread synchronization, and can therefore cause deadlocks.
+ -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+ -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+ -   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+
+commit e793fce088b449992141e564843dde88ce2c5f60
+Author: learn-build-service-prod[bot] <113403604+learn-build-service-prod[bot]@users.noreply.github.com>
+Date:   Wed May 31 16:33:34 2023 -0700
+
+    Resolve syncing conflicts from repo_sync_working_branch to main (#1744)
+    
+    * Update -search-sql-literalvaluecomparison.md
+    
+    Updated the literal value comparison page to specify that you must use DATEADD to compare dates in the search index.
+    
+    * use relative link
+    
+    * Fix espace character
+    
+    Sorry, I didn't escape the '\' in my last commit.  This fixes that.
+    
+    * Update lvm-subitemhittest.md
+    
+    Fixed html tags.
+    
+    * Update high-quality-scale.md
+    
+    Fixed sub for x as it was shown as ?
+    
+    * Update lvm-hittest.md
+    
+    Fixed HTML tags.
+    
+    * Update how-to--size-a-window-properly-for-high-dpi-displays.md
+    
+    * Update dpi-and-device-independent-pixels.md
+    
+    Mention `USER_DEFAULT_SCREEN_DPI` define
+    
+    * Update dpi-and-device-independent-pixels.md
+    
+    * Update pe-format.md
+    
+    * Update -wic-about-windows-imaging-codec.md
+    
+    * Update lvm-hasgroup.md
+    
+    Fixed HTML tag.
+    
+    * Update lvm-insertgroup.md
+    
+    Fixed HTML tag.
+    
+    * Update lvm-getgroupinfo.md
+    
+    Fixed HTML tags.
+    
+    * Update lvm-setgroupinfo.md
+    
+    Fixed HTML tags.
+    
+    * Update about-icons.md
+    
+    * Update lvm-removeallgroups.md
+    
+    Fixed HTML tags.
+    
+    * Update lvm-hasgroup.md
+    
+    Fixed HTML tags.
+    
+    * Update lvm-enablegroupview.md
+    
+    Fixed HTML tags.
+    
+    * Update image-stride.md (#1601)
+    
+    * fix typo
+    
+    * Update cipher-suites-in-schannel.md
+    
+    * updated md to use % Processor Time performance counter
+    
+    * more info on Process(X) counter
+    
+    * Update dynamic-link-library-best-practices.md
+    
+    fixing typos
+    
+    * Update dynamic-link-library-best-practices.md
+    
+    * Update capturing-winhttp-logs.md
+    
+    Add version limitations
+    
+    * Update capturing-winhttp-logs.md
+    
+    * Update cng-algorithm-identifiers.md
+    
+    * Update toc.yml (#1588)
+    
+    fix wrong links
+    
+    ---------
+    
+    Co-authored-by: scfeng10 <133056674+scfeng10@users.noreply.github.com>
+    Co-authored-by: Jim Walker <jimwalk@microsoft.com>
+    Co-authored-by: Blake-Madden <66873089+Blake-Madden@users.noreply.github.com>
+    Co-authored-by: iPhilip <philip.vonguggenberg@gmail.com>
+    Co-authored-by: David <bundgaard@users.noreply.github.com>
+    Co-authored-by: Steven White <31261191+stevewhims@users.noreply.github.com>
+    Co-authored-by: Dimitriy Ryazantcev <dimitriy.ryazantcev@gmail.com>
+    Co-authored-by: Ratin Gao <ratin@knsoft.org>
+    Co-authored-by: KB <kbridge@microsoft.com>
+    Co-authored-by: Alcaro <floating@muncher.se>
+    Co-authored-by: Michaela Wilson <36787498+MichaelaMWilson@users.noreply.github.com>
+    Co-authored-by: RBGS <59351744+RBGS@users.noreply.github.com>
+    Co-authored-by: Alessio Williams Gava <91129623+mrwillyees@users.noreply.github.com>
+    Co-authored-by: NouriArafa <73240310+NouriArafa@users.noreply.github.com>
+    Co-authored-by: Yuto Chikazawa <chikazawa0517@gmail.com>
+    Co-authored-by: Alvin Ashcraft <73072+alvinashcraft@users.noreply.github.com>
+    Co-authored-by: Rans4ckeR <ransacker@outlook.com>
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index 0d2c40cd6a..90dccb365f 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -43,7 +43,7 @@ You should never perform the following tasks from within [**DllMain**](dllmain.m
+ -   Call [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+ -   Call [**ExitThread**](/windows/win32/api/libloaderapi/nf-libloaderapi-freelibraryandexitthread). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+ -   Call [**CreateThread**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+--   Call [**ShGetFolterPathW**](/windows/win32/api/shlobj_core/nf-shlobj_core-shgetfolderpathw). Calling Shell/Known folder APIs result in Thread Sychronization causing deadlocks.
++-   Call [**ShGetFolterPathW**](/windows/win32/api/shlobj_core/nf-shlobj_core-shgetfolderpathw). Calling shell/known folder APIs can result in thread synchronization, and can therefore cause deadlocks.
+ -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+ -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+ -   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+
+commit 2cb2c15a7992b543849d59804943b72146d03d2b
+Author: Steven White <31261191+stevewhims@users.noreply.github.com>
+Date:   Fri May 12 11:49:19 2023 -0700
+
+    Fixing url
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index 259fcbcb14..0d2c40cd6a 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -43,7 +43,7 @@ You should never perform the following tasks from within [**DllMain**](dllmain.m
+ -   Call [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+ -   Call [**ExitThread**](/windows/win32/api/libloaderapi/nf-libloaderapi-freelibraryandexitthread). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+ -   Call [**CreateThread**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+--   Call [**ShGetFolterPathW**](/https://learn.microsoft.com/en-us/windows/win32/api/shlobj_core/nf-shlobj_core-shgetfolderpathw). Calling Shell/Known folder APIs result in Thread Sychronization causing deadlocks.
++-   Call [**ShGetFolterPathW**](/windows/win32/api/shlobj_core/nf-shlobj_core-shgetfolderpathw). Calling Shell/Known folder APIs result in Thread Sychronization causing deadlocks.
+ -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+ -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+ -   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+
+commit d7da3cce674226ac8aae46176297a29200b884ef
+Author: NouriArafa <73240310+NouriArafa@users.noreply.github.com>
+Date:   Fri May 12 09:44:23 2023 -0400
+
+    Update dynamic-link-library-best-practices.md
+    
+    Adding SHGetFolderPathW() as an example to avoid deadlocks during Logon/Credential provider load.
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index d20aee58fb..259fcbcb14 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -43,6 +43,7 @@ You should never perform the following tasks from within [**DllMain**](dllmain.m
+ -   Call [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+ -   Call [**ExitThread**](/windows/win32/api/libloaderapi/nf-libloaderapi-freelibraryandexitthread). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+ -   Call [**CreateThread**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
++-   Call [**ShGetFolterPathW**](/https://learn.microsoft.com/en-us/windows/win32/api/shlobj_core/nf-shlobj_core-shgetfolderpathw). Calling Shell/Known folder APIs result in Thread Sychronization causing deadlocks.
+ -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+ -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+ -   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+
+commit 3132f8ca2594a103d1231b8c56a8d7a2d8386f2f
+Author: jasonepperly <31452365+jasonepperly@users.noreply.github.com>
+Date:   Wed May 4 09:33:35 2022 -0400
+
+    Update dynamic-link-library-best-practices.md
+    
+    Removing the "reason" after the rule that says don't call registry functions regarding advapi32. We are getting a lot of developers that read the reason and try to mitigate the reason through various means. This reason is only one of many reasons you cannot use registry functions in dllmain, e.g., if you use a pre-defined handle the registry code will use a critical section which can lead to deadlocks.
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index dbf92351ae..d20aee58fb 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -39,7 +39,7 @@ You should never perform the following tasks from within [**DllMain**](dllmain.m
+ -   Synchronize with other threads. This can cause a deadlock.
+ -   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+ -   Initialize COM threads by using [**CoInitializeEx**](/windows/desktop/api/combaseapi/nf-combaseapi-coinitializeex). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
+--   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
++-   Call the registry functions.
+ -   Call [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+ -   Call [**ExitThread**](/windows/win32/api/libloaderapi/nf-libloaderapi-freelibraryandexitthread). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+ -   Call [**CreateThread**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+
+commit 4d5f26c6be39ae31f663357fe190f3868a37f9be
+Author: Kent Sharkey <v-kents@microsoft.com>
+Date:   Thu Jan 7 09:41:40 2021 -0800
+
+    update description metadata
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index bbb0fb642f..dbf92351ae 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -1,5 +1,5 @@
+ ---
+-Description: Creating DLLs presents a number of challenges for developers.
++description: Creating DLLs presents a number of challenges for developers.
+ ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
+ title: Dynamic-Link Library Best Practices
+ ms.topic: article
+@@ -103,4 +103,4 @@ The following are recommended guidelines:
+ 
+  
+ 
+- 
+\ No newline at end of file
++ 
+
+commit 9daa384a1d1f77e7fb7c8966fdfd737fb2f7b8c6
+Author: David Coulter <David.Coulter@microsoft.com>
+Date:   Sun Aug 16 06:04:53 2020 -0700
+
+    Links: Win32 - D
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index f8d372de94..bbb0fb642f 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -16,7 +16,7 @@ ms.date: 05/31/2018
+ 
+ -   [**DllMain**](dllmain.md)
+ -   [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa)
+--   [**CreateProcess**](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa)
++-   [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa)
+ 
+ Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
+ 
+@@ -34,15 +34,15 @@ Some initialization tasks cannot be postponed. For example, a DLL that depends o
+ 
+ You should never perform the following tasks from within [**DllMain**](dllmain.md):
+ 
+--   Call [**LoadLibrary**](https://msdn.microsoft.com/library/ms684175(v=VS.85).aspx) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
+--   Call [**GetStringTypeA**](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getstringtypea), [**GetStringTypeEx**](https://docs.microsoft.com/windows/win32/api/stringapiset/nf-stringapiset-getstringtypeexw), or [**GetStringTypeW**](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-getstringtypew) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**LoadLibrary**](/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**GetStringTypeA**](/windows/desktop/api/winnls/nf-winnls-getstringtypea), [**GetStringTypeEx**](/windows/win32/api/stringapiset/nf-stringapiset-getstringtypeexw), or [**GetStringTypeW**](/windows/desktop/api/stringapiset/nf-stringapiset-getstringtypew) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Synchronize with other threads. This can cause a deadlock.
+ -   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+--   Initialize COM threads by using [**CoInitializeEx**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-coinitializeex). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
++-   Initialize COM threads by using [**CoInitializeEx**](/windows/desktop/api/combaseapi/nf-combaseapi-coinitializeex). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
+ -   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
+--   Call [**CreateProcess**](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+--   Call [**ExitThread**](https://msdn.microsoft.com/library/ms683153(v=VS.85).aspx). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+--   Call [**CreateThread**](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
++-   Call [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
++-   Call [**ExitThread**](/windows/win32/api/libloaderapi/nf-libloaderapi-freelibraryandexitthread). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
++-   Call [**CreateThread**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+ -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+ -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+ -   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+@@ -62,7 +62,7 @@ The following tasks are safe to perform within **DllMain**:
+ 
+ When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
+ 
+-It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](https://msdn.microsoft.com/library/ms683197(v=VS.85).aspx) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
++It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamea) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
+ 
+ Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
+ 
+@@ -103,7 +103,4 @@ The following are recommended guidelines:
+ 
+  
+ 
+- 
+-
+-
+-
++ 
+\ No newline at end of file
+
+commit 3d684c4a32d5f288dfd7bd3755bf851c0ea117ac
+Author: Drew Batchelor <drewbat@microsoft.com>
+Date:   Tue Feb 25 15:50:20 2020 -0800
+
+    Link fixes using title matches
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index ba2f003dab..f8d372de94 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -35,7 +35,7 @@ Some initialization tasks cannot be postponed. For example, a DLL that depends o
+ You should never perform the following tasks from within [**DllMain**](dllmain.md):
+ 
+ -   Call [**LoadLibrary**](https://msdn.microsoft.com/library/ms684175(v=VS.85).aspx) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
+--   Call [**GetStringTypeA**](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getstringtypea), [**GetStringTypeEx**](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getstringtypeexa), or [**GetStringTypeW**](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-getstringtypew) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**GetStringTypeA**](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getstringtypea), [**GetStringTypeEx**](https://docs.microsoft.com/windows/win32/api/stringapiset/nf-stringapiset-getstringtypeexw), or [**GetStringTypeW**](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-getstringtypew) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Synchronize with other threads. This can cause a deadlock.
+ -   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+ -   Initialize COM threads by using [**CoInitializeEx**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-coinitializeex). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
+
+commit 624cb0bc9471517bfeb9c89af2db85115f4effc6
+Author: Drew Batchelor <drewbat@microsoft.com>
+Date:   Wed Nov 27 13:25:37 2019 -0800
+
+    Removing hardcoded en-us locale from links
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index f5a91dca7b..ba2f003dab 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -34,14 +34,14 @@ Some initialization tasks cannot be postponed. For example, a DLL that depends o
+ 
+ You should never perform the following tasks from within [**DllMain**](dllmain.md):
+ 
+--   Call [**LoadLibrary**](https://msdn.microsoft.com/en-us/library/ms684175(v=VS.85).aspx) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**LoadLibrary**](https://msdn.microsoft.com/library/ms684175(v=VS.85).aspx) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Call [**GetStringTypeA**](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getstringtypea), [**GetStringTypeEx**](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getstringtypeexa), or [**GetStringTypeW**](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-getstringtypew) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Synchronize with other threads. This can cause a deadlock.
+ -   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+ -   Initialize COM threads by using [**CoInitializeEx**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-coinitializeex). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
+ -   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
+ -   Call [**CreateProcess**](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+--   Call [**ExitThread**](https://msdn.microsoft.com/en-us/library/ms683153(v=VS.85).aspx). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
++-   Call [**ExitThread**](https://msdn.microsoft.com/library/ms683153(v=VS.85).aspx). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+ -   Call [**CreateThread**](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+ -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+ -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+@@ -62,7 +62,7 @@ The following tasks are safe to perform within **DllMain**:
+ 
+ When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
+ 
+-It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](https://msdn.microsoft.com/en-us/library/ms683197(v=VS.85).aspx) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
++It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](https://msdn.microsoft.com/library/ms683197(v=VS.85).aspx) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
+ 
+ Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
+ 
+
+commit 27a9dfa3ef68240fbf09f1c64dff7b2232874ef4
+Author: Mike Jacobs <mijacobs@microsoft.com>
+Date:   Wed Jun 5 16:54:56 2019 -0700
+
+    Replacing old MSDN URLs with updated docs.microsoft.com URLs (#98)
+    
+    * initial fixes
+    
+    * additional fixes
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index c8d7f89452..f5a91dca7b 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -16,7 +16,7 @@ ms.date: 05/31/2018
+ 
+ -   [**DllMain**](dllmain.md)
+ -   [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa)
+--   [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425)
++-   [**CreateProcess**](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa)
+ 
+ Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
+ 
+@@ -35,14 +35,14 @@ Some initialization tasks cannot be postponed. For example, a DLL that depends o
+ You should never perform the following tasks from within [**DllMain**](dllmain.md):
+ 
+ -   Call [**LoadLibrary**](https://msdn.microsoft.com/en-us/library/ms684175(v=VS.85).aspx) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
+--   Call [**GetStringTypeA**](https://msdn.microsoft.com/library/windows/desktop/dd318117), [**GetStringTypeEx**](https://msdn.microsoft.com/library/windows/desktop/dd318118), or [**GetStringTypeW**](https://msdn.microsoft.com/library/windows/desktop/dd318119) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**GetStringTypeA**](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getstringtypea), [**GetStringTypeEx**](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getstringtypeexa), or [**GetStringTypeW**](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-getstringtypew) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Synchronize with other threads. This can cause a deadlock.
+ -   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+--   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
++-   Initialize COM threads by using [**CoInitializeEx**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-coinitializeex). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
+ -   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
+--   Call [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425). Creating a process can load another DLL.
++-   Call [**CreateProcess**](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+ -   Call [**ExitThread**](https://msdn.microsoft.com/en-us/library/ms683153(v=VS.85).aspx). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+--   Call [**CreateThread**](https://msdn.microsoft.com/library/windows/desktop/ms682453). Creating a thread can work if you do not synchronize with other threads, but it is risky.
++-   Call [**CreateThread**](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+ -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+ -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+ -   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+
+commit 0180b6dbcaa133e58745702bf0ebefa871ee151b
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Tue Nov 6 09:10:11 2018 -0800
+
+    Cleaned up metadata and fixed some topics
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index 53d51be9b0..c8d7f89452 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -2,7 +2,6 @@
+ Description: Creating DLLs presents a number of challenges for developers.
+ ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
+ title: Dynamic-Link Library Best Practices
+-ms.author: windowssdkdev
+ ms.topic: article
+ ms.date: 05/31/2018
+ ---
+
+commit 472b2e07d4cdbe5f9c86811b104935259625c314
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Wed Oct 24 09:03:34 2018 -0700
+
+    Bulk edit: Added global metadata and cleaned up topics
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index 62d995a659..53d51be9b0 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -2,8 +2,6 @@
+ Description: Creating DLLs presents a number of challenges for developers.
+ ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
+ title: Dynamic-Link Library Best Practices
+-ms.technology: desktop
+-ms.prod: windows
+ ms.author: windowssdkdev
+ ms.topic: article
+ ms.date: 05/31/2018
+
+commit 372cce342a549daf2a88caeaea771b3610d222a6
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Thu Jun 14 11:37:31 2018 -0700
+
+    Another build
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index a084068eec..62d995a659 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -37,14 +37,14 @@ Some initialization tasks cannot be postponed. For example, a DLL that depends o
+ 
+ You should never perform the following tasks from within [**DllMain**](dllmain.md):
+ 
+--   Call [**LoadLibrary**](https://www.bing.com/search?q=**LoadLibrary**) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**LoadLibrary**](https://msdn.microsoft.com/en-us/library/ms684175(v=VS.85).aspx) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Call [**GetStringTypeA**](https://msdn.microsoft.com/library/windows/desktop/dd318117), [**GetStringTypeEx**](https://msdn.microsoft.com/library/windows/desktop/dd318118), or [**GetStringTypeW**](https://msdn.microsoft.com/library/windows/desktop/dd318119) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Synchronize with other threads. This can cause a deadlock.
+ -   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+ -   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
+ -   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
+ -   Call [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425). Creating a process can load another DLL.
+--   Call [**ExitThread**](https://www.bing.com/search?q=**ExitThread**). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
++-   Call [**ExitThread**](https://msdn.microsoft.com/en-us/library/ms683153(v=VS.85).aspx). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+ -   Call [**CreateThread**](https://msdn.microsoft.com/library/windows/desktop/ms682453). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+ -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+ -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+@@ -65,7 +65,7 @@ The following tasks are safe to perform within **DllMain**:
+ 
+ When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
+ 
+-It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](https://www.bing.com/search?q=**GetModuleFileName**) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
++It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](https://msdn.microsoft.com/en-us/library/ms683197(v=VS.85).aspx) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
+ 
+ Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
+ 
+
+commit 3c3df8c89c4236915080e87b76460059a68b2651
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Thu Jun 7 13:04:21 2018 -0700
+
+    Another build
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+new file mode 100644
+index 0000000000..a084068eec
+--- /dev/null
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -0,0 +1,112 @@
++---
++Description: Creating DLLs presents a number of challenges for developers.
++ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
++title: Dynamic-Link Library Best Practices
++ms.technology: desktop
++ms.prod: windows
++ms.author: windowssdkdev
++ms.topic: article
++ms.date: 05/31/2018
++---
++
++# Dynamic-Link Library Best Practices
++
++**Updated: **
++
++-   May 17, 2006
++
++**Important APIs**
++
++-   [**DllMain**](dllmain.md)
++-   [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa)
++-   [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425)
++
++Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
++
++Improper synchronization within [**DllMain**](dllmain.md) can cause an application to deadlock or access data or code in an uninitialized DLL. Calling certain functions from within **DllMain** causes such problems.
++
++![what happens when a library is loaded](images/fig1.png)
++
++## General Best Practices
++
++[**DllMain**](dllmain.md) is called while the loader-lock is held. Therefore, significant restrictions are imposed on the functions that can be called within **DllMain**. As such, **DllMain** is designed to perform minimal initialization tasks, by using a small subset of the Microsoft® Windows® API. You cannot call any function in **DllMain** that directly or indirectly tries to acquire the loader lock. Otherwise, you will introduce the possibility that your application deadlocks or crashes. An error in a **DllMain** implementation can jeopardize the entire process and all of its threads.
++
++The ideal [**DllMain**](dllmain.md) would be just an empty stub. However, given the complexity of many applications, this is generally too restrictive. A good rule of thumb for **DllMain** is to postpone as much initialization as possible. Lazy initialization increases robustness of the application because this initialization is not performed while the loader lock is held. Also, lazy initialization enables you to safely use much more of the Windows API.
++
++Some initialization tasks cannot be postponed. For example, a DLL that depends on a configuration file should fail to load if the file is malformed or contains garbage. For this type of initialization, the DLL should attempt the action and fail quickly rather than waste resources by completing other work.
++
++You should never perform the following tasks from within [**DllMain**](dllmain.md):
++
++-   Call [**LoadLibrary**](https://www.bing.com/search?q=**LoadLibrary**) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**GetStringTypeA**](https://msdn.microsoft.com/library/windows/desktop/dd318117), [**GetStringTypeEx**](https://msdn.microsoft.com/library/windows/desktop/dd318118), or [**GetStringTypeW**](https://msdn.microsoft.com/library/windows/desktop/dd318119) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Synchronize with other threads. This can cause a deadlock.
++-   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
++-   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
++-   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
++-   Call [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425). Creating a process can load another DLL.
++-   Call [**ExitThread**](https://www.bing.com/search?q=**ExitThread**). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
++-   Call [**CreateThread**](https://msdn.microsoft.com/library/windows/desktop/ms682453). Creating a thread can work if you do not synchronize with other threads, but it is risky.
++-   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
++-   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
++-   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
++-   Use managed code.
++
++The following tasks are safe to perform within **DllMain**:
++
++-   Initialize static data structures and members at compile time.
++-   Create and initialize synchronization objects.
++-   Allocate memory and initialize dynamic data structures (avoiding the functions listed above.)
++-   Set up thread local storage (TLS).
++-   Open, read from, and write to files.
++-   Call functions in Kernel32.dll (except the functions that are listed above).
++-   Set global pointers to NULL, putting off the initialization of dynamic members. In Microsoft Windows Vista™, you can use the one-time initialization functions to ensure that a block of code is executed only once in a multithreaded environment.
++
++## Deadlocks Caused by Lock Order Inversion
++
++When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
++
++It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](https://www.bing.com/search?q=**GetModuleFileName**) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
++
++Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
++
++![deadlock caused by lock order inversion](images/fig2.png)
++
++To prevent deadlocks that are caused by lock order inversion, all threads should attempt to acquire synchronization objects in the defined load order at all times.
++
++## Best Practices for Synchronization
++
++Consider a DLL that creates worker threads as part of its initialization. Upon DLL cleanup, it is necessary to synchronize with all the worker threads to ensure that the data structures are in a consistent state and then terminate the worker threads. Today, there is no straightforward way to completely solve the problem of cleanly synchronizing and shutting down DLLs in a multithreaded environment. This section describes the current best practices for thread synchronizing during DLL shutdown.
++
++Thread Synchronization in [**DllMain**](dllmain.md) during Process Exit
++
++-   By the time [**DllMain**](dllmain.md) is called at process exit, all the process’s threads have been forcibly cleaned up and there is a chance that the address space is inconsistent. Synchronization is not required in this case. In other words, the ideal DLL\_PROCESS\_DETACH handler is empty.
++-   Windows Vista ensures that core data structures (environment variables, current directory, process heap, and so on) are in a consistent state. However, other data structures can be corrupted, so cleaning memory is not safe.
++-   Persistent state that needs to be saved must be flushed to permanent storage.
++
++Thread Synchronization in **DllMain** for DLL\_THREAD\_DETACH during DLL Unload
++
++-   When the DLL is unloaded, the address space is not thrown away. Therefore, the DLL is expected to perform a clean shutdown. This includes thread synchronization, open handles, persistent state, and allocated resources.
++-   Thread synchronization is tricky because waiting on threads to exit in [**DllMain**](dllmain.md) can cause a deadlock. For example, DLL A holds the loader lock. It signals thread T to exit and waits for the thread to exit. Thread T exits and the loader tries to acquire the loader lock to call into DLL A’s **DllMain** with DLL\_THREAD\_DETACH. This causes a deadlock. To minimize the risk of a deadlock:
++    -   DLL A gets a DLL\_THREAD\_DETACH message in its [**DllMain**](dllmain.md) and sets an event for thread T, signaling it to exit.
++    -   Thread T finishes its current task, brings itself to a consistent state, signals DLL A, and waits infinitely. Note that the consistency-checking routines should follow the same restrictions as [**DllMain**](dllmain.md) to avoid deadlocking.
++    -   DLL A terminates T, knowing that it is in a consistent state.
++
++If a DLL is unloaded after all its threads have been created, but before they begin executing, the threads may crash. If the DLL created threads in its **DllMain** as part of its initialization, some threads may not have finished initialization and their DLL\_THREAD\_ATTACH message is still waiting to be delivered to the DLL. In this situation, if the DLL is unloaded, it will begin terminating threads. However, some threads may be blocked behind the loader lock. Their DLL\_THREAD\_ATTACH messages are processed after the DLL has been unmapped, causing the process to crash.
++
++## Recommendations
++
++The following are recommended guidelines:
++
++-   Use Application Verifier to catch the most common errors in [**DllMain**](dllmain.md).
++-   If using a private lock inside [**DllMain**](dllmain.md), define a locking hierarchy and use it consistently. The loader lock must be at the bottom of this hierarchy.
++-   Verify that no calls depend on another DLL that may not have been fully loaded yet.
++-   Perform simple initializations statically at compile time, rather than in [**DllMain**](dllmain.md).
++-   Defer any calls in [**DllMain**](dllmain.md) that can wait until later.
++-   Defer initialization tasks that can wait until later. Certain error conditions must be detected early so that the application can handle errors gracefully. However, there are tradeoffs between this early detection and the loss of robustness that can result from it. Deferring initialization is often best.
++
++ 
++
++ 
++
++
++
+
+commit 509ab0d3a13db2020a4fd91eaa19d2e7d192b2a4
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Thu Jun 7 09:10:40 2018 -0700
+
+    Prepping for another build
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+deleted file mode 100644
+index a084068eec..0000000000
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ /dev/null
+@@ -1,112 +0,0 @@
+----
+-Description: Creating DLLs presents a number of challenges for developers.
+-ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
+-title: Dynamic-Link Library Best Practices
+-ms.technology: desktop
+-ms.prod: windows
+-ms.author: windowssdkdev
+-ms.topic: article
+-ms.date: 05/31/2018
+----
+-
+-# Dynamic-Link Library Best Practices
+-
+-**Updated: **
+-
+--   May 17, 2006
+-
+-**Important APIs**
+-
+--   [**DllMain**](dllmain.md)
+--   [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa)
+--   [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425)
+-
+-Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
+-
+-Improper synchronization within [**DllMain**](dllmain.md) can cause an application to deadlock or access data or code in an uninitialized DLL. Calling certain functions from within **DllMain** causes such problems.
+-
+-![what happens when a library is loaded](images/fig1.png)
+-
+-## General Best Practices
+-
+-[**DllMain**](dllmain.md) is called while the loader-lock is held. Therefore, significant restrictions are imposed on the functions that can be called within **DllMain**. As such, **DllMain** is designed to perform minimal initialization tasks, by using a small subset of the Microsoft® Windows® API. You cannot call any function in **DllMain** that directly or indirectly tries to acquire the loader lock. Otherwise, you will introduce the possibility that your application deadlocks or crashes. An error in a **DllMain** implementation can jeopardize the entire process and all of its threads.
+-
+-The ideal [**DllMain**](dllmain.md) would be just an empty stub. However, given the complexity of many applications, this is generally too restrictive. A good rule of thumb for **DllMain** is to postpone as much initialization as possible. Lazy initialization increases robustness of the application because this initialization is not performed while the loader lock is held. Also, lazy initialization enables you to safely use much more of the Windows API.
+-
+-Some initialization tasks cannot be postponed. For example, a DLL that depends on a configuration file should fail to load if the file is malformed or contains garbage. For this type of initialization, the DLL should attempt the action and fail quickly rather than waste resources by completing other work.
+-
+-You should never perform the following tasks from within [**DllMain**](dllmain.md):
+-
+--   Call [**LoadLibrary**](https://www.bing.com/search?q=**LoadLibrary**) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
+--   Call [**GetStringTypeA**](https://msdn.microsoft.com/library/windows/desktop/dd318117), [**GetStringTypeEx**](https://msdn.microsoft.com/library/windows/desktop/dd318118), or [**GetStringTypeW**](https://msdn.microsoft.com/library/windows/desktop/dd318119) (either directly or indirectly). This can cause a deadlock or a crash.
+--   Synchronize with other threads. This can cause a deadlock.
+--   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+--   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
+--   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
+--   Call [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425). Creating a process can load another DLL.
+--   Call [**ExitThread**](https://www.bing.com/search?q=**ExitThread**). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+--   Call [**CreateThread**](https://msdn.microsoft.com/library/windows/desktop/ms682453). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+--   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+--   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+--   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+--   Use managed code.
+-
+-The following tasks are safe to perform within **DllMain**:
+-
+--   Initialize static data structures and members at compile time.
+--   Create and initialize synchronization objects.
+--   Allocate memory and initialize dynamic data structures (avoiding the functions listed above.)
+--   Set up thread local storage (TLS).
+--   Open, read from, and write to files.
+--   Call functions in Kernel32.dll (except the functions that are listed above).
+--   Set global pointers to NULL, putting off the initialization of dynamic members. In Microsoft Windows Vista™, you can use the one-time initialization functions to ensure that a block of code is executed only once in a multithreaded environment.
+-
+-## Deadlocks Caused by Lock Order Inversion
+-
+-When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
+-
+-It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](https://www.bing.com/search?q=**GetModuleFileName**) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
+-
+-Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
+-
+-![deadlock caused by lock order inversion](images/fig2.png)
+-
+-To prevent deadlocks that are caused by lock order inversion, all threads should attempt to acquire synchronization objects in the defined load order at all times.
+-
+-## Best Practices for Synchronization
+-
+-Consider a DLL that creates worker threads as part of its initialization. Upon DLL cleanup, it is necessary to synchronize with all the worker threads to ensure that the data structures are in a consistent state and then terminate the worker threads. Today, there is no straightforward way to completely solve the problem of cleanly synchronizing and shutting down DLLs in a multithreaded environment. This section describes the current best practices for thread synchronizing during DLL shutdown.
+-
+-Thread Synchronization in [**DllMain**](dllmain.md) during Process Exit
+-
+--   By the time [**DllMain**](dllmain.md) is called at process exit, all the process’s threads have been forcibly cleaned up and there is a chance that the address space is inconsistent. Synchronization is not required in this case. In other words, the ideal DLL\_PROCESS\_DETACH handler is empty.
+--   Windows Vista ensures that core data structures (environment variables, current directory, process heap, and so on) are in a consistent state. However, other data structures can be corrupted, so cleaning memory is not safe.
+--   Persistent state that needs to be saved must be flushed to permanent storage.
+-
+-Thread Synchronization in **DllMain** for DLL\_THREAD\_DETACH during DLL Unload
+-
+--   When the DLL is unloaded, the address space is not thrown away. Therefore, the DLL is expected to perform a clean shutdown. This includes thread synchronization, open handles, persistent state, and allocated resources.
+--   Thread synchronization is tricky because waiting on threads to exit in [**DllMain**](dllmain.md) can cause a deadlock. For example, DLL A holds the loader lock. It signals thread T to exit and waits for the thread to exit. Thread T exits and the loader tries to acquire the loader lock to call into DLL A’s **DllMain** with DLL\_THREAD\_DETACH. This causes a deadlock. To minimize the risk of a deadlock:
+-    -   DLL A gets a DLL\_THREAD\_DETACH message in its [**DllMain**](dllmain.md) and sets an event for thread T, signaling it to exit.
+-    -   Thread T finishes its current task, brings itself to a consistent state, signals DLL A, and waits infinitely. Note that the consistency-checking routines should follow the same restrictions as [**DllMain**](dllmain.md) to avoid deadlocking.
+-    -   DLL A terminates T, knowing that it is in a consistent state.
+-
+-If a DLL is unloaded after all its threads have been created, but before they begin executing, the threads may crash. If the DLL created threads in its **DllMain** as part of its initialization, some threads may not have finished initialization and their DLL\_THREAD\_ATTACH message is still waiting to be delivered to the DLL. In this situation, if the DLL is unloaded, it will begin terminating threads. However, some threads may be blocked behind the loader lock. Their DLL\_THREAD\_ATTACH messages are processed after the DLL has been unmapped, causing the process to crash.
+-
+-## Recommendations
+-
+-The following are recommended guidelines:
+-
+--   Use Application Verifier to catch the most common errors in [**DllMain**](dllmain.md).
+--   If using a private lock inside [**DllMain**](dllmain.md), define a locking hierarchy and use it consistently. The loader lock must be at the bottom of this hierarchy.
+--   Verify that no calls depend on another DLL that may not have been fully loaded yet.
+--   Perform simple initializations statically at compile time, rather than in [**DllMain**](dllmain.md).
+--   Defer any calls in [**DllMain**](dllmain.md) that can wait until later.
+--   Defer initialization tasks that can wait until later. Certain error conditions must be detected early so that the application can handle errors gracefully. However, there are tradeoffs between this early detection and the loss of robustness that can result from it. Deferring initialization is often best.
+-
+- 
+-
+- 
+-
+-
+-
+
+commit f0629c9a32dc4ccca05c94e16575cd5a2635586f
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Sat Jun 2 21:20:36 2018 -0700
+
+    Another build
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+new file mode 100644
+index 0000000000..a084068eec
+--- /dev/null
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -0,0 +1,112 @@
++---
++Description: Creating DLLs presents a number of challenges for developers.
++ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
++title: Dynamic-Link Library Best Practices
++ms.technology: desktop
++ms.prod: windows
++ms.author: windowssdkdev
++ms.topic: article
++ms.date: 05/31/2018
++---
++
++# Dynamic-Link Library Best Practices
++
++**Updated: **
++
++-   May 17, 2006
++
++**Important APIs**
++
++-   [**DllMain**](dllmain.md)
++-   [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa)
++-   [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425)
++
++Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
++
++Improper synchronization within [**DllMain**](dllmain.md) can cause an application to deadlock or access data or code in an uninitialized DLL. Calling certain functions from within **DllMain** causes such problems.
++
++![what happens when a library is loaded](images/fig1.png)
++
++## General Best Practices
++
++[**DllMain**](dllmain.md) is called while the loader-lock is held. Therefore, significant restrictions are imposed on the functions that can be called within **DllMain**. As such, **DllMain** is designed to perform minimal initialization tasks, by using a small subset of the Microsoft® Windows® API. You cannot call any function in **DllMain** that directly or indirectly tries to acquire the loader lock. Otherwise, you will introduce the possibility that your application deadlocks or crashes. An error in a **DllMain** implementation can jeopardize the entire process and all of its threads.
++
++The ideal [**DllMain**](dllmain.md) would be just an empty stub. However, given the complexity of many applications, this is generally too restrictive. A good rule of thumb for **DllMain** is to postpone as much initialization as possible. Lazy initialization increases robustness of the application because this initialization is not performed while the loader lock is held. Also, lazy initialization enables you to safely use much more of the Windows API.
++
++Some initialization tasks cannot be postponed. For example, a DLL that depends on a configuration file should fail to load if the file is malformed or contains garbage. For this type of initialization, the DLL should attempt the action and fail quickly rather than waste resources by completing other work.
++
++You should never perform the following tasks from within [**DllMain**](dllmain.md):
++
++-   Call [**LoadLibrary**](https://www.bing.com/search?q=**LoadLibrary**) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**GetStringTypeA**](https://msdn.microsoft.com/library/windows/desktop/dd318117), [**GetStringTypeEx**](https://msdn.microsoft.com/library/windows/desktop/dd318118), or [**GetStringTypeW**](https://msdn.microsoft.com/library/windows/desktop/dd318119) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Synchronize with other threads. This can cause a deadlock.
++-   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
++-   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
++-   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
++-   Call [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425). Creating a process can load another DLL.
++-   Call [**ExitThread**](https://www.bing.com/search?q=**ExitThread**). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
++-   Call [**CreateThread**](https://msdn.microsoft.com/library/windows/desktop/ms682453). Creating a thread can work if you do not synchronize with other threads, but it is risky.
++-   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
++-   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
++-   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
++-   Use managed code.
++
++The following tasks are safe to perform within **DllMain**:
++
++-   Initialize static data structures and members at compile time.
++-   Create and initialize synchronization objects.
++-   Allocate memory and initialize dynamic data structures (avoiding the functions listed above.)
++-   Set up thread local storage (TLS).
++-   Open, read from, and write to files.
++-   Call functions in Kernel32.dll (except the functions that are listed above).
++-   Set global pointers to NULL, putting off the initialization of dynamic members. In Microsoft Windows Vista™, you can use the one-time initialization functions to ensure that a block of code is executed only once in a multithreaded environment.
++
++## Deadlocks Caused by Lock Order Inversion
++
++When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
++
++It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](https://www.bing.com/search?q=**GetModuleFileName**) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
++
++Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
++
++![deadlock caused by lock order inversion](images/fig2.png)
++
++To prevent deadlocks that are caused by lock order inversion, all threads should attempt to acquire synchronization objects in the defined load order at all times.
++
++## Best Practices for Synchronization
++
++Consider a DLL that creates worker threads as part of its initialization. Upon DLL cleanup, it is necessary to synchronize with all the worker threads to ensure that the data structures are in a consistent state and then terminate the worker threads. Today, there is no straightforward way to completely solve the problem of cleanly synchronizing and shutting down DLLs in a multithreaded environment. This section describes the current best practices for thread synchronizing during DLL shutdown.
++
++Thread Synchronization in [**DllMain**](dllmain.md) during Process Exit
++
++-   By the time [**DllMain**](dllmain.md) is called at process exit, all the process’s threads have been forcibly cleaned up and there is a chance that the address space is inconsistent. Synchronization is not required in this case. In other words, the ideal DLL\_PROCESS\_DETACH handler is empty.
++-   Windows Vista ensures that core data structures (environment variables, current directory, process heap, and so on) are in a consistent state. However, other data structures can be corrupted, so cleaning memory is not safe.
++-   Persistent state that needs to be saved must be flushed to permanent storage.
++
++Thread Synchronization in **DllMain** for DLL\_THREAD\_DETACH during DLL Unload
++
++-   When the DLL is unloaded, the address space is not thrown away. Therefore, the DLL is expected to perform a clean shutdown. This includes thread synchronization, open handles, persistent state, and allocated resources.
++-   Thread synchronization is tricky because waiting on threads to exit in [**DllMain**](dllmain.md) can cause a deadlock. For example, DLL A holds the loader lock. It signals thread T to exit and waits for the thread to exit. Thread T exits and the loader tries to acquire the loader lock to call into DLL A’s **DllMain** with DLL\_THREAD\_DETACH. This causes a deadlock. To minimize the risk of a deadlock:
++    -   DLL A gets a DLL\_THREAD\_DETACH message in its [**DllMain**](dllmain.md) and sets an event for thread T, signaling it to exit.
++    -   Thread T finishes its current task, brings itself to a consistent state, signals DLL A, and waits infinitely. Note that the consistency-checking routines should follow the same restrictions as [**DllMain**](dllmain.md) to avoid deadlocking.
++    -   DLL A terminates T, knowing that it is in a consistent state.
++
++If a DLL is unloaded after all its threads have been created, but before they begin executing, the threads may crash. If the DLL created threads in its **DllMain** as part of its initialization, some threads may not have finished initialization and their DLL\_THREAD\_ATTACH message is still waiting to be delivered to the DLL. In this situation, if the DLL is unloaded, it will begin terminating threads. However, some threads may be blocked behind the loader lock. Their DLL\_THREAD\_ATTACH messages are processed after the DLL has been unmapped, causing the process to crash.
++
++## Recommendations
++
++The following are recommended guidelines:
++
++-   Use Application Verifier to catch the most common errors in [**DllMain**](dllmain.md).
++-   If using a private lock inside [**DllMain**](dllmain.md), define a locking hierarchy and use it consistently. The loader lock must be at the bottom of this hierarchy.
++-   Verify that no calls depend on another DLL that may not have been fully loaded yet.
++-   Perform simple initializations statically at compile time, rather than in [**DllMain**](dllmain.md).
++-   Defer any calls in [**DllMain**](dllmain.md) that can wait until later.
++-   Defer initialization tasks that can wait until later. Certain error conditions must be detected early so that the application can handle errors gracefully. However, there are tradeoffs between this early detection and the loss of robustness that can result from it. Deferring initialization is often best.
++
++ 
++
++ 
++
++
++
+
+commit 7989457c1f63a0300e95633a3172cb7accdc3bb0
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Thu May 31 09:37:22 2018 -0700
+
+    Deleting all contents in preparation of new build
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+deleted file mode 100644
+index 800ef37598..0000000000
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ /dev/null
+@@ -1,112 +0,0 @@
+----
+-Description: Creating DLLs presents a number of challenges for developers.
+-ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
+-title: Dynamic-Link Library Best Practices
+-ms.date: 05/31/2018
+-ms.topic: article
+-ms.author: windowssdkdev
+-ms.prod: windows
+-ms.technology: desktop
+----
+-
+-# Dynamic-Link Library Best Practices
+-
+-**Updated: **
+-
+--   May 17, 2006
+-
+-**Important APIs**
+-
+--   [**DllMain**](dllmain.md)
+--   [**LoadLibraryEx**](/windows/win32/LibLoaderAPI/nf-libloaderapi-loadlibraryexa?branch=master)
+--   [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425)
+-
+-Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
+-
+-Improper synchronization within [**DllMain**](dllmain.md) can cause an application to deadlock or access data or code in an uninitialized DLL. Calling certain functions from within **DllMain** causes such problems.
+-
+-![what happens when a library is loaded](images/fig1.png)
+-
+-## General Best Practices
+-
+-[**DllMain**](dllmain.md) is called while the loader-lock is held. Therefore, significant restrictions are imposed on the functions that can be called within **DllMain**. As such, **DllMain** is designed to perform minimal initialization tasks, by using a small subset of the Microsoft® Windows® API. You cannot call any function in **DllMain** that directly or indirectly tries to acquire the loader lock. Otherwise, you will introduce the possibility that your application deadlocks or crashes. An error in a **DllMain** implementation can jeopardize the entire process and all of its threads.
+-
+-The ideal [**DllMain**](dllmain.md) would be just an empty stub. However, given the complexity of many applications, this is generally too restrictive. A good rule of thumb for **DllMain** is to postpone as much initialization as possible. Lazy initialization increases robustness of the application because this initialization is not performed while the loader lock is held. Also, lazy initialization enables you to safely use much more of the Windows API.
+-
+-Some initialization tasks cannot be postponed. For example, a DLL that depends on a configuration file should fail to load if the file is malformed or contains garbage. For this type of initialization, the DLL should attempt the action and fail quickly rather than waste resources by completing other work.
+-
+-You should never perform the following tasks from within [**DllMain**](dllmain.md):
+-
+--   Call [**LoadLibrary**](loadlibrary.md) or [**LoadLibraryEx**](/windows/win32/LibLoaderAPI/nf-libloaderapi-loadlibraryexa?branch=master) (either directly or indirectly). This can cause a deadlock or a crash.
+--   Call [**GetStringTypeA**](https://msdn.microsoft.com/library/windows/desktop/dd318117), [**GetStringTypeEx**](https://msdn.microsoft.com/library/windows/desktop/dd318118), or [**GetStringTypeW**](https://msdn.microsoft.com/library/windows/desktop/dd318119) (either directly or indirectly). This can cause a deadlock or a crash.
+--   Synchronize with other threads. This can cause a deadlock.
+--   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+--   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/win32/LibLoaderAPI/nf-libloaderapi-loadlibraryexa?branch=master).
+--   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
+--   Call [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425). Creating a process can load another DLL.
+--   Call [**ExitThread**](freelibraryandexitthread.md). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+--   Call [**CreateThread**](https://msdn.microsoft.com/library/windows/desktop/ms682453). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+--   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+--   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+--   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+--   Use managed code.
+-
+-The following tasks are safe to perform within **DllMain**:
+-
+--   Initialize static data structures and members at compile time.
+--   Create and initialize synchronization objects.
+--   Allocate memory and initialize dynamic data structures (avoiding the functions listed above.)
+--   Set up thread local storage (TLS).
+--   Open, read from, and write to files.
+--   Call functions in Kernel32.dll (except the functions that are listed above).
+--   Set global pointers to NULL, putting off the initialization of dynamic members. In Microsoft Windows Vista™, you can use the one-time initialization functions to ensure that a block of code is executed only once in a multithreaded environment.
+-
+-## Deadlocks Caused by Lock Order Inversion
+-
+-When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
+-
+-It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](getmodulefilename.md) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
+-
+-Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
+-
+-![deadlock caused by lock order inversion](images/fig2.png)
+-
+-To prevent deadlocks that are caused by lock order inversion, all threads should attempt to acquire synchronization objects in the defined load order at all times.
+-
+-## Best Practices for Synchronization
+-
+-Consider a DLL that creates worker threads as part of its initialization. Upon DLL cleanup, it is necessary to synchronize with all the worker threads to ensure that the data structures are in a consistent state and then terminate the worker threads. Today, there is no straightforward way to completely solve the problem of cleanly synchronizing and shutting down DLLs in a multithreaded environment. This section describes the current best practices for thread synchronizing during DLL shutdown.
+-
+-Thread Synchronization in [**DllMain**](dllmain.md) during Process Exit
+-
+--   By the time [**DllMain**](dllmain.md) is called at process exit, all the process’s threads have been forcibly cleaned up and there is a chance that the address space is inconsistent. Synchronization is not required in this case. In other words, the ideal DLL\_PROCESS\_DETACH handler is empty.
+--   Windows Vista ensures that core data structures (environment variables, current directory, process heap, and so on) are in a consistent state. However, other data structures can be corrupted, so cleaning memory is not safe.
+--   Persistent state that needs to be saved must be flushed to permanent storage.
+-
+-Thread Synchronization in **DllMain** for DLL\_THREAD\_DETACH during DLL Unload
+-
+--   When the DLL is unloaded, the address space is not thrown away. Therefore, the DLL is expected to perform a clean shutdown. This includes thread synchronization, open handles, persistent state, and allocated resources.
+--   Thread synchronization is tricky because waiting on threads to exit in [**DllMain**](dllmain.md) can cause a deadlock. For example, DLL A holds the loader lock. It signals thread T to exit and waits for the thread to exit. Thread T exits and the loader tries to acquire the loader lock to call into DLL A’s **DllMain** with DLL\_THREAD\_DETACH. This causes a deadlock. To minimize the risk of a deadlock:
+-    -   DLL A gets a DLL\_THREAD\_DETACH message in its [**DllMain**](dllmain.md) and sets an event for thread T, signaling it to exit.
+-    -   Thread T finishes its current task, brings itself to a consistent state, signals DLL A, and waits infinitely. Note that the consistency-checking routines should follow the same restrictions as [**DllMain**](dllmain.md) to avoid deadlocking.
+-    -   DLL A terminates T, knowing that it is in a consistent state.
+-
+-If a DLL is unloaded after all its threads have been created, but before they begin executing, the threads may crash. If the DLL created threads in its **DllMain** as part of its initialization, some threads may not have finished initialization and their DLL\_THREAD\_ATTACH message is still waiting to be delivered to the DLL. In this situation, if the DLL is unloaded, it will begin terminating threads. However, some threads may be blocked behind the loader lock. Their DLL\_THREAD\_ATTACH messages are processed after the DLL has been unmapped, causing the process to crash.
+-
+-## Recommendations
+-
+-The following are recommended guidelines:
+-
+--   Use Application Verifier to catch the most common errors in [**DllMain**](dllmain.md).
+--   If using a private lock inside [**DllMain**](dllmain.md), define a locking hierarchy and use it consistently. The loader lock must be at the bottom of this hierarchy.
+--   Verify that no calls depend on another DLL that may not have been fully loaded yet.
+--   Perform simple initializations statically at compile time, rather than in [**DllMain**](dllmain.md).
+--   Defer any calls in [**DllMain**](dllmain.md) that can wait until later.
+--   Defer initialization tasks that can wait until later. Certain error conditions must be detected early so that the application can handle errors gracefully. However, there are tradeoffs between this early detection and the loss of robustness that can result from it. Deferring initialization is often best.
+-
+- 
+-
+- 
+-
+-
+-
+
+commit bba8133fa1f2ac02187c776e3fabd76733a8834d
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Fri May 25 19:48:29 2018 -0700
+
+    updated build
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+index dd33d4a644..800ef37598 100644
+--- a/desktop-src/Dlls/dynamic-link-library-best-practices.md
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -1,7 +1,12 @@
+ ---
+-Description: 'Creating DLLs presents a number of challenges for developers.'
+-ms.assetid: '44EFC4B5-7A2F-43A6-914E-D4EB7446AC35'
+-title: 'Dynamic-Link Library Best Practices'
++Description: Creating DLLs presents a number of challenges for developers.
++ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
++title: Dynamic-Link Library Best Practices
++ms.date: 05/31/2018
++ms.topic: article
++ms.author: windowssdkdev
++ms.prod: windows
++ms.technology: desktop
+ ---
+ 
+ # Dynamic-Link Library Best Practices
+@@ -13,7 +18,7 @@ title: 'Dynamic-Link Library Best Practices'
+ **Important APIs**
+ 
+ -   [**DllMain**](dllmain.md)
+--   [**LoadLibraryEx**](loadlibraryex.md)
++-   [**LoadLibraryEx**](/windows/win32/LibLoaderAPI/nf-libloaderapi-loadlibraryexa?branch=master)
+ -   [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425)
+ 
+ Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
+@@ -32,11 +37,11 @@ Some initialization tasks cannot be postponed. For example, a DLL that depends o
+ 
+ You should never perform the following tasks from within [**DllMain**](dllmain.md):
+ 
+--   Call [**LoadLibrary**](loadlibrary.md) or [**LoadLibraryEx**](loadlibraryex.md) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**LoadLibrary**](loadlibrary.md) or [**LoadLibraryEx**](/windows/win32/LibLoaderAPI/nf-libloaderapi-loadlibraryexa?branch=master) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Call [**GetStringTypeA**](https://msdn.microsoft.com/library/windows/desktop/dd318117), [**GetStringTypeEx**](https://msdn.microsoft.com/library/windows/desktop/dd318118), or [**GetStringTypeW**](https://msdn.microsoft.com/library/windows/desktop/dd318119) (either directly or indirectly). This can cause a deadlock or a crash.
+ -   Synchronize with other threads. This can cause a deadlock.
+ -   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+--   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](loadlibraryex.md).
++-   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/win32/LibLoaderAPI/nf-libloaderapi-loadlibraryexa?branch=master).
+ -   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
+ -   Call [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425). Creating a process can load another DLL.
+ -   Call [**ExitThread**](freelibraryandexitthread.md). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+
+commit 66168cfa76cac3f27171114d3aac3bc9df9e18ef
+Author: Michael Satran <misatran@microsoft.com>
+Date:   Thu May 17 22:13:00 2018 -0700
+
+    First content pass
+
+diff --git a/desktop-src/Dlls/dynamic-link-library-best-practices.md b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+new file mode 100644
+index 0000000000..dd33d4a644
+--- /dev/null
++++ b/desktop-src/Dlls/dynamic-link-library-best-practices.md
+@@ -0,0 +1,107 @@
++---
++Description: 'Creating DLLs presents a number of challenges for developers.'
++ms.assetid: '44EFC4B5-7A2F-43A6-914E-D4EB7446AC35'
++title: 'Dynamic-Link Library Best Practices'
++---
++
++# Dynamic-Link Library Best Practices
++
++**Updated: **
++
++-   May 17, 2006
++
++**Important APIs**
++
++-   [**DllMain**](dllmain.md)
++-   [**LoadLibraryEx**](loadlibraryex.md)
++-   [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425)
++
++Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
++
++Improper synchronization within [**DllMain**](dllmain.md) can cause an application to deadlock or access data or code in an uninitialized DLL. Calling certain functions from within **DllMain** causes such problems.
++
++![what happens when a library is loaded](images/fig1.png)
++
++## General Best Practices
++
++[**DllMain**](dllmain.md) is called while the loader-lock is held. Therefore, significant restrictions are imposed on the functions that can be called within **DllMain**. As such, **DllMain** is designed to perform minimal initialization tasks, by using a small subset of the Microsoft® Windows® API. You cannot call any function in **DllMain** that directly or indirectly tries to acquire the loader lock. Otherwise, you will introduce the possibility that your application deadlocks or crashes. An error in a **DllMain** implementation can jeopardize the entire process and all of its threads.
++
++The ideal [**DllMain**](dllmain.md) would be just an empty stub. However, given the complexity of many applications, this is generally too restrictive. A good rule of thumb for **DllMain** is to postpone as much initialization as possible. Lazy initialization increases robustness of the application because this initialization is not performed while the loader lock is held. Also, lazy initialization enables you to safely use much more of the Windows API.
++
++Some initialization tasks cannot be postponed. For example, a DLL that depends on a configuration file should fail to load if the file is malformed or contains garbage. For this type of initialization, the DLL should attempt the action and fail quickly rather than waste resources by completing other work.
++
++You should never perform the following tasks from within [**DllMain**](dllmain.md):
++
++-   Call [**LoadLibrary**](loadlibrary.md) or [**LoadLibraryEx**](loadlibraryex.md) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Call [**GetStringTypeA**](https://msdn.microsoft.com/library/windows/desktop/dd318117), [**GetStringTypeEx**](https://msdn.microsoft.com/library/windows/desktop/dd318118), or [**GetStringTypeW**](https://msdn.microsoft.com/library/windows/desktop/dd318119) (either directly or indirectly). This can cause a deadlock or a crash.
++-   Synchronize with other threads. This can cause a deadlock.
++-   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
++-   Initialize COM threads by using [**CoInitializeEx**](https://msdn.microsoft.com/library/windows/desktop/ms695279). Under certain conditions, this function can call [**LoadLibraryEx**](loadlibraryex.md).
++-   Call the registry functions. These functions are implemented in Advapi32.dll. If Advapi32.dll is not initialized before your DLL, the DLL can access uninitialized memory and cause the process to crash.
++-   Call [**CreateProcess**](https://msdn.microsoft.com/library/windows/desktop/ms682425). Creating a process can load another DLL.
++-   Call [**ExitThread**](freelibraryandexitthread.md). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
++-   Call [**CreateThread**](https://msdn.microsoft.com/library/windows/desktop/ms682453). Creating a thread can work if you do not synchronize with other threads, but it is risky.
++-   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
++-   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
++-   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
++-   Use managed code.
++
++The following tasks are safe to perform within **DllMain**:
++
++-   Initialize static data structures and members at compile time.
++-   Create and initialize synchronization objects.
++-   Allocate memory and initialize dynamic data structures (avoiding the functions listed above.)
++-   Set up thread local storage (TLS).
++-   Open, read from, and write to files.
++-   Call functions in Kernel32.dll (except the functions that are listed above).
++-   Set global pointers to NULL, putting off the initialization of dynamic members. In Microsoft Windows Vista™, you can use the one-time initialization functions to ensure that a block of code is executed only once in a multithreaded environment.
++
++## Deadlocks Caused by Lock Order Inversion
++
++When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
++
++It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](getmodulefilename.md) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
++
++Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
++
++![deadlock caused by lock order inversion](images/fig2.png)
++
++To prevent deadlocks that are caused by lock order inversion, all threads should attempt to acquire synchronization objects in the defined load order at all times.
++
++## Best Practices for Synchronization
++
++Consider a DLL that creates worker threads as part of its initialization. Upon DLL cleanup, it is necessary to synchronize with all the worker threads to ensure that the data structures are in a consistent state and then terminate the worker threads. Today, there is no straightforward way to completely solve the problem of cleanly synchronizing and shutting down DLLs in a multithreaded environment. This section describes the current best practices for thread synchronizing during DLL shutdown.
++
++Thread Synchronization in [**DllMain**](dllmain.md) during Process Exit
++
++-   By the time [**DllMain**](dllmain.md) is called at process exit, all the process’s threads have been forcibly cleaned up and there is a chance that the address space is inconsistent. Synchronization is not required in this case. In other words, the ideal DLL\_PROCESS\_DETACH handler is empty.
++-   Windows Vista ensures that core data structures (environment variables, current directory, process heap, and so on) are in a consistent state. However, other data structures can be corrupted, so cleaning memory is not safe.
++-   Persistent state that needs to be saved must be flushed to permanent storage.
++
++Thread Synchronization in **DllMain** for DLL\_THREAD\_DETACH during DLL Unload
++
++-   When the DLL is unloaded, the address space is not thrown away. Therefore, the DLL is expected to perform a clean shutdown. This includes thread synchronization, open handles, persistent state, and allocated resources.
++-   Thread synchronization is tricky because waiting on threads to exit in [**DllMain**](dllmain.md) can cause a deadlock. For example, DLL A holds the loader lock. It signals thread T to exit and waits for the thread to exit. Thread T exits and the loader tries to acquire the loader lock to call into DLL A’s **DllMain** with DLL\_THREAD\_DETACH. This causes a deadlock. To minimize the risk of a deadlock:
++    -   DLL A gets a DLL\_THREAD\_DETACH message in its [**DllMain**](dllmain.md) and sets an event for thread T, signaling it to exit.
++    -   Thread T finishes its current task, brings itself to a consistent state, signals DLL A, and waits infinitely. Note that the consistency-checking routines should follow the same restrictions as [**DllMain**](dllmain.md) to avoid deadlocking.
++    -   DLL A terminates T, knowing that it is in a consistent state.
++
++If a DLL is unloaded after all its threads have been created, but before they begin executing, the threads may crash. If the DLL created threads in its **DllMain** as part of its initialization, some threads may not have finished initialization and their DLL\_THREAD\_ATTACH message is still waiting to be delivered to the DLL. In this situation, if the DLL is unloaded, it will begin terminating threads. However, some threads may be blocked behind the loader lock. Their DLL\_THREAD\_ATTACH messages are processed after the DLL has been unmapped, causing the process to crash.
++
++## Recommendations
++
++The following are recommended guidelines:
++
++-   Use Application Verifier to catch the most common errors in [**DllMain**](dllmain.md).
++-   If using a private lock inside [**DllMain**](dllmain.md), define a locking hierarchy and use it consistently. The loader lock must be at the bottom of this hierarchy.
++-   Verify that no calls depend on another DLL that may not have been fully loaded yet.
++-   Perform simple initializations statically at compile time, rather than in [**DllMain**](dllmain.md).
++-   Defer any calls in [**DllMain**](dllmain.md) that can wait until later.
++-   Defer initialization tasks that can wait until later. Certain error conditions must be detected early so that the application can handle errors gracefully. However, there are tradeoffs between this early detection and the loss of robustness that can result from it. Deferring initialization is often best.
++
++ 
++
++ 
++
++
++

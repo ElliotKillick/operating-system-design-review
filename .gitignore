@@ -1,5 +1,6 @@
 main
 target
+out
 *.out
 *.so
 *.exe

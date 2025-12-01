@@ -5,9 +5,9 @@ rem /MD: Use UCRT instead of statically linking CRT into modules
 rem /INCREMENTAL:NO: Remove "ILT" from symbol names
 rem Exclude debug flags for performance test
 cl dll-test.c /DUNICODE /D_UNICODE /MD /LD /link /INCREMENTAL:NO
-cl thread-test.c dll-test.lib /DUNICODE /D_UNICODE /MD /link /INCREMENTAL:NO
+cl thread-test.c /DUNICODE /D_UNICODE /MD /link dll-test.lib /INCREMENTAL:NO
 
-rem Helper: If compilation fails because cl command doesn't exist then re-run in the correct environment
+rem Helper: If compilation fails because cl command does not exist then re-run in the correct environment
 if %ERRORLEVEL% equ 9009 (
     echo Compiler not found. Opening Visual Studio developer environment...
     set "VSCMD_START_DIR=%cd%"

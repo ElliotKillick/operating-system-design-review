@@ -1,0 +1,112 @@
+Microsoft (R) COFF/PE Dumper Version 14.30.30706.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file GDI32.DLL
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    KERNEL32.dll
+              77C69178 Import Address Table
+              77C69050 Import Name Table
+              2C4865A0 time date stamp Sat Jul 17 16:48:32 1993
+              FFFFFFFF Index of first forwarder reference
+
+      7787E6A0     16 CloseHandle
+      7787C340     20 CopyFileW
+      778899F0     26 CreateEventA
+      7787B240     2A CreateFileMappingW
+      7787CCD0     2B CreateFileW
+      7788A450     39 CreateThread
+      7787BA30     42 DeleteFileW
+      77881010     6F FindResourceA
+      77881A50     7C FreeResource
+      778733E0     BF GetFullPathNameW
+      77879520     C1 GetLastError
+      77880B40     C9 GetModuleFileNameW
+      77880F60     DC GetProcAddress
+      77873820     FC GetTickCount
+      77883AF0    106 GetWindowsDirectoryW
+      7787D710    109 GlobalAlloc
+      7787E110    110 GlobalFree
+      7787DBE0    114 GlobalLock
+      7787DDC0    11A GlobalUnlock
+      77880930    133 LoadLibraryA
+      77881230    138 LoadResource
+      7787F440    139 LocalAlloc
+      7787FD70    13D LocalFree
+      7787F610    140 LocalReAlloc
+      77881A60    146 LockResource
+      7787B4A0    147 MapViewOfFile
+      7787EF40    14D MulDiv
+      778883F0    174 ReadProcessMemory
+      77889C70    17B ResetEvent
+      77883E50    183 SearchPathA
+      77884070    184 SearchPathW
+      77889C40    1A8 SetEvent
+      7787A790    1AC SetFilePointer
+      77879530    1B0 SetLastError
+      778812E0    1C4 SizeofResource
+      7787B5E0    1D5 UnmapViewOfFile
+      7788A1D0    1EB WaitForSingleObject
+      7787A570    1FC WriteFile
+      7787F380    212 lstrcatW
+      7787F360    21B lstrcpyW
+      7787F290    21D lstrlenA
+      7787F3A0    21E lstrlenW
+
+    ntdll.dll
+              77C69224 Import Address Table
+              77C690FC Import Name Table
+              2C4F15D7 time date stamp Thu Jul 22 18:33:59 1993
+              FFFFFFFF Index of first forwarder reference
+
+      771A3090      7 CsrClientConnectToServer
+      771A3B00      9 CsrClientSendMessage
+      771A3830      A CsrClientThreadConnect
+      771AC210     39 NtAllocateVirtualMemory
+      771AC240     3C NtClose
+      771AC350     4D NtCreateSection
+      771ADA40     53 NtCurrentTeb
+      771AC49C     63 NtFreeVirtualMemory
+      771AC570     71 NtMapViewOfSection
+      771AC670     81 NtOpenThreadToken
+      771ACA60     C1 NtSetInformationThread
+      771ACBE0     DA NtUnmapViewOfSection
+      771B5700     F7 RtlAllocateHeap
+      771AC0D0    13F RtlEnterCriticalSection
+      771B6B40    15B RtlFreeHeap
+      771AA230    179 RtlInitializeCriticalSection
+      771AC130    18D RtlLeaveCriticalSection
+      771AEA30    19A RtlMultiByteToUnicodeN
+      771AF080    1E9 RtlUnicodeToMultiByteN
+      771AF020    1EA RtlUnicodeToMultiByteSize
+      771BDCC0    1EE RtlUnwind
+
+    USER32.dll
+              77C6927C Import Address Table
+              77C69154 Import Name Table
+              2C90E4C8 time date stamp Fri Sep 10 16:34:16 1993
+              FFFFFFFF Index of first forwarder reference
+
+      76A14E76      0 AbortProcYield
+      76A0E136     24 CharUpperBuffA
+      76A26246     4A CsDrawTextA
+      76A09B76     4B CsDrawTextW
+      76A1AFF6     4C CsFrameRect
+      76A26856     4D CsTabbedTextOutA
+      76A259F6     4E CsTabbedTextOutW
+      76A06846     C1 GetAppCompatFlags
+
+  Summary
+
+        1000 .bss
+        2000 .data
+        3000 .edata
+        1000 .idata
+        1000 .rdata
+        3000 .reloc
+        1000 .rsrc
+       31000 .text

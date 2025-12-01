@@ -1,0 +1,2144 @@
+!This program cannot be run in DOS mode.
+\WVf
+f`Vj
+u28E
+Bf+Q
+WVh@
+8SWV
+<SWV
+t%Wj
+"a`7"a`
+"a`7"a`
+"a`7"a`7"a`
+"a`7"a`7"a`7"a`7"a`
+"a`j
+0SWV
+,WVf
+t	Ht
+\SWV
+|Hj$
+tSWV
+<SWV
+LSWV
+0SWV
+lSWV
+Ht&HtkHttHt}H
+dAa`
+Pjwj
+E	 t)
+\Ba`
+b`9M
+b`9M
+HDa`
+b`w'95t
+u<Wj
+PWVj
+b`w'95t
+b`9E
+b`9E
+f`h	
+ SWV
+$Ha`
+(SWV
+t]HtNHu
+j(h0
+joh 
+f`hM
+b`Pj
+b`h(
+f`hJ
+b`f+
+b`h0
+f`hb
+f`h-
+f`hr
+$SWV
+,SWV
+@Xa`
+ SWV
+8WVj
+>1|l
+>%u-F
+>1|'
+8SWV
+DSWV
+Paa`
+8SWV
+,SWV
+$SWV
+$SWV
+\fa`
+@SWV
+Pha`
+DSWV
+xja`
+$SWV
+8#uD
+9E$t
+\SWV
+u	9u
+DSWV
+(SWV
+<wa`
+4SWV
+$SWV
+t49u
+\t'9u
+PSWV
+]$fCf
+\t*Q
+@SWV
+PWWj
+|SWV
+8	ux
+f`hN
+tAj@h
+xSWV
+G(^_
+0SWV
+H(^_[
+hSWV
+f`hb
+w'<It?
+h/	f`
+h=	f`
+w'<It?
+Ph?	f`
+8MZu
+hp	f`h
+E' t
+E'@t
+DSWV
+b`h 
+8\u	+E
+0SWV
+f90t
+0SWV
+f90t
+t	Ht
+	f`h
+f`hI
+$SWV
+(SWV
+(SWV
+$SWV
+a`jW
+Ht#Ht(
+jZh 
+f`hE
+j[hT
+f`hy
+SWV+
+t%HHt)
+base
+AddAtomA
+AddAtomW
+BaseNullApiCall
+CallNamedPipeA
+CallNamedPipeW
+ClearCommBreak
+ClearCommError
+CloseHandle
+CommSetup
+CompareFileTime
+ConnectNamedPipe
+ContinueDebugEvent
+CopyFileA
+CopyFileW
+CreateDirectoryA
+CreateDirectoryW
+CreateEventA
+CreateEventW
+CreateFileA
+CreateFileMappingA
+CreateFileMappingW
+CreateFileW
+CreateMailslotA
+CreateMailslotW
+CreateMutexA
+CreateMutexW
+CreateNamedPipeA
+CreateNamedPipeW
+CreatePipe
+CreateProcessA
+CreateProcessW
+CreateSemaphoreA
+CreateSemaphoreW
+CreateThread
+DebugActiveProcess
+DebugBreak
+DeleteAtom
+DeleteCriticalSection
+DeleteFileA
+DeleteFileW
+DisconnectNamedPipe
+DosDateTimeToFileTime
+DuplicateHandle
+EnableCommNotification
+EnterCriticalSection
+EnumResourceNamesA
+EnumResourceNamesW
+EnumResourceTypesA
+EnumResourceTypesW
+EscapeCommFunction
+ExitProcess
+ExitThread
+ExtendedProviderFunction
+FatalAppExitA
+FatalAppExitW
+FatalExit
+FileTimeToDosDateTime
+FileTimeToSystemTime
+FindAtomA
+FindAtomW
+FindClose
+FindFirstFileA
+FindFirstFileW
+FindNextFileA
+FindNextFileW
+FindResourceA
+FindResourceW
+FlushFileBuffers
+FlushViewOfFile
+FormatMessage
+FormatMessageV
+FreeLibrary
+FreeResource
+GetAtomNameA
+GetAtomNameW
+GetCommConfig
+GetCommMask
+GetCommProperties
+GetCommState
+GetCommTimeouts
+GetCommandLineA
+GetCommandLineW
+GetContextThread
+GetCurrentDirectoryA
+GetCurrentDirectoryW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDiskFreeSpaceA
+GetDiskFreeSpaceW
+GetDriveTypeA
+GetDriveTypeW
+GetEnvironmentStrings
+GetEnvironmentVariableA
+GetEnvironmentVariableW
+GetExitCodeProcess
+GetExitCodeThread
+GetFileAttributesA
+GetFileAttributesW
+GetFileSize
+GetFileTime
+GetFileType
+GetFullPathNameA
+GetFullPathNameW
+GetLastError
+GetLogicalDriveStringsA
+GetLogicalDriveStringsW
+GetLogicalDrives
+GetMailslotInfo
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleA
+GetModuleHandleW
+GetNamedPipeHandleStateA
+GetNamedPipeHandleStateW
+GetNamedPipeInfo
+GetOverlappedResult
+GetPriorityThread
+GetPrivateProfileIntA
+GetPrivateProfileIntW
+GetPrivateProfileSectionA
+GetPrivateProfileSectionW
+GetPrivateProfileStringA
+GetPrivateProfileStringW
+GetProcAddress
+GetProfileIntA
+GetProfileIntW
+GetProfileSectionA
+GetProfileSectionW
+GetProfileStringA
+GetProfileStringW
+GetStartupInfoA
+GetStartupInfoW
+GetStdHandle
+GetSystemDirectoryA
+GetSystemDirectoryW
+GetSystemInfo
+GetSystemTime
+GetTempFileNameA
+GetTempFileNameW
+GetTempPathA
+GetTempPathW
+GetThreadSelectorEntry
+GetTickCount
+GetVersion
+GetVolumeInformationA
+GetVolumeInformationW
+GetWindowsDirectoryA
+GetWindowsDirectoryW
+GlobalAddAtomA
+GlobalAddAtomW
+GlobalAlloc
+GlobalDeleteAtom
+GlobalFindAtomA
+GlobalFindAtomW
+GlobalFlags
+GlobalFree
+GlobalGetAtomNameA
+GlobalGetAtomNameW
+GlobalLock
+GlobalMemoryStatus
+GlobalReAlloc
+GlobalSize
+GlobalUnlock
+HeapAlloc
+HeapCreate
+HeapDestroy
+HeapFree
+HeapSize
+InitAtomTable
+InitializeCriticalSection
+LeaveCriticalSection
+LoadLibraryA
+LoadLibraryW
+LoadModule
+LoadResource
+LocalAlloc
+LocalFlags
+LocalFree
+LocalLock
+LocalReAlloc
+LocalSize
+LocalUnlock
+LockFile
+LockResource
+MapViewOfFile
+MoveFileA
+MoveFileW
+MulDiv
+OpenEventA
+OpenEventW
+OpenFile
+OpenFileMappingA
+OpenFileMappingW
+OpenMutexA
+OpenMutexW
+OpenProcess
+OpenSemaphoreA
+OpenSemaphoreW
+OpenSystemFile
+OutputDebugStringA
+OutputDebugStringW
+PeekNamedPipe
+PulseEvent
+PurgeComm
+RaiseException
+ReadFile
+ReadMemoryProcess
+ReleaseMutex
+ReleaseSemaphore
+RemoveDirectoryA
+RemoveDirectoryW
+ResetEvent
+ResumeThread
+SearchPathA
+SearchPathW
+SetCommBreak
+SetCommConfig
+SetCommMask
+SetCommState
+SetCommTimeouts
+SetContextThread
+SetCurrentDirectoryA
+SetCurrentDirectoryW
+SetEndOfFile
+SetEnvironmentVariableA
+SetEnvironmentVariableW
+SetErrorMode
+SetEvent
+SetFileAttributesA
+SetFileAttributesW
+SetFilePointer
+SetFileTime
+SetHandleCount
+SetLastError
+SetMailslotInfo
+SetNamedPipeHandleState
+SetPriorityThread
+SetStdHandle
+SetSystemTime
+SizeofResource
+Sleep
+SuspendThread
+SystemTimeToFileTime
+TerminateProcess
+TerminateThread
+TlsAlloc
+TlsFree
+TlsGetValue
+TlsSetValue
+TransactNamedPipe
+TransmitCommChar
+UnlockFile
+UnmapViewOfFile
+VirtualAlloc
+VirtualFree
+VirtualProtect
+VirtualQuery
+WaitCommEvent
+WaitForDebugEvent
+WaitForMultipleObjects
+WaitForSingleObject
+WaitNamedPipeA
+WaitNamedPipeW
+WinExec
+WriteFile
+WriteMemoryProcess
+WritePrivateProfileSectionA
+WritePrivateProfileSectionW
+WritePrivateProfileStringA
+WritePrivateProfileStringW
+WriteProfileSectionA
+WriteProfileSectionW
+WriteProfileStringA
+WriteProfileStringW
+_lclose
+_lcreat
+_llseek
+_lopen
+_lread
+_lwrite
+lstrcat
+lstrcmp
+lstrcmpi
+lstrcpy
+lstrlen
+Windows 32 Base API
+Incorrect function
+The system cannot find the file specified.
+The system cannot find the path specified.
+The system cannot open the file.
+Access Denied.
+Incorrect internal file identifier.
+The storage control blocks were destroyed.
+Not enough storage is available to
+process this command.
+The storage control block address is invalid.
+The environment is incorrect.
+An attempt was made to load a program with an
+incorrect format.
+The access code is invalid.
+The data is invalid.
+The system cannot find the drive specified.
+The directory cannot be removed.
+The system cannot move the file
+to a different disk drive.
+There are no more files.
+The diskette is write protected.
+The system cannot find the device specified.
+The drive is not ready.
+The device does not recognize the command.
+Data error (cyclic redundancy check)
+The program issued a command but the
+command length is incorrect.
+The drive cannot locate a specific
+area or track on the disk.
+The specified disk or diskette cannot be accessed.
+The drive cannot find the sector requested.
+The printer is out of paper.
+The system cannot write to the specified device.
+The system cannot read from the specified device.
+A device attached to the system is not functioning.
+The process cannot access the file because
+it is being used by another process.
+The process cannot access the file because
+another process has locked a portion of the file.
+The wrong diskette is in the drive.
+Insert %2 (Volume Serial Number: %3)
+into drive %1.
+Reached End of File.
+The disk is full.
+The network request is not supported.
+The remote computer is not available.
+A duplicate name exists on the network.
+The network path was not found.
+The network is busy.
+The specified network resource is no longer
+available.
+The network BIOS command limit has been reached.
+A network adapter hardware error occurred.
+The specified server cannot perform the requested
+operation.
+An unexpected network error occurred.
+The remote adapter is not compatible.
+The printer queue is full.
+Space to store the file waiting to be printed is
+not available on the server.
+Your file waiting to be printed was deleted.
+The specified network name is no longer available.
+Network access is denied.
+The network resource type is not correct.
+The network name cannot be found.
+The name limit for the local computer network
+adapter card was exceeded.
+The network BIOS session limit was exceeded.
+The remote server has been paused or is in the
+process of being started.
+The network request was not accepted.
+The specified printer or disk device has been paused.
+The file exists.
+The directory or file cannot be created.
+Fail on INT 24
+Storage to process this request is not available.
+The local device name is already in use.
+The specified network password is not correct.
+The parameter is incorrect.
+A write fault occurred on the network.
+The system cannot start another process at
+this time.
+Cannot create another system semaphore.
+The exclusive semaphore is owned by another process.
+The semaphore is set and cannot be closed.
+The semaphore cannot be set again.
+Cannot request exclusive semaphores at interrupt time.
+The previous ownership of this semaphore has ended.
+Insert the diskette for drive %1.
+Program stopped because alternate diskette was not inserted.
+The disk is in use or locked by
+another process.
+The pipe has been ended.
+The system cannot open the
+device or file specified.
+The file name is too long.
+There is not enough space on the disk.
+No more internal file identifiers available.
+The target internal file identifier is incorrect.
+The IOCTL call made by the application program is
+not correct.
+The verify-on-write switch parameter value is not
+correct.
+The system does not support the command requested.
+The Application Program Interface (API) entered
+will only work in Windows/NT mode.
+The semaphore timeout period has expired.
+The data area passed to a system call is too
+small.
+A file name or volume label contains an incorrect character.
+The system call level is not correct.
+The disk has no volume label.
+The specified module could not be found.
+The specified procedure could not be found.
+The %1 application cannot be run in Windows mode.
+BUGBUG - message text missing.
+BUGBUG - message text missing.
+BUGBUG - message text missing.
+A JOIN or SUBST command
+cannot be used for a drive that
+contains previously joined drives.
+An attempt was made to use a
+JOIN or SUBST command on a drive that has
+already been joined.
+An attempt was made to use a
+JOIN or SUBST command on a drive that has
+already been substituted.
+The system tried to delete
+the JOIN of a drive that is not joined.
+The system tried to delete the
+substitution of a drive that is not substituted.
+The system tried to join a drive
+to a directory on a joined drive.
+The system tried to substitute a
+drive to a directory on a substituted drive.
+The system tried to join a drive to
+a directory on a substituted drive.
+The system tried to SUBST a drive
+to a directory on a joined drive.
+The system cannot perform a JOIN or SUBST at this time.
+The system cannot join or substitute a
+drive to or for a directory on the same drive.
+The directory is not a subdirectory of the root directory.
+The directory is not empty.
+The path specified is being used in
+a substitute.
+Not enough resources are available to
+process this command.
+The path specified cannot be used at this time.
+An attempt was made to join
+or substitute a drive for which a directory
+on the drive is the target of a previous
+substitute.
+System trace information was not specified in your
+CONFIG.SYS file, or tracing is disallowed.
+The number of specified semaphore events for
+DosMuxSemWait is not correct.
+DosMuxSemWait did not execute; too many semaphores
+are already set.
+The DosMuxSemWait list is not correct.
+The volume label you entered exceeds the
+11 character limit.  The first 11 characters were written
+to disk.  Any characters that exceeded the 11 character limit
+were automatically deleted.
+Cannot create another thread.
+The recipient process has refused the signal.
+The segment is already discarded and cannot be locked.
+The segment is already unlocked.
+The address for the thread ID is not correct.
+The argument string passed to DosExecPgm is not correct.
+Invalid path name specified.
+A signal is already pending.
+No more threads can be created in the system.
+Attempt to lock a region of a file failed.
+The requested resource is in use.
+The system detected a segment number that was not correct.
+The operating system cannot run %1.
+Attempt to create file that already exists.
+The flag passed is not correct.
+The specified system semaphore name was not found.
+The operating system cannot run %1.
+The operating system cannot run %1.
+The operating system cannot run %1.
+%1 cannot be run in Windows/NT mode.
+The operating system cannot run %1.
+%1 is not a valid Windows application.
+The operating system cannot run %1.
+The operating system cannot run %1.
+The operating system cannot run this
+application program.
+The operating system is not presently
+configured to run this application.
+The operating system cannot run %1.
+The operating system cannot run this
+application program.
+The code segment cannot be greater than or equal to 64KB.
+The operating system cannot run %1.
+The operating system cannot run %1.
+The system could not find the environment
+option that was entered.
+No process in the command subtree has a
+signal handler.
+The file name or extension is too long.
+The ring 2 stack is in use.
+The global file name characters, * or ? are entered
+incorrectly or too many global file name characters are specified.
+The signal being posted is not correct.
+The signal handler cannot be set.
+The segment is locked and cannot be reallocated.
+Too many dynamic link modules are attached to this
+program or dynamic link module.
+Invalid pipe state.
+All pipe instances busy.
+Pipe close in progress.
+No process on other end of pipe.
+More data is available.
+The session was cancelled.
+The specified EA name was invalid.
+No more data is available.
+Invalid directory name.
+The EAs did not fit in the buffer.
+The mounted file system does not support extended attributes.
+Attempt to release mutex not owned by caller.
+Too many posts were made to a semaphore.
+The system cannot find message for message number 0x%1
+in message file for %2.
+Attempt to access invalid address.
+Arithmatic result exceeded 32-bits.
+There is a process on other end of the pipe.
+Waiting for a process to open the other end of the pipe.
+The IO operation has been aborted due to either thread exit
+or application request.
+Overlapped IO event not in signalled state.
+Overlapped IO operation in progress.
+Invalid access to memory location.
+Error accessing paging file.
+a`user.dll
+CheckWindowStationAccess
+.ini
+C:\nt\private\windows\base\client\filefind.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\fileopcr.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\gmem.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS( Status )
+\Windows
+BaseGetConnectInformation
+basesrv
+csrsrv
+C:\nt\private\windows\base\client\baseinit.c
+CsrSrv
+CsrSetQuickThreadCreateRoutine
+C:\nt\private\windows\base\client\baseinit.c
+SetQuick
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+CONIN$
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+CONOUT$
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+PATH
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+TEMP
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+.tmp
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+.com
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+.exe
+C:\nt\private\windows\base\client\baseinit.c
+NT_SUCCESS(Status)
+Profile Dump of Server
+\\.\pipe\
+\DosDevices\pipe\
+\DosDevices\UNC\
+C:\nt\private\windows\base\client\pathmisc.c
+DeleteMe
+C:\nt\private\windows\base\client\pathmisc.c
+DeleteMe
+\Device\NamedPipe\Win32Pipes.%08x.%08x
+C:\nt\private\windows\base\client\process.c
+sizeof(StartupInfo) == sizeof(*lpStartupInfo)
+C:\nt\private\windows\base\client\process.c
+AnsiOs2Command.Buffer != NULL
+OS2 /P 
+ /C 
+C:\nt\private\windows\base\client\process.c
+NT_SUCCESS(Status)
+CMD /K 
+C:\nt\private\windows\base\client\process.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\process.c
+NT_SUCCESS(Status) && i == 1
+C:\nt\private\windows\base\client\process.c
+!BaseRunningInServerProcess
+C:\nt\private\windows\base\client\process.c
+NT_SUCCESS(Status)
+.exe
+C:\nt\private\windows\base\client\process.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\process.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\process.c
+NT_SUCCESS(xStatus)
+FatalAppExit...
+A (Abort), B (Break), I (Ignore)? 
+FatalExit...
+A (Abort), B (Break), I (Ignore)? 
+C:\nt\private\windows\base\client\support.c
+NT_SUCCESS(Status)
+cmdline
+size
+wowcmdline
+wowsize
+C:\nt\private\windows\base\client\thread.c
+NT_SUCCESS(Status)
+C:\nt\private\windows\base\client\thread.c
+FALSE
+C:\nt\private\windows\base\client\comm.c
+(SERIAL_EV_RXCHAR == EV_RXCHAR ) && (SERIAL_EV_RXFLAG == EV_RXFLAG ) && (SERIAL_EV_TXEMPTY == EV_TXEMPTY ) && (SERIAL_EV_CTS == EV_CTS ) && (SERIAL_EV_DSR == EV_DSR ) && (SERIAL_EV_RLSD == EV_RLSD ) && (SERIAL_EV_BREAK == EV_BREAK ) && (SERIAL_EV_ERR == EV_ERR ) && (SERIAL_EV_RING == EV_RING ) && (SERIAL_EV_PERR == EV_PERR ) && (SERIAL_EV_RX80FULL == EV_RX80FULL) && (SERIAL_EV_EVENT1 == EV_EVENT1 ) && (SERIAL_EV_EVENT2 == EV_EVENT2 )
+C:\nt\private\windows\base\client\comm.c
+(SERIAL_EV_RXCHAR == EV_RXCHAR ) && (SERIAL_EV_RXFLAG == EV_RXFLAG ) && (SERIAL_EV_TXEMPTY == EV_TXEMPTY ) && (SERIAL_EV_CTS == EV_CTS ) && (SERIAL_EV_DSR == EV_DSR ) && (SERIAL_EV_RLSD == EV_RLSD ) && (SERIAL_EV_BREAK == EV_BREAK ) && (SERIAL_EV_ERR == EV_ERR ) && (SERIAL_EV_RING == EV_RING ) && (SERIAL_EV_PERR == EV_PERR ) && (SERIAL_EV_RX80FULL == EV_RX80FULL) && (SERIAL_EV_EVENT1 == EV_EVENT1 ) && (SERIAL_EV_EVENT2 == EV_EVENT2 )
+         (((((                  H
+D:\nt\private\crtdll\stdio\sprintf.c
+string != NULL
+D:\nt\private\crtdll\stdio\sprintf.c
+format != NULL
+(null)
+ (8PX
+000WP
+``````
+ppxxxx
+BaseRtlCreateAtomTable
+BaseRtlAddAtomToAtomTable
+BaseRtlLookupAtomInAtomTable
+BaseRtlDeleteAtomFromAtomTable
+BaseRtlQueryAtomInAtomTable
+basertl
+CloseConsoleHandle
+CreateConsole
+DuplicateConsoleHandle
+FlushConsoleInputBuffer
+GetConsoleMode
+GetConsoleInputWaitHandle
+OpenConsole
+ReadConsole
+VerifyConsoleIoHandle
+WriteConsole
+console
+CsrAllocateCaptureBuffer
+CsrClientCallServer
+CsrCaptureMessageString
+CsrAllocateMessagePointer
+CsrAllocateCapturePointer
+CsrFreeCaptureBuffer
+CsrClientConnectToServer
+CsrNewThread
+CsrStartProfile
+CsrStopDumpProfile
+DbgUiConnectToDbg
+DbgUiWaitStateChange
+DbgUiContinue
+dbgdll
+DbgPrint
+DbgBreakPoint
+DbgPrompt
+LdrFindResource
+LdrAccessResource
+LdrGetDllHandle
+LdrFindResourceDirectory
+LdrGetProcedureAddress
+LdrUnloadDll
+LdrLoadDll
+LdrShutdownProcess
+LdrShutdownThread
+NtCurrentTeb
+NtCreateFile
+NtClose
+NtAllocateVirtualMemory
+NtContinue
+NtCreateEvent
+NtCreateSection
+NtCreateMailslotFile
+NtCreateNamedPipeFile
+NtCreateMutant
+NtCreateProcess
+NtCreateThread
+NtCreateSemaphore
+NtOpenFile
+NtFlushBuffersFile
+NtDuplicateObject
+NtDelayExecution
+NtDeviceIoControlFile
+NtLockFile
+NtFlushVirtualMemory
+NtFreeVirtualMemory
+NtFsControlFile
+NtGetContextThread
+NtMapViewOfSection
+NtOpenEvent
+NtSetInformationFile
+NtQuerySystemTime
+NtQueryInformationThread
+NtQueryInformationProcess
+NtQueryDirectoryFile
+NtOpenSection
+NtOpenProcess
+NtOpenMutant
+NtProtectVirtualMemory
+NtPartyByNumber
+NtOpenSemaphore
+NtPulseEvent
+NtQueryInformationFile
+NtQuerySystemInformation
+NtQuerySection
+NtReadFile
+NtQueryVolumeInformationFile
+NtQueryVirtualMemory
+NtResumeThread
+NtReadVirtualMemory
+NtReleaseMutant
+NtReleaseSemaphore
+NtResetEvent
+NtSetEvent
+NtSetContextThread
+NtSetSystemTime
+NtSetInformationProcess
+NtSetInformationThread
+NtUnlockFile
+NtTerminateProcess
+NtSuspendThread
+NtTerminateThread
+NtWriteFile
+NtUnmapViewOfSection
+NtWaitForSingleObject
+NtWaitForMultipleObjects
+NtWriteVirtualMemory
+RtlCopyString
+RtlCharToInteger
+RtlAnsiStringToUnicodeString
+RtlAllocateHeap
+RtlAcquirePebLock
+RtlAnalyzeProfile
+RtlAnsiCharToUnicodeChar
+RtlAnsiStringToUnicodeSize
+RtlAssert
+RtlAppendAsciizToString
+RtlAppendStringToString
+RtlAreBitsSet
+RtlConvertLongToLargeInteger
+RtlCompareString
+RtlCloseConfigFile
+RtlClearBits
+RtlConvertUlongToLargeInteger
+RtlIntegerToChar
+RtlInitString
+RtlGetCurrentDirectory_U
+RtlFreeHeap
+RtlFreeAnsiString
+RtlDosPathNameToNtPathName_U
+RtlDoesFileExists_U
+RtlCreateHeap
+RtlDestroyHeap
+RtlCreateProcessParameters
+RtlDeleteCriticalSection
+RtlDetermineDosPathNameType_U
+RtlDestroyProcessParameters
+RtlExtendedMagicDivide
+RtlEnlargedIntegerMultiply
+RtlExtendedLargeIntegerDivide
+RtlEqualString
+RtlEnterCriticalSection
+RtlFindMessage
+RtlFindClearBitsAndSet
+RtlFreeUnicodeString
+RtlGetFullPathName_U
+RtlInitAnsiString
+RtlInitUnicodeString
+RtlInitializeProfile
+RtlInitializeCriticalSection
+RtlUnicodeStringToAnsiString
+RtlMoveMemory
+RtlLargeIntegerSubtract
+RtlIsDosDeviceName_U
+RtlLargeIntegerAdd
+RtlLargeIntegerDivide
+RtlLargeIntegerNegate
+RtlLocateSectionConfigFile
+RtlLocateKeywordConfigFile
+RtlLeaveCriticalSection
+RtlSetCurrentDirectory_U
+RtlNtStatusToDosError
+RtlReleasePebLock
+RtlPrefixString
+RtlOpenConfigFile
+RtlQueryEnvironmentVariable_U
+RtlQueryEnvironmentVariable
+RtlRaiseStatus
+RtlRaiseException
+RtlTimeToTimeFields
+RtlTimeFieldsToTime
+RtlStartProfile
+RtlSizeHeap
+RtlSetEnvironmentVariable
+RtlStopProfile
+RtlZeroMemory
+RtlUnwind
+ntdll
+d	k	
+L	V	
+	"	(	.	4	:	@	F	L	R	X	^	d	j	p	v	|	
+.EXPORTS
+.rsrc:02@
+.file
+C:\nt\private\windows\base\client\dllatom.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\dllprof.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\curdir.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\dir.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\datetime.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\debug.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\error.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\filefind.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\filehops.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\filemap.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\filemisc.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\fileopcr.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\gmem.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\handle.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\baseinit.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\lcompat.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\lmem.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\mailslot.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\message.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\module.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\namepipe.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\nullapi.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\pathmisc.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\pipe.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\process.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\support.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\synch.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\thread.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\ustubs.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+C:\nt\private\windows\base\client\comm.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+i386\thunk.asm
+.text
+FLAT
+.file
+C:\nt\private\windows\base\client\i386\context.c
+.text
+.data
+.data
+.bss
+FLAT
+.idata:6<
+.idata:6V
+.idata:6r
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:62
+.idata:6J
+.idata:6
+.idata:6
+.idata:6f
+.idata:6v
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:64
+.idata:6F
+.idata:6
+.idata:6 
+.idata:64
+.idata:6F
+.idata:6b
+.idata:6|
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6&
+.idata:68
+.idata:6P
+.idata:6h
+.idata:6z
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6$
+.idata:6<
+.idata:6R
+.idata:6d
+.idata:6z
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6*	
+.idata:6:	
+.idata:6J	
+.idata:6d	
+.idata:6v	
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6&
+.idata:68
+.idata:6N
+.idata:6`
+.idata:6v
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6(
+.idata:6<
+.idata:6J
+.idata:6b
+.idata:6z
+.idata:6b
+.idata:6
+.idata:6p
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6,
+.idata:6H
+.idata:6f
+.idata:6r
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:60
+.idata:6D
+.idata:6T
+.idata:6p
+.idata:6~
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6$
+.idata:6D
+.idata:6b
+.idata:6|
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6*
+.idata:6B
+.idata:6V
+.idata:6n
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:66
+.idata:6N
+.idata:6l
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:62
+.idata:6P
+.idata:6b
+.idata:6v
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6~
+.idata:6
+.file
+i386\crtexcpt.asm
+.text
+.data
+.data
+.bss
+DGROUP
+FLAT
+.idata:6
+.file
+D:\nt\private\crtdll\string\stricmp.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+D:\nt\private\crtdll\misc\ctype.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+D:\nt\private\crtdll\string\strncpy.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+D:\nt\private\crtdll\stdio\sprintf.c.text
+.data
+.data
+.bss
+FLAT
+.file
+D:\nt\private\crtdll\hack\stubs.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+D:\nt\private\crtdll\stdio\output.c
+.text
+.data
+.data
+.bss
+FLAT
+.file
+D:\nt\private\crtdll\misc\cmiscdat.c.text
+.data
+.data
+.bss
+FLAT
+.file
+D:\nt\private\crtdll\startup\crt0fp.c
+.text
+.data
+.data
+.bss
+FLAT
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+.idata:6
+header
+_lstrcmp
+_lstrcpyDR
+_lstrcattR
+_lstrlen
+__lopen
+__lcreatTS
+__lread
+__lwrite
+__lclose
+__llseek
+_MulDiv
+_WinExec
+_Sleep
+_TlsFree
+_NtClose
+_strncpy
+_sprintf
+__flsbuf
+_ungetc
+_fflush
+_fprintf
+_abort
+_read
+__getbuf
+__assert
+__output
+__fptrap
+__osfile
+__iob
+__ctype
+_BaseDllInitialize
+base_EXPORTS
+_AddAtomA
+_AddAtomW
+_BaseNullApiCall
+_CallNamedPipeA
+_CallNamedPipeW
+_ClearCommBreak
+_ClearCommError
+_CloseHandle
+_CommSetup
+_CompareFileTime
+_ConnectNamedPipe
+_ContinueDebugEvent
+_CopyFileA
+_CopyFileW
+_CreateDirectoryA
+_CreateDirectoryW
+_CreateEventA
+_CreateEventW
+_CreateFileA
+_CreateFileMappingA
+_CreateFileMappingW
+_CreateFileW
+_CreateMailslotA
+_CreateMailslotW
+_CreateMutexA
+_CreateMutexW
+_CreateNamedPipeA
+_CreateNamedPipeW
+_CreatePipe
+_CreateProcessA
+_CreateProcessW
+_CreateSemaphoreA
+_CreateSemaphoreW
+_CreateThread
+_DebugActiveProcess
+_DebugBreak
+_DeleteAtom
+_DeleteCriticalSection
+_DeleteFileA
+_DeleteFileW
+_DisconnectNamedPipe
+_DosDateTimeToFileTime
+_DuplicateHandle
+_EnableCommNotification
+_EnterCriticalSection
+_EnumResourceNamesA
+_EnumResourceNamesW
+_EnumResourceTypesA
+_EnumResourceTypesW
+_EscapeCommFunction
+_ExitProcess
+_ExitThread
+_ExtendedProviderFunction
+_FatalAppExitA
+_FatalAppExitW
+_FatalExit
+_FileTimeToDosDateTime
+_FileTimeToSystemTime
+_FindAtomA
+_FindAtomW
+_FindClose
+_FindFirstFileA
+_FindFirstFileW
+_FindNextFileA
+_FindNextFileW
+_FindResourceA
+_FindResourceW
+_FlushFileBuffers
+_FlushViewOfFile
+_FormatMessage
+_FormatMessageV
+_FreeLibrary
+_FreeResource
+_GetAtomNameA
+_GetAtomNameW
+_GetCommConfig
+_GetCommMask
+_GetCommProperties
+_GetCommState
+_GetCommTimeouts
+_GetCommandLineA
+_GetCommandLineW
+_GetContextThread
+_GetCurrentDirectoryA
+_GetCurrentDirectoryW
+_GetCurrentProcess
+_GetCurrentProcessId
+_GetCurrentThread
+_GetCurrentThreadId
+_GetDiskFreeSpaceA
+_GetDiskFreeSpaceW
+_GetDriveTypeA
+_GetDriveTypeW
+_GetEnvironmentStrings
+_GetEnvironmentVariableA
+_GetEnvironmentVariableW
+_GetExitCodeProcess
+_GetExitCodeThread
+_GetFileAttributesA
+_GetFileAttributesW
+_GetFileSize
+_GetFileTime
+_GetFileType
+_GetFullPathNameA
+_GetFullPathNameW
+_GetLastError
+_GetLogicalDriveStringsA
+_GetLogicalDriveStringsW
+_GetLogicalDrives
+_GetMailslotInfo
+_GetModuleFileNameA
+_GetModuleFileNameW
+_GetModuleHandleA
+_GetModuleHandleW
+_GetNamedPipeHandleStateA
+_GetNamedPipeHandleStateW
+_GetNamedPipeInfo
+_GetOverlappedResult
+_GetPriorityThread
+_GetPrivateProfileIntA
+_GetPrivateProfileIntW
+_GetPrivateProfileSectionA
+_GetPrivateProfileSectionW
+_GetPrivateProfileStringA
+_GetPrivateProfileStringW
+_GetProcAddress
+_GetProfileIntA
+_GetProfileIntW
+_GetProfileSectionA
+_GetProfileSectionW
+_GetProfileStringA
+_GetProfileStringW
+_GetStartupInfoA
+_GetStartupInfoW
+_GetStdHandle
+_GetSystemDirectoryA
+_GetSystemDirectoryW
+_GetSystemInfo
+_GetSystemTime
+_GetTempFileNameA
+_GetTempFileNameW
+_GetTempPathA
+_GetTempPathW
+_GetThreadSelectorEntry
+_GetTickCount
+_GetVersion
+_GetVolumeInformationA
+_GetVolumeInformationW
+_GetWindowsDirectoryA
+_GetWindowsDirectoryW
+_GlobalAddAtomA
+_GlobalAddAtomW
+_GlobalAlloc
+_GlobalDeleteAtom
+_GlobalFindAtomA
+_GlobalFindAtomW
+_GlobalFlags
+_GlobalFree
+_GlobalGetAtomNameA
+_GlobalGetAtomNameW
+_GlobalLock
+_GlobalMemoryStatus
+_GlobalReAlloc
+_GlobalSize
+_GlobalUnlock
+_HeapAlloc
+_HeapCreate
+_HeapDestroy
+_HeapFree
+_HeapSize
+_InitAtomTable
+_InitializeCriticalSection
+_LeaveCriticalSection
+_LoadLibraryA
+_LoadLibraryW
+_LoadModule
+_LoadResource
+_LocalAlloc
+_LocalFlags
+_LocalFree
+_LocalLock
+_LocalReAlloc
+_LocalSize
+_LocalUnlock
+_LockFile
+_LockResource
+_MapViewOfFile
+_MoveFileA
+_MoveFileW
+_OpenEventA
+_OpenEventW
+_OpenFile
+_OpenFileMappingA
+_OpenFileMappingW
+_OpenMutexA
+_OpenMutexW
+_OpenProcess
+_OpenSemaphoreA
+_OpenSemaphoreW
+_OpenSystemFile
+_OutputDebugStringA
+_OutputDebugStringW
+_PeekNamedPipe
+_PulseEvent
+_PurgeComm
+_RaiseException
+_ReadFile
+_ReadMemoryProcess
+_ReleaseMutex
+_ReleaseSemaphore
+_RemoveDirectoryA
+_RemoveDirectoryW
+_ResetEvent
+_ResumeThread
+_SearchPathA
+_SearchPathW
+_SetCommBreak
+_SetCommConfig
+_SetCommMask
+_SetCommState
+_SetCommTimeouts
+_SetContextThread
+_SetCurrentDirectoryA
+_SetCurrentDirectoryW
+_SetEndOfFile
+_SetEnvironmentVariableA
+_SetEnvironmentVariableW
+_SetErrorMode
+_SetEvent
+_SetFileAttributesA
+_SetFileAttributesW
+_SetFilePointer
+_SetFileTime
+_SetHandleCount
+_SetLastError
+_SetMailslotInfo
+_SetNamedPipeHandleState
+_SetPriorityThread
+_SetStdHandle
+_SetSystemTime
+_SizeofResource
+_SuspendThread
+_SystemTimeToFileTime
+_TerminateProcess
+_TerminateThread
+_TlsAlloc
+_TlsGetValue
+_TlsSetValue
+_TransactNamedPipe
+_TransmitCommChar
+_UnlockFile
+_UnmapViewOfFile
+_VirtualAlloc
+_VirtualFree
+_VirtualProtect
+_VirtualQuery
+_WaitCommEvent
+_WaitForDebugEvent
+_WaitForMultipleObjects
+_WaitForSingleObject
+_WaitNamedPipeA
+_WaitNamedPipeW
+_WriteFile
+_WriteMemoryProcess
+_WritePrivateProfileSectionA
+_WritePrivateProfileSectionW
+_WritePrivateProfileStringA
+_WritePrivateProfileStringW
+_WriteProfileSectionA
+_WriteProfileSectionW
+_WriteProfileStringA
+_WriteProfileStringW
+_lstrcmpi
+_BasePathVariableName
+_InternalGetAtomName
+_BaseWindowsVersion
+_BaseAtomTable
+_BaseNtSysInfo
+_BaseConsoleGeneric
+_BaseRtlCreateAtomTable
+_BaseConsoleOutput
+_BaseDefaultPathAppend
+_BaseDllHandle
+_BaseShareMemoryEnd
+_CsrAllocateCaptureBuffer
+_CsrClientCallServer
+_RtlCopyString
+_BaseTmpVariableName
+_BaseRtlLookupAtomInAtomTable
+_BaseDotExeSuffixName
+_InternalAccessCheck
+_BaseWindowsDirectory
+_BaseRtlAddAtomToAtomTable
+_RtlIntegerToChar
+_BaseNamedObjectDirectory
+_pfnCheckWinStaAccess
+_BaseDotComSuffixName
+_CsrCaptureMessageString
+_BaseShareMemoryBegin
+_InternalAddAtom
+_BaseAnsiStartupInfo
+_CsrFreeCaptureBuffer
+_BaseTempVariableName
+_BaseWindowsSystemDirectory
+_BaseRtlQueryAtomInAtomTable
+_BaseDotVariableName
+_BaseAnsiCommandLine
+_InternalDeleteAtom
+_BaseRtlDeleteAtomFromAtomTable
+_BaseUnicodeCommandLine
+_RtlCharToInteger
+_BaseConsoleInput
+_InternalFindAtom
+_BaseDefaultPath
+_BaseDotTmpSuffixName
+_RtlInitString
+_BaseSetLastNTError
+_BaseDllExpandProfileFileName
+_BaseDllSnarfParameterString
+_RtlAnsiStringToUnicodeString
+_RtlAllocateHeap
+_RtlGetCurrentDirectory_U
+_RtlFreeHeap
+_RtlInitUnicodeString
+_RtlGetFullPathName_U
+_RtlInitAnsiString
+_RtlUnicodeStringToAnsiString
+_RtlFreeUnicodeString
+_RtlMoveMemory
+_RtlFreeAnsiString
+_NtCurrentTeb
+_RtlSetCurrentDirectory_U
+_RtlDosPathNameToNtPathName_U
+_NtOpenFile
+_NtCreateFile
+_NtSetInformationFile
+_NtSetSystemTime
+_RtlTimeToTimeFields
+_BaseGetTickMagicShiftCount
+_RtlTimeFieldsToTime
+_RtlLargeIntegerSubtract
+_RtlExtendedMagicDivide
+_BaseGetTickMagicDivisor
+_NtQuerySystemTime
+_DbgPrint
+_BaseAttachComplete
+_BaseAttachCompleteThunk
+_DbgUiConnectToDbg
+_BaseFormatTimeOut
+_NtQueryInformationThread
+_NtContinue
+_DbgUiWaitStateChange
+_DbgUiContinue
+_NtQueryInformationProcess
+_BaseDebugAttachThread
+_DbgBreakPoint
+_RtlNtStatusToDosError
+_BaseIsThisAConsoleName
+_BaseFindFirstDevice
+_RtlAssert
+_NtQueryDirectoryFile
+_RtlZeroMemory
+_RtlIsDosDeviceName_U
+_NtReadFile
+_NtUnlockFile
+_NtQueryVolumeInformationFile
+_RtlConvertLongToLargeInteger
+_FlushConsoleInputBuffer
+__global_unwind
+_VerifyConsoleIoHandle
+_NtFlushBuffersFile
+_NtQueryInformationFile
+__except_list
+_NtWriteFile
+_ReadConsole
+_RtlConvertUlongToLargeInteger
+_WriteConsole
+_GetConsoleMode
+__except_handler
+_RtlLargeIntegerAdd
+_NtLockFile
+_NtFlushVirtualMemory
+_NtMapViewOfSection
+_NtCreateSection
+_NtUnmapViewOfSection
+_NtOpenSection
+_BaseFormatObjectAttributes
+__local_unwind
+_OpenConsole
+_RtlDoesFileExists_U
+_RtlCompareString
+_CreateConsole
+_NtProtectVirtualMemory
+_NtFreeVirtualMemory
+_NtAllocateVirtualMemory
+_NtQuerySystemInformation
+_NtQueryVirtualMemory
+_DuplicateConsoleHandle
+_NtDuplicateObject
+_CloseConsoleHandle
+_CsrClientConnectToServer
+_BaseRunningInServerProcess
+_BaseDefaultPathBuffer
+_RtlStartProfile
+_CsrNewThread
+_CsrStartProfile
+_BaseGetTickMagicMultiplier
+_CsrStopDumpProfile
+_QuickThreadCreateRoutine
+_RtlInitializeProfile
+_RtlAnalyzeProfile
+_RtlStopProfile
+_RtlEnlargedIntegerMultiply
+__strcmpi
+_RtlLargeIntegerDivide
+_RtlSizeHeap
+_RtlCreateHeap
+_RtlDestroyHeap
+_NtCreateMailslotFile
+_RtlExtendedLargeIntegerDivide
+_RtlLargeIntegerNegate
+_RtlFindMessage
+_RtlAcquirePebLock
+_RtlReleasePebLock
+_LdrFindResource
+_BaseComputeProcessDllPath
+_LdrGetDllHandle
+_LdrGetProcedureAddress
+_LdrAccessResource
+_LdrUnloadDll
+_BasepMapModuleHandle
+_LdrLoadDll
+_BaseDllMapResourceId
+_LdrFindResourceDirectory
+_RtlDetermineDosPathNameType_U
+_NtFsControlFile
+_RtlPrefixString
+_NtCreateNamedPipeFile
+_CsrAllocateMessagePointer
+_CsrAllocateCapturePointer
+_RtlQueryEnvironmentVariable_U
+_RtlAnsiCharToUnicodeChar
+_PipeSerialNumber
+_NtQuerySection
+_BaseGetDosVdmConfigInfo
+_RtlAppendAsciizToString
+_DbgPrompt
+_RtlRaiseStatus
+_NtPartyByNumber
+_RtlSetEnvironmentVariable
+_RtlAppendStringToString
+_NtCreateProcess
+_BaseInitializeContext
+_NtResumeThread
+_LdrShutdownProcess
+_NtTerminateProcess
+_RtlQueryEnvironmentVariable
+_NtReadVirtualMemory
+_BaseCreateStack
+_NtWriteVirtualMemory
+_NtOpenProcess
+_NtCreateThread
+_BaseGetWowVdmConfigInfo
+_BaseIsDosApplication
+_RtlAnsiStringToUnicodeSize
+_NtSetInformationProcess
+_BasePushProcessParameters
+_RtlLocateSectionConfigFile
+_BaseThreadStart
+_RtlLocateKeywordConfigFile
+_LdrShutdownThread
+_BaseFreeStackAndTerminate
+_RtlEqualString
+_RtlCloseConfigFile
+_RtlDestroyProcessParameters
+_RtlCreateProcessParameters
+_RtlOpenConfigFile
+_NtTerminateThread
+_NtWaitForSingleObject
+_NtReleaseMutant
+_NtDelayExecution
+_RtlInitializeCriticalSection
+_NtOpenSemaphore
+_RtlLeaveCriticalSection
+_NtWaitForMultipleObjects
+_NtSetEvent
+_NtReleaseSemaphore
+_NtPulseEvent
+_NtCreateSemaphore
+_NtCreateEvent
+_NtOpenEvent
+_RtlEnterCriticalSection
+_NtOpenMutant
+_GetConsoleInputWaitHandle
+_RtlDeleteCriticalSection
+_NtResetEvent
+_NtCreateMutant
+_NtSetInformationThread
+_RtlAreBitsSet
+_NtSuspendThread
+_RtlFindClearBitsAndSet
+_RtlRaiseException
+_RtlClearBits
+_BaseSwitchStackThenTerminate
+_NtGetContextThread
+_NtSetContextThread
+_BuildCommDCB
+_NtDeviceIoControlFile
+_BaseProcessStartThunk
+_BaseThreadStartThunk
+basertl_IMPORT_DESCRIPTOR
+console_IMPORT_DESCRIPTOR
+csr_IMPORT_DESCRIPTOR
+ntdll_IMPORT_DESCRIPTOR
+dbgdll_IMPORT_DESCRIPTOR
+_RtlUnwind
+__stricmp
+__amsg_exit
+__cfltcvt_tab
+__sigintoff
+NULL_IMPORT_DESCRIPTOR
+basertl_NULL_THUNK_DATA
+console_NULL_THUNK_DATA
+csr_NULL_THUNK_DATA
+ntdll_NULL_THUNK_DATA
+dbgdll_NULL_THUNK_DATA
+_BaseRtlCreateAtomTable_THUNK_DATA
+_BaseRtlAddAtomToAtomTable_THUNK_DATA
+_BaseRtlLookupAtomInAtomTable_THUNK_DATA
+_BaseRtlDeleteAtomFromAtomTable_THUNK_DATA
+_BaseRtlQueryAtomInAtomTable_THUNK_DATA
+_CloseConsoleHandle_THUNK_DATA
+_CreateConsole_THUNK_DATA
+_CsrAllocateCaptureBuffer_THUNK_DATA
+_CsrClientCallServer_THUNK_DATA
+_CsrCaptureMessageString_THUNK_DATA
+_CsrAllocateMessagePointer_THUNK_DATA
+_CsrAllocateCapturePointer_THUNK_DATA
+_CsrFreeCaptureBuffer_THUNK_DATA
+_CsrClientConnectToServer_THUNK_DATA
+_DbgPrint_THUNK_DATA
+_DbgBreakPoint_THUNK_DATA
+_CsrNewThread_THUNK_DATA
+_CsrStartProfile_THUNK_DATA
+_CsrStopDumpProfile_THUNK_DATA
+_DbgUiConnectToDbg_THUNK_DATA
+_DbgPrompt_THUNK_DATA
+_DbgUiWaitStateChange_THUNK_DATA
+_DbgUiContinue_THUNK_DATA
+_DuplicateConsoleHandle_THUNK_DATA
+_FlushConsoleInputBuffer_THUNK_DATA
+_GetConsoleMode_THUNK_DATA
+_GetConsoleInputWaitHandle_THUNK_DATA
+_LdrFindResource_THUNK_DATA
+_LdrAccessResource_THUNK_DATA
+_LdrGetDllHandle_THUNK_DATA
+_LdrFindResourceDirectory_THUNK_DATA
+_LdrGetProcedureAddress_THUNK_DATA
+_LdrUnloadDll_THUNK_DATA
+_LdrLoadDll_THUNK_DATA
+_LdrShutdownProcess_THUNK_DATA
+_LdrShutdownThread_THUNK_DATA
+_NtCurrentTeb_THUNK_DATA
+_NtCreateFile_THUNK_DATA
+_NtClose_THUNK_DATA
+_NtAllocateVirtualMemory_THUNK_DATA
+_NtContinue_THUNK_DATA
+_NtCreateEvent_THUNK_DATA
+_NtCreateSection_THUNK_DATA
+_NtCreateMailslotFile_THUNK_DATA
+_NtCreateNamedPipeFile_THUNK_DATA
+_NtCreateMutant_THUNK_DATA
+_NtCreateProcess_THUNK_DATA
+_NtCreateThread_THUNK_DATA
+_NtCreateSemaphore_THUNK_DATA
+_NtOpenFile_THUNK_DATA
+_NtFlushBuffersFile_THUNK_DATA
+_NtDuplicateObject_THUNK_DATA
+_NtDelayExecution_THUNK_DATA
+_NtDeviceIoControlFile_THUNK_DATA
+_NtLockFile_THUNK_DATA
+_NtFlushVirtualMemory_THUNK_DATA
+_NtFreeVirtualMemory_THUNK_DATA
+_NtFsControlFile_THUNK_DATA
+_NtGetContextThread_THUNK_DATA
+_NtMapViewOfSection_THUNK_DATA
+_NtOpenEvent_THUNK_DATA
+_NtSetInformationFile_THUNK_DATA
+_NtQuerySystemTime_THUNK_DATA
+_NtQueryInformationThread_THUNK_DATA
+_NtQueryInformationProcess_THUNK_DATA
+_NtQueryDirectoryFile_THUNK_DATA
+_NtOpenSection_THUNK_DATA
+_NtOpenProcess_THUNK_DATA
+_NtOpenMutant_THUNK_DATA
+_NtProtectVirtualMemory_THUNK_DATA
+_NtPartyByNumber_THUNK_DATA
+_NtOpenSemaphore_THUNK_DATA
+_NtPulseEvent_THUNK_DATA
+_NtQueryInformationFile_THUNK_DATA
+_NtQuerySystemInformation_THUNK_DATA
+_NtQuerySection_THUNK_DATA
+_NtReadFile_THUNK_DATA
+_NtQueryVolumeInformationFile_THUNK_DATA
+_NtQueryVirtualMemory_THUNK_DATA
+_NtResumeThread_THUNK_DATA
+_NtReadVirtualMemory_THUNK_DATA
+_NtReleaseMutant_THUNK_DATA
+_NtReleaseSemaphore_THUNK_DATA
+_NtResetEvent_THUNK_DATA
+_NtSetEvent_THUNK_DATA
+_NtSetContextThread_THUNK_DATA
+_NtSetSystemTime_THUNK_DATA
+_NtSetInformationProcess_THUNK_DATA
+_NtSetInformationThread_THUNK_DATA
+_NtUnlockFile_THUNK_DATA
+_NtTerminateProcess_THUNK_DATA
+_NtSuspendThread_THUNK_DATA
+_NtTerminateThread_THUNK_DATA
+_NtWriteFile_THUNK_DATA
+_NtUnmapViewOfSection_THUNK_DATA
+_NtWaitForSingleObject_THUNK_DATA
+_NtWaitForMultipleObjects_THUNK_DATA
+_OpenConsole_THUNK_DATA
+_NtWriteVirtualMemory_THUNK_DATA
+_ReadConsole_THUNK_DATA
+_RtlCopyString_THUNK_DATA
+_RtlCharToInteger_THUNK_DATA
+_RtlAnsiStringToUnicodeString_THUNK_DATA
+_RtlAllocateHeap_THUNK_DATA
+_RtlAcquirePebLock_THUNK_DATA
+_RtlAnalyzeProfile_THUNK_DATA
+_RtlAnsiCharToUnicodeChar_THUNK_DATA
+_RtlAnsiStringToUnicodeSize_THUNK_DATA
+_RtlAssert_THUNK_DATA
+_RtlAppendAsciizToString_THUNK_DATA
+_RtlAppendStringToString_THUNK_DATA
+_RtlAreBitsSet_THUNK_DATA
+_RtlConvertLongToLargeInteger_THUNK_DATA
+_RtlCompareString_THUNK_DATA
+_RtlCloseConfigFile_THUNK_DATA
+_RtlClearBits_THUNK_DATA
+_RtlConvertUlongToLargeInteger_THUNK_DATA
+_RtlIntegerToChar_THUNK_DATA
+_RtlInitString_THUNK_DATA
+_RtlGetCurrentDirectory_U_THUNK_DATA
+_RtlFreeHeap_THUNK_DATA
+_RtlFreeAnsiString_THUNK_DATA
+_RtlDosPathNameToNtPathName_U_THUNK_DATA
+_RtlDoesFileExists_U_THUNK_DATA
+_RtlCreateHeap_THUNK_DATA
+_RtlDestroyHeap_THUNK_DATA
+_RtlCreateProcessParameters_THUNK_DATA
+_RtlDeleteCriticalSection_THUNK_DATA
+_RtlDetermineDosPathNameType_U_THUNK_DATA
+_RtlDestroyProcessParameters_THUNK_DATA
+_RtlExtendedMagicDivide_THUNK_DATA
+_RtlEnlargedIntegerMultiply_THUNK_DATA
+_RtlExtendedLargeIntegerDivide_THUNK_DATA
+_RtlEqualString_THUNK_DATA
+_RtlEnterCriticalSection_THUNK_DATA
+_RtlFindMessage_THUNK_DATA
+_RtlFindClearBitsAndSet_THUNK_DATA
+_RtlFreeUnicodeString_THUNK_DATA
+_RtlGetFullPathName_U_THUNK_DATA
+_RtlInitAnsiString_THUNK_DATA
+_RtlInitUnicodeString_THUNK_DATA
+_RtlInitializeProfile_THUNK_DATA
+_RtlInitializeCriticalSection_THUNK_DATA
+_RtlUnicodeStringToAnsiString_THUNK_DATA
+_RtlMoveMemory_THUNK_DATA
+_RtlLargeIntegerSubtract_THUNK_DATA
+_RtlIsDosDeviceName_U_THUNK_DATA
+_RtlLargeIntegerAdd_THUNK_DATA
+_RtlLargeIntegerDivide_THUNK_DATA
+_RtlLargeIntegerNegate_THUNK_DATA
+_RtlLocateSectionConfigFile_THUNK_DATA
+_RtlLocateKeywordConfigFile_THUNK_DATA
+_RtlLeaveCriticalSection_THUNK_DATA
+_RtlSetCurrentDirectory_U_THUNK_DATA
+_RtlNtStatusToDosError_THUNK_DATA
+_RtlReleasePebLock_THUNK_DATA
+_RtlPrefixString_THUNK_DATA
+_RtlOpenConfigFile_THUNK_DATA
+_RtlQueryEnvironmentVariable_U_THUNK_DATA
+_RtlQueryEnvironmentVariable_THUNK_DATA
+_RtlRaiseStatus_THUNK_DATA
+_RtlRaiseException_THUNK_DATA
+_RtlTimeToTimeFields_THUNK_DATA
+_RtlTimeFieldsToTime_THUNK_DATA
+_RtlStartProfile_THUNK_DATA
+_RtlSizeHeap_THUNK_DATA
+_RtlSetEnvironmentVariable_THUNK_DATA
+_RtlStopProfile_THUNK_DATA
+_RtlZeroMemory_THUNK_DATA
+_VerifyConsoleIoHandle_THUNK_DATA
+_WriteConsole_THUNK_DATA
+_RtlUnwind_THUNK_DATA
+get_long_arg
+write_multi_char
+write_char
+get_int_arg
+write_string

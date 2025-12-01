@@ -1,5 +1,5 @@
-use library::hello;
+use library::hello_world;
 
 fn main() {
-    hello();
+    hello_world();
 }

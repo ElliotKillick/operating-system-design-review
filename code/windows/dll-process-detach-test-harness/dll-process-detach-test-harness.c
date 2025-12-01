@@ -477,7 +477,7 @@ BOOL myDllMain(HINSTANCE hinstDll, DWORD fdwReason, LPVOID lpvReserved) {
 }
 
 void startHarness() {
-    // The UCRT (which modern Visual Studo links programs with by default) loads the kernel.appcore.dll library at CRT exit (after running atexit handlers) messing up the last DLL in the initialization order list
+    // The UCRT (which modern Visual Studo links programs with by default) loads the kernel.appcore.dll library at CRT exit (after running atexit routines) messing up the last DLL in the initialization order list
     // Load this DLL ahead of time to work around the issue
     // Loading this library also causes RPCRT4.dll and msvcrt.dll to load, thus loading two CRTs into every UCRT process...
     // The library load is done to support the ucrtbase!__acrt_AppPolicyGetProcessTerminationMethodInternal function (bloatware alert)
@@ -539,9 +539,10 @@ int main() {
     // Allow program to return so module destructors are run (following NtTerminateProcess)...
 }
 
-// Relevant Old New Thing articles:
+// Relevant articles from "The Old New Thing":
 //
 // "Quick overview of how processes exit on Windows XP": https://devblogs.microsoft.com/oldnewthing/20070503-00/?p=27003
 //   - Note: Modern Windows added more process meltdown mitigations (e.g. protecting the process heap)
 // "How my lack of understanding of how processes exit on Windows XP forced a security patch to be recalled": https://devblogs.microsoft.com/oldnewthing/20070504-00/?p=26983
+// "A process shutdown puzzle": https://devblogs.microsoft.com/oldnewthing/20090129-00/?p=19333
 // "A process shutdown puzzle: Answers": https://devblogs.microsoft.com/oldnewthing/20090206-00/?p=19233

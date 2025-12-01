@@ -1,6 +1,8 @@
-Dynamically loading an empty DLL. Source code can be found in the "loadlibrary" code sample.
+We trace a dynamically library load of an empty DLL.
+For source code, see: /code/windows/loadlibrary
+Important Note: Turn off parallel loader worker threads for the process to ensure nothing escapes the trace (see: /code/windows/scripts/debugging-commands.md)
 
-Breakpoint 1 hit
+Breakpoint 0 hit
 KERNELBASE!LoadLibraryW:
 00007ffa`54572030 4533c0          xor     r8d,r8d
 0:000> wt -oR

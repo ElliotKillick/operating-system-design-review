@@ -571,4 +571,3 @@ File Type: DLL
         4000 .reloc
         F000 .rsrc
        38000 .text
-

@@ -1,0 +1,169 @@
+Microsoft (R) COFF/PE Dumper Version 14.30.30706.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file RPCRT4.DLL
+
+File Type: DLL
+
+  Section contains the following exports for RPCRT4.dll
+
+    00000000 characteristics
+    2C7AC161 time date stamp Tue Aug 24 21:33:21 1993
+        0.00 version
+           1 ordinal base
+         139 number of functions
+         139 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00008A46 I_RpcAllocate
+          2    1 0000B8F6 I_RpcBindingCopy
+          3    2 00015496 I_RpcBindingInqDynamicEndpoint
+          4    3 00015606 I_RpcBindingIsClientLocal
+          5    4 00009D36 I_RpcClearMutex
+          6    5 0000EA96 I_RpcDeleteMutex
+          7    6 00007B06 I_RpcFree
+          8    7 00006F76 I_RpcFreeBuffer
+          9    8 00009716 I_RpcGetAssociationContext
+         10    9 00006D56 I_RpcGetBuffer
+         11    A 0000E686 I_RpcGetCurrentCallHandle
+         12    B 00014EC6 I_RpcIfInqTransferSyntaxes
+         13    C 000112C6 I_RpcMapWin32Status
+         14    D 0000E6D6 I_RpcMonitorAssociation
+         15    E 00014816 I_RpcNsBindingSetEntryName
+         16    F 0000B1E6 I_RpcParseSecurity
+         17   10 00014556 I_RpcPauseExecution
+         18   11 00009946 I_RpcRequestMutex
+         19   12 00006F96 I_RpcSendReceive
+         20   13 00011D86 I_RpcSetAssociationContext
+         21   14 00001A40 I_RpcSsDontSerializeContext
+         22   15 00011DB6 I_RpcStopMonitorAssociation
+         23   16 00014576 I_RpcTimeCharge
+         24   17 00014586 I_RpcTimeGet
+         25   18 00014566 I_RpcTimeReset
+         26   19 00016F16 I_RpcTransClientMaxFrag
+         27   1A 0000EE36 I_RpcTransClientReallocBuffer
+         28   1B 00016E86 I_RpcTransServerFindConnection
+         29   1C 00016EC6 I_RpcTransServerFreeBuffer
+         30   1D 00016EB6 I_RpcTransServerMaxFrag
+         31   1E 0000FE36 I_RpcTransServerNewConnection
+         32   1F 0000E836 I_RpcTransServerProtectThread
+         33   20 0000E1F6 I_RpcTransServerReallocBuffer
+         34   21 00016EF6 I_RpcTransServerReceiveDirectReady
+         35   22 0000FE96 I_RpcTransServerUnprotectThread
+         36   23 00016F76 I_Trace
+         37   24 0000E316 I_UuidCreate
+         38   25 00001B40 MIDL_wchar_strcpy
+         39   26 00001B20 MIDL_wchar_strlen
+         40   27 00001C40 NDRCContextBinding
+         41   28 00001CE0 NDRCContextMarshall
+         42   29 00001DB0 NDRCContextUnmarshall
+         43   2A 00001990 NDRSContextMarshall
+         44   2B 00001790 NDRSContextUnmarshall
+         45   2C 00001EB0 NDRcopy
+         46   2D 00014596 RpcBindingCopy
+         47   2E 00007486 RpcBindingFree
+         48   2F 00015F76 RpcBindingFromStringBindingA
+         49   30 00007A96 RpcBindingFromStringBindingW
+         50   31 000168A6 RpcBindingInqAuthClientA
+         51   32 00015526 RpcBindingInqAuthClientW
+         52   33 00016926 RpcBindingInqAuthInfoA
+         53   34 00014886 RpcBindingInqAuthInfoW
+         54   35 00014AD6 RpcBindingInqObject
+         55   36 00014606 RpcBindingReset
+         56   37 000169A6 RpcBindingSetAuthInfoA
+         57   38 00014966 RpcBindingSetAuthInfoW
+         58   39 00014666 RpcBindingSetObject
+         59   3A 00016086 RpcBindingToStringBindingA
+         60   3B 00014B46 RpcBindingToStringBindingW
+         61   3C 000146D6 RpcBindingVectorFree
+         62   3D 00018A76 RpcEpRegisterA
+         63   3E 00018956 RpcEpRegisterNoReplaceA
+         64   3F 00018A06 RpcEpRegisterNoReplaceW
+         65   40 00018B26 RpcEpRegisterW
+         66   41 00014736 RpcEpResolveBinding
+         67   42 00018B96 RpcEpUnregister
+         68   43 00014DD6 RpcIfInqId
+         69   44 00009D46 RpcImpersonateClient
+         70   45 00014F26 RpcMgmtEnableIdleCleanup
+         71   46 00014E46 RpcMgmtInqComTimeout
+         72   47 000153A6 RpcMgmtInqStats
+         73   48 00015406 RpcMgmtIsServerListening
+         74   49 00014E86 RpcMgmtSetComTimeout
+         75   4A 000155E6 RpcMgmtSetServerStackSize
+         76   4B 00015366 RpcMgmtStatsVectorFree
+         77   4C 00015446 RpcMgmtStopServerListening
+         78   4D 00015476 RpcMgmtWaitServerListen
+         79   4E 00016516 RpcNetworkInqProtseqsA
+         80   4F 00014F46 RpcNetworkInqProtseqsW
+         81   50 000164C6 RpcNetworkIsProtseqValidA
+         82   51 00014E26 RpcNetworkIsProtseqValidW
+         83   52 00016696 RpcNsBindingInqEntryNameA
+         84   53 000147A6 RpcNsBindingInqEntryNameW
+         85   54 00014F66 RpcObjectInqType
+         86   55 00014FB6 RpcObjectSetInqFn
+         87   56 00014FD6 RpcObjectSetType
+         88   57 000165B6 RpcProtseqVectorFreeA
+         89   58 00015006 RpcProtseqVectorFreeW
+         90   59 00010196 RpcRaiseException
+         91   5A 0000FB86 RpcRevertToSelf
+         92   5B 00015066 RpcServerInqBindings
+         93   5C 00015096 RpcServerInqIf
+         94   5D 00010B26 RpcServerListen
+         95   5E 00016846 RpcServerRegisterAuthInfoA
+         96   5F 000154E6 RpcServerRegisterAuthInfoW
+         97   60 00010BA6 RpcServerRegisterIf
+         98   61 000150C6 RpcServerUnregisterIf
+         99   62 000150F6 RpcServerUseAllProtseqs
+        100   63 000151C6 RpcServerUseAllProtseqsIf
+        101   64 000165D6 RpcServerUseProtseqA
+        102   65 00011A16 RpcServerUseProtseqEpA
+        103   66 00010C26 RpcServerUseProtseqEpW
+        104   67 00016636 RpcServerUseProtseqIfA
+        105   68 000152A6 RpcServerUseProtseqIfW
+        106   69 00015266 RpcServerUseProtseqW
+        107   6A 00001E60 RpcSsDestroyClientContext
+        108   6B 000160E6 RpcStringBindingComposeA
+        109   6C 00008566 RpcStringBindingComposeW
+        110   6D 000162A6 RpcStringBindingParseA
+        111   6E 000149E6 RpcStringBindingParseW
+        112   6F 00016486 RpcStringFreeA
+        113   70 00007B16 RpcStringFreeW
+        114   71 000183E6 TowerConstruct
+        115   72 00018376 TowerExplode
+        116   73 00017D16 UuidCreate
+        117   74 000167B6 UuidFromStringA
+        118   75 00017F26 UuidFromStringW
+        119   76 00016746 UuidToStringA
+        120   77 00017EE6 UuidToStringW
+        121   78 00001BC0 char_array_from_ndr
+        122   79 00001B70 char_from_ndr
+        123   7A 00003DF0 data_from_ndr
+        124   7B 00004770 data_into_ndr
+        125   7C 00005000 data_size_ndr
+        126   7D 00002150 double_array_from_ndr
+        127   7E 000020B0 double_from_ndr
+        128   7F 00005CA0 enum_from_ndr
+        129   80 00001FA0 float_array_from_ndr
+        130   81 00001F20 float_from_ndr
+        131   82 00005BA0 long_array_from_ndr
+        132   83 00005B40 long_from_ndr
+        133   84 00005C40 long_from_ndr_temp
+        134   85 00005A80 short_array_from_ndr
+        135   86 00005A30 short_from_ndr
+        136   87 00005B00 short_from_ndr_temp
+        137   88 00004C80 tree_into_ndr
+        138   89 000056F0 tree_peek_ndr
+        139   8A 00005420 tree_size_ndr
+
+  Summary
+
+        1000 .bss
+        3000 .data
+        2000 .edata
+        1000 .idata
+        1000 .rdata
+        3000 .reloc
+        1000 .rsrc
+       19000 .text

@@ -1,0 +1,7 @@
+# Library Initialization Exits Process
+
+We evaluate how the loader responds to exiting the process from a module constructor in different execution contexts. Do module destructors run?
+
+Generally, a library should never invoke process exit because libraries should not affect the state of the broader application. So, exiting the process from a library's module constructor is extra weird and thus should not be expected to behave in any sort of predicatable way across implementations.
+
+According to the [System V Release 4 specification](https://www.sco.com/developers/devspecs/gabi40.pdf) that introdued ELF, module destructors stored by the original `.fini` finalization section run as follows: "This section holds executable instructions that contribute to the process termination code. That is, when a program exits normally, the system arranges to execute the code in this section." By this defintion, which does not take into account the initialization status of modules at all, a Unix-like loader would be correct to call the destructors on unconstructed modules. Upon the addition of failable constructors to Unix, it may be worth it to publish an amendment to this text stating only modules or initialization routines that have been successfully and fully initialized in the first place should ever have their respective destructors called (although again, exiting the process in this context is a highly weird thing to do and I cannot think of any context where it would be warranted as the best solution).

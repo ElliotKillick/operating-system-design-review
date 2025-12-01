@@ -1,0 +1,218 @@
+Microsoft (R) COFF/PE Dumper Version 14.30.30706.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file USER32.DLL
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    GDI32.dll
+              76A3A320 Import Address Table
+              76A3A050 Import Name Table
+              2C51B75B time date stamp Sat Jul 24 18:27:39 1993
+              FFFFFFFF Index of first forwarder reference
+
+      77C36326      9 BitBlt
+      77C4DB66     12 CopyEnhMetaFileW
+      77C58AD6     14 CopyMetaFileW
+      77C3E346     15 CreateBitmap
+      77C3A986     17 CreateBrushIndirect
+      77C38516     18 CreateCompatibleBitmap
+      77C35F56     19 CreateCompatibleDC
+      77C47CE6     2E CreatePalette
+      77C3EE56     2F CreatePatternBrush
+      77C3E876     34 CreateRectRgn
+      77C384F6     39 CreateSolidBrush
+      77C35F46     3B DeleteDC
+      77C4DC66     3C DeleteEnhMetaFile
+      77C47566     3D DeleteMetaFile
+      77C36EE6     3E DeleteObject
+      77C34C56     54 ExtSelectClipRgn
+      77C36866     55 ExtTextOutA
+      77C35A66     56 ExtTextOutW
+      77C35216     5D GdiAssociateObject
+      77C415C6     5E GdiAttrCache
+      77C39626     61 GdiConvertAndCheckDC
+      77C3D636     62 GdiConvertBitmap
+      77C39256     63 GdiConvertBrush
+      77C34F86     64 GdiConvertDC
+      77C52E26     65 GdiConvertEnhMetaFile
+      77C3D7B6     66 GdiConvertFont
+      77C52D86     67 GdiConvertMetaFilePict
+      77C4D3A6     68 GdiConvertPalette
+      77C37456     69 GdiConvertRegion
+      77C3BEB6     6A GdiCreateLocalBitmap
+      77C3B4B6     6B GdiCreateLocalBrush
+      77C52F26     6C GdiCreateLocalEnhMetaFile
+      77C3B446     6D GdiCreateLocalFont
+      77C52F06     6E GdiCreateLocalMetaFilePict
+      77C4D3C6     6F GdiCreateLocalPalette
+      77C37416     70 GdiCreateLocalRegion
+      77C3DCE6     72 GdiDeleteLocalDC
+      77C36C26     73 GdiDeleteLocalObject
+      77C5D7D6     74 GdiFlush
+      77C4D436     76 GdiGetCsInfo
+      77C38F76     77 GdiGetLocalBrush
+      77C34F66     78 GdiGetLocalDC
+      77C3E966     79 GdiGetLocalFont
+      77C45156     7A GdiIsMetaFileDC
+      77C35106     7F GdiReleaseLocalDC
+      77C5DC36     82 GdiSAPSupport
+      77C36676     83 GdiSetAttrs
+      77C38EB6     8A GetBkColor
+      77C38F16     8B GetBkMode
+      77C3B856     91 GetCharABCWidthsW
+      77C41DB6     97 GetCharWidthW
+      77C47956     9A GetClipRgn
+      77C41A06     9D GetCurrentPositionEx
+      77C37846     BA GetObjectType
+      77C409D6     BB GetObjectW
+      77C5E376     BF GetPaletteEntries
+      77C3B116     C9 GetStockObject
+      77C38026     CF GetTextColor
+      77C37526     D4 GetTextExtentPointA
+      77C3F3A6     D5 GetTextExtentPointW
+      77C41116     D9 GetTextMetricsW
+      77C44F76     DC GetViewportExtEx
+      77C45016     DF GetWindowExtEx
+      77C3E7F6     E0 GetWindowOrgEx
+      77C34A96     E2 IntersectClipRect
+      77C398D6     E9 MoveToEx
+      77C347F6     EF PatBlt
+      77C5C556     FD PolyTextOutW
+      77C3CFD6    10C RestoreDC
+      77C3C0D6    10E SaveDC
+      77C34406    113 SelectObject
+      77C35996    119 SetBkColor
+      77C37466    11A SetBkMode
+      77C47E16    129 SetPaletteEntries
+      77C357A6    138 SetTextColor
+      77C38676    13F SetWindowOrgEx
+      77C38086    148 TextOutA
+      77C3FEF6    149 TextOutW
+
+    KERNEL32.dll
+              76A3A45C Import Address Table
+              76A3A18C Import Name Table
+              2C4865A0 time date stamp Sat Jul 17 16:48:32 1993
+              FFFFFFFF Index of first forwarder reference
+
+      77875090      0 AddAtomA
+      77875100      1 AddAtomW
+      7787E6A0     16 CloseHandle
+      77885F30     34 CreateProcessW
+      778750D0     3F DeleteAtom
+      77895140     4A EnterCriticalSection
+      77887650     53 ExitProcess
+      778750B0     64 FindAtomA
+      77875120     65 FindAtomW
+      77879E10     66 FindClose
+      77879760     6B FindFirstFileW
+      77879C10     6E FindNextFileW
+      77881120     70 FindResourceExA
+      77881B80     71 FindResourceExW
+      77880B10     7B FreeLibrary
+      77881A50     7C FreeResource
+      778750E0     80 GetAtomNameA
+      77875140     81 GetAtomNameW
+      77873480     A9 GetCurrentDirectoryW
+      7788A7D0     AD GetCurrentThreadId
+      77873560     C6 GetLogicalDrives
+      77880B40     C9 GetModuleFileNameW
+      77880E40     CB GetModuleHandleW
+      778877A0     E7 GetStartupInfoW
+      77898890     E9 GetStringTypeW
+      778A4090     F8 GetThreadLocale
+      77873820     FC GetTickCount
+      77875000    108 GlobalAddAtomW
+      7787D710    109 GlobalAlloc
+      77874FD0    10B GlobalDeleteAtom
+      7787DFD0    10F GlobalFlags
+      7787E110    110 GlobalFree
+      77875040    112 GlobalGetAtomNameW
+      7787DBE0    114 GlobalLock
+      7787D910    116 GlobalReAlloc
+      7787DED0    117 GlobalSize
+      7787DDC0    11A GlobalUnlock
+      778899D0    123 InitializeCriticalSection
+      7789FA30    131 LCMapStringW
+      778951A0    132 LeaveCriticalSection
+      77880950    136 LoadLibraryW
+      77881230    138 LoadResource
+      7787F440    139 LocalAlloc
+      7787FD70    13D LocalFree
+      7787F860    13F LocalLock
+      7787F610    140 LocalReAlloc
+      7787FB50    142 LocalSize
+      7787FA40    143 LocalUnlock
+      77881A60    146 LockResource
+      7787B4A0    147 MapViewOfFile
+      778A19E0    14E MultiByteToWideChar
+      77873EF0    15B OutputDebugStringA
+      77885F20    176 RegisterWaitForInputIdle
+      77873520    1A3 SetCurrentDirectoryW
+      77879530    1B0 SetLastError
+      778812E0    1C4 SizeofResource
+      7788A3E0    1C5 Sleep
+      7787B5E0    1D5 UnmapViewOfFile
+      7788A2A0    1E9 WaitForMultipleObjects
+      7788A1D0    1EB WaitForSingleObject
+      778A1D40    1EF WideCharToMultiByte
+      7787F140    217 lstrcmpiA
+      7787F330    218 lstrcmpiW
+      7787F220    21A lstrcpyA
+      7787F360    21B lstrcpyW
+      7787F290    21D lstrlenA
+      7787F3A0    21E lstrlenW
+
+    ntdll.dll
+              76A3A56C Import Address Table
+              76A3A29C Import Name Table
+              2C4F15D7 time date stamp Thu Jul 22 18:33:59 1993
+              FFFFFFFF Index of first forwarder reference
+
+      771A3090      7 CsrClientConnectToServer
+      771A3B00      9 CsrClientSendMessage
+      771A3830      A CsrClientThreadConnect
+      771ACCA0     16 DbgBreakPoint
+      771ACCC0     17 DbgPrint
+      771AC240     3C NtClose
+      771AC350     4D NtCreateSection
+      771AC570     71 NtMapViewOfSection
+      771AC750     8F NtQueryInformationProcess
+      771AC7E0     98 NtQuerySecurityObject
+      771ACBE0     DA NtUnmapViewOfSection
+      771B2280     EB RtlAbsoluteToSelfRelativeSD
+      771B23F0     EC RtlAcquirePebLock
+      771B5700     F7 RtlAllocateHeap
+      771B7CB0     FB RtlAnsiStringToUnicodeString
+      771AC0D0    13F RtlEnterCriticalSection
+      771B6B40    15B RtlFreeHeap
+      771B3760    162 RtlGetControlSecurityDescriptor
+      771AD840    170 RtlImageNtHeader
+      771B8C70    176 RtlInitUnicodeString
+      771AA230    179 RtlInitializeCriticalSection
+      771AC130    18D RtlLeaveCriticalSection
+      771B35B0    18F RtlLengthSecurityDescriptor
+      771AEA30    19A RtlMultiByteToUnicodeN
+      771B2410    1BB RtlReleasePebLock
+      771B2C50    1BF RtlRunDecodeUnicodeString
+      771B2BF0    1C0 RtlRunEncodeUnicodeString
+      771B7DD0    1E3 RtlUnicodeStringToAnsiString
+      771BA630    1E5 RtlUnicodeStringToInteger
+      771AF080    1E9 RtlUnicodeToMultiByteN
+      771BDCC0    1EE RtlUnwind
+      771B3480    1FA RtlValidSecurityDescriptor
+
+  Summary
+
+        1000 .bss
+        2000 .data
+        4000 .edata
+        2000 .idata
+        1000 .rdata
+        3000 .reloc
+        1000 .rsrc
+       30000 .text

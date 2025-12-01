@@ -1,3 +1,5 @@
+Output from: /code/windows/scripts/dll-deps-research/dumpbin-delay-loads.ps1
+
 aadauthhelper.dll Delay Loads:
     OLEAUT32.dll
     SspiCli.dll

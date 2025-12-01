@@ -20,4 +20,4 @@ The glibc loader did not go back and initialize the other constructors in librar
 
 Note that this discussion on the per-routine safety of module initialization interruption is only relevant to begin with because the ELF executable format distinctly exposes each routine in a module using the `.init_array` section.
 
-**Conclusion:** The GNU loader does not utilize its knowledge of individual initialization routines to help mitigate the poor outcomes of circular dependenices on module initialization. Not trying to compensate for developer stupidity (since circular dependencies are always wrong), potentially at the cost of extra checks that could impact performance for everyone else, is a reasonable choice.
+**Conclusion:** The GNU loader does not utilize its knowledge of individual initialization routines to help mitigate the poor outcomes of circular dependenices on module initialization. Not trying to compensate for the potential error of some developers (because circular dependencies are always wrong), potentially at the cost of extra checks that could impact performance for everyone else, is a reasonable choice.

@@ -842,4 +842,3 @@ File Type: DLL
         5000 ECODE
         1000 EDATA
         1000 _TEXT
-

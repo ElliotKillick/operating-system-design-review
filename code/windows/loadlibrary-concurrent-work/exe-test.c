@@ -67,4 +67,3 @@ int main() {
     // Join threads before application exits
     result = WaitForMultipleObjects(NUM_THREADS, threads, TRUE, INFINITE);
 }
-

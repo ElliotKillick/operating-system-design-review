@@ -34,4 +34,9 @@ int main() {
     //
     // Generally, another difference between an event object and a critical section is that the former has no owning thread, which means one thread can lock an event and another thread can unlock it.
     // Lastly, an event object is inter-process while a critical section is intra-process.
+    //
+    // Relevant artlce from "The Old New Thing":
+    // "An auto-reset event is just a stupid semaphore"
+    // https://devblogs.microsoft.com/oldnewthing/20060622-00/?p=30773
+    // Auto-reset events are indeed quite confusing if you are not familiar them and with their usage patterns.
 }

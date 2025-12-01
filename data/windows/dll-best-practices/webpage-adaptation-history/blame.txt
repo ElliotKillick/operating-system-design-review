@@ -1,0 +1,107 @@
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700   1) ---
+4d5f26c6be3 (Kent Sharkey   2021-01-07 09:41:40 -0800   2) description: Creating DLLs presents a number of challenges for developers.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700   3) ms.assetid: 44EFC4B5-7A2F-43A6-914E-D4EB7446AC35
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700   4) title: Dynamic-Link Library Best Practices
+26465e18219 (Saisang Cai    2025-03-12 07:37:46 +0800   5) ms.topic: best-practice
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700   6) ms.date: 05/31/2018
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700   7) ---
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700   8) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700   9) # Dynamic-Link Library Best Practices
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  10) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  11) **Updated: **
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  12) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  13) -   May 17, 2006
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  14) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  15) **Important APIs**
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  16) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  17) -   [**DllMain**](dllmain.md)
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  18) -   [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa)
+9daa384a1d1 (David Coulter  2020-08-16 06:04:53 -0700  19) -   [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa)
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  20) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  21) Creating DLLs presents a number of challenges for developers. DLLs do not have system-enforced versioning. When multiple versions of a DLL exist on a system, the ease of being overwritten coupled with the lack of a versioning schema creates dependency and API conflicts. Complexity in the development environment, the loader implementation, and the DLL dependencies has created fragility in load order and application behavior. Lastly, many applications rely on DLLs and have complex sets of dependencies that must be honored for the applications to function properly. This document provides guidelines for DLL developers to help in building more robust, portable, and extensible DLLs.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  22) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  23) Improper synchronization within [**DllMain**](dllmain.md) can cause an application to deadlock or access data or code in an uninitialized DLL. Calling certain functions from within **DllMain** causes such problems.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  24) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  25) ![what happens when a library is loaded](images/fig1.png)
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  26) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  27) ## General Best Practices
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  28) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  29) [**DllMain**](dllmain.md) is called while the loader-lock is held. Therefore, significant restrictions are imposed on the functions that can be called within **DllMain**. As such, **DllMain** is designed to perform minimal initialization tasks, by using a small subset of the Microsoft® Windows® API. You cannot call any function in **DllMain** that directly or indirectly tries to acquire the loader lock. Otherwise, you will introduce the possibility that your application deadlocks or crashes. An error in a **DllMain** implementation can jeopardize the entire process and all of its threads.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  30) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  31) The ideal [**DllMain**](dllmain.md) would be just an empty stub. However, given the complexity of many applications, this is generally too restrictive. A good rule of thumb for **DllMain** is to postpone as much initialization as possible. Lazy initialization increases robustness of the application because this initialization is not performed while the loader lock is held. Also, lazy initialization enables you to safely use much more of the Windows API.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  32) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  33) Some initialization tasks cannot be postponed. For example, a DLL that depends on a configuration file should fail to load if the file is malformed or contains garbage. For this type of initialization, the DLL should attempt the action and fail quickly rather than waste resources by completing other work.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  34) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  35) You should never perform the following tasks from within [**DllMain**](dllmain.md):
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  36) 
+9daa384a1d1 (David Coulter  2020-08-16 06:04:53 -0700  37) -   Call [**LoadLibrary**](/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya) or [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa) (either directly or indirectly). This can cause a deadlock or a crash.
+9daa384a1d1 (David Coulter  2020-08-16 06:04:53 -0700  38) -   Call [**GetStringTypeA**](/windows/desktop/api/winnls/nf-winnls-getstringtypea), [**GetStringTypeEx**](/windows/win32/api/stringapiset/nf-stringapiset-getstringtypeexw), or [**GetStringTypeW**](/windows/desktop/api/stringapiset/nf-stringapiset-getstringtypew) (either directly or indirectly). This can cause a deadlock or a crash.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  39) -   Synchronize with other threads. This can cause a deadlock.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  40) -   Acquire a synchronization object that is owned by code that is waiting to acquire the loader lock. This can cause a deadlock.
+9daa384a1d1 (David Coulter  2020-08-16 06:04:53 -0700  41) -   Initialize COM threads by using [**CoInitializeEx**](/windows/desktop/api/combaseapi/nf-combaseapi-coinitializeex). Under certain conditions, this function can call [**LoadLibraryEx**](/windows/desktop/api/LibLoaderAPI/nf-libloaderapi-loadlibraryexa).
+3132f8ca259 (jasonepperly   2022-05-04 09:33:35 -0400  42) -   Call the registry functions.
+9daa384a1d1 (David Coulter  2020-08-16 06:04:53 -0700  43) -   Call [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa). Creating a process can load another DLL.
+9daa384a1d1 (David Coulter  2020-08-16 06:04:53 -0700  44) -   Call [**ExitThread**](/windows/win32/api/libloaderapi/nf-libloaderapi-freelibraryandexitthread). Exiting a thread during DLL detach can cause the loader lock to be acquired again, causing a deadlock or a crash.
+9daa384a1d1 (David Coulter  2020-08-16 06:04:53 -0700  45) -   Call [**CreateThread**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createthread). Creating a thread can work if you do not synchronize with other threads, but it is risky.
+9af678f9b39 (Nir Lichtman   2023-12-17 14:24:41 +0200  46) -   Call [**ShGetFolderPathW**](/windows/win32/api/shlobj_core/nf-shlobj_core-shgetfolderpathw). Calling shell/known folder APIs can result in thread synchronization, and can therefore cause deadlocks.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  47) -   Create a named pipe or other named object (Windows 2000 only). In Windows 2000, named objects are provided by the Terminal Services DLL. If this DLL is not initialized, calls to the DLL can cause the process to crash.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  48) -   Use the memory management function from the dynamic C Run-Time (CRT). If the CRT DLL is not initialized, calls to these functions can cause the process to crash.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  49) -   Call functions in User32.dll or Gdi32.dll. Some functions load another DLL, which may not be initialized.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  50) -   Use managed code.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  51) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  52) The following tasks are safe to perform within **DllMain**:
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  53) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  54) -   Initialize static data structures and members at compile time.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  55) -   Create and initialize synchronization objects.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  56) -   Allocate memory and initialize dynamic data structures (avoiding the functions listed above.)
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  57) -   Set up thread local storage (TLS).
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  58) -   Open, read from, and write to files.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  59) -   Call functions in Kernel32.dll (except the functions that are listed above).
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  60) -   Set global pointers to NULL, putting off the initialization of dynamic members. In Microsoft Windows Vista™, you can use the one-time initialization functions to ensure that a block of code is executed only once in a multithreaded environment.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  61) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  62) ## Deadlocks Caused by Lock Order Inversion
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  63) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  64) When you are implementing code that uses multiple synchronization objects such as locks, it is vital to respect lock order. When it is necessary to acquire more than one lock at a time, you must define an explicit precedence that is called a lock hierarchy or lock order. For example, if lock A is acquired before lock B somewhere in the code, and lock B is acquired before lock C elsewhere in the code, then the lock order is A, B, C and this order should be followed throughout the code. Lock order inversion occurs when the locking order is not followed—for example, if lock B is acquired before lock A. Lock order inversion can cause deadlocks that are difficult to debug. To avoid such problems, all threads must acquire locks in the same order.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  65) 
+9daa384a1d1 (David Coulter  2020-08-16 06:04:53 -0700  66) It is important to note that the loader calls [**DllMain**](dllmain.md) with the loader lock already acquired, so the loader lock should have the highest precedence in the locking hierarchy. Also note that code only has to acquire the locks it requires for proper synchronization; it does not have to acquire every single lock that is defined in the hierarchy. For example, if a section of code requires only locks A and C for proper synchronization, then the code should acquire lock A before it acquires lock C; it is not necessary for the code to also acquire lock B. Furthermore, DLL code cannot explicitly acquire the loader lock. If the code must call an API such as [**GetModuleFileName**](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamea) that can indirectly acquire the loader lock and the code must also acquire a private lock, then the code should call **GetModuleFileName** before it acquires lock P, thus ensuring that load order is respected.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  67) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  68) Figure 2 is an example that illustrates lock order inversion. Consider a DLL whose main thread contains [**DllMain**](dllmain.md). The library loader acquires the loader lock L and then calls into **DllMain**. The main thread creates synchronization objects A, B, and G to serialize access to its data structures and then tries to acquire lock G. A worker thread that has already successfully acquired lock G then calls a function such as GetModuleHandle that attempts to acquire the loader lock L. Thus, the worker thread is blocked on L and the main thread is blocked on G, resulting in a deadlock.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  69) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  70) ![deadlock caused by lock order inversion](images/fig2.png)
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  71) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  72) To prevent deadlocks that are caused by lock order inversion, all threads should attempt to acquire synchronization objects in the defined load order at all times.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  73) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  74) ## Best Practices for Synchronization
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  75) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  76) Consider a DLL that creates worker threads as part of its initialization. Upon DLL cleanup, it is necessary to synchronize with all the worker threads to ensure that the data structures are in a consistent state and then terminate the worker threads. Today, there is no straightforward way to completely solve the problem of cleanly synchronizing and shutting down DLLs in a multithreaded environment. This section describes the current best practices for thread synchronizing during DLL shutdown.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  77) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  78) Thread Synchronization in [**DllMain**](dllmain.md) during Process Exit
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  79) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  80) -   By the time [**DllMain**](dllmain.md) is called at process exit, all the process’s threads have been forcibly cleaned up and there is a chance that the address space is inconsistent. Synchronization is not required in this case. In other words, the ideal DLL\_PROCESS\_DETACH handler is empty.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  81) -   Windows Vista ensures that core data structures (environment variables, current directory, process heap, and so on) are in a consistent state. However, other data structures can be corrupted, so cleaning memory is not safe.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  82) -   Persistent state that needs to be saved must be flushed to permanent storage.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  83) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  84) Thread Synchronization in **DllMain** for DLL\_THREAD\_DETACH during DLL Unload
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  85) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  86) -   When the DLL is unloaded, the address space is not thrown away. Therefore, the DLL is expected to perform a clean shutdown. This includes thread synchronization, open handles, persistent state, and allocated resources.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  87) -   Thread synchronization is tricky because waiting on threads to exit in [**DllMain**](dllmain.md) can cause a deadlock. For example, DLL A holds the loader lock. It signals thread T to exit and waits for the thread to exit. Thread T exits and the loader tries to acquire the loader lock to call into DLL A’s **DllMain** with DLL\_THREAD\_DETACH. This causes a deadlock. To minimize the risk of a deadlock:
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  88)     -   DLL A gets a DLL\_THREAD\_DETACH message in its [**DllMain**](dllmain.md) and sets an event for thread T, signaling it to exit.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  89)     -   Thread T finishes its current task, brings itself to a consistent state, signals DLL A, and waits infinitely. Note that the consistency-checking routines should follow the same restrictions as [**DllMain**](dllmain.md) to avoid deadlocking.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  90)     -   DLL A terminates T, knowing that it is in a consistent state.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  91) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  92) If a DLL is unloaded after all its threads have been created, but before they begin executing, the threads may crash. If the DLL created threads in its **DllMain** as part of its initialization, some threads may not have finished initialization and their DLL\_THREAD\_ATTACH message is still waiting to be delivered to the DLL. In this situation, if the DLL is unloaded, it will begin terminating threads. However, some threads may be blocked behind the loader lock. Their DLL\_THREAD\_ATTACH messages are processed after the DLL has been unmapped, causing the process to crash.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  93) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  94) ## Recommendations
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  95) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  96) The following are recommended guidelines:
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  97) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  98) -   Use Application Verifier to catch the most common errors in [**DllMain**](dllmain.md).
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700  99) -   If using a private lock inside [**DllMain**](dllmain.md), define a locking hierarchy and use it consistently. The loader lock must be at the bottom of this hierarchy.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700 100) -   Verify that no calls depend on another DLL that may not have been fully loaded yet.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700 101) -   Perform simple initializations statically at compile time, rather than in [**DllMain**](dllmain.md).
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700 102) -   Defer any calls in [**DllMain**](dllmain.md) that can wait until later.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700 103) -   Defer initialization tasks that can wait until later. Certain error conditions must be detected early so that the application can handle errors gracefully. However, there are tradeoffs between this early detection and the loss of robustness that can result from it. Deferring initialization is often best.
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700 104) 
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700 105)  
+3c3df8c89c4 (Michael Satran 2018-06-07 13:04:21 -0700 106) 
+4d5f26c6be3 (Kent Sharkey   2021-01-07 09:41:40 -0800 107)  

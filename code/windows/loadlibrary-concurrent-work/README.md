@@ -4,12 +4,12 @@ Running two library loads concurrently to study the loader's ability for work pa
 
 ## Steps
 
-1. Disable loader worker threads (CMD command): `reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\exe-test.exe" /v MaxLoaderThreads /t REG_DWORD /d 1 /f`
+1. [Disable loader worker threads](/code/windows/scripts/debugging-commands.md#disable-loader-worker-threads) (CMD command)
     - This is to keep them from picking up work and messing up our experiment
 2. Set a breakpoint on the `ntdll!LdrpQueueWork` function: `bp ntdll!LdrpQueueWork`
 3. When the first `LoadLibrary` thread hits this breakpoint, continue execution until that function returns: `gu`
 4. Verify `ntdll!LdrpWorkQueue` is not empty: `!list ntdll!LdrpWorkQueue`
-5. Suspend that thread: `~n`
+5. Suspend thread 1: `~n`
 6. Set a breakpoint on `ntdll!LdrpProcessWork`
 7. Continue execution: `g`
 
@@ -30,17 +30,17 @@ Thread 2 `LoadLibrary` picking up work from from thread 1 `LoadLibrary`:
 ```
 
 8. Continue execution until the return of `ntdll!LdrpProcessWork`: `gu`
-9. [List all modules with their `DdagNode.State` values](/analysis-commands.mld##ldr_ddag_node-analysis) to verify work has been done
+9. [List all modules with their `DdagNode.State` values](/code/windows/scripts/debugging-commands.md#ldr_ddag_node-analysis) to verify work has been done
 
 ## Conclusion
 
 A concurrent `LoadLibrary` has successfully helped out another `LoadLibrary`.
 
-While in the `ntdll!LdrpDrainWorkQueue` function, the `LoadLibrary` on thread 2 thread will keep picking up work until there is none left in the `ntdll!LdrpWorkQueue`. Note that because thread 1 `LoadLibrary` never offloads (with the `ntdll!LdrpQueueWork` function) the work item for the top-level loading DLL (`shell32.dll` in this case) itelf, the program will freeze until thread 1 is resumed (`~m` command). The `LoadLibrary` on thread 2 will not start on any of its own mapping and snapping work (just on `dll-test.dll` in this case) while thread 1 is still undergoing its mapping and snapping work.
+While in the `ntdll!LdrpDrainWorkQueue` function, the `LoadLibrary` on thread 2 thread will keep picking up work until there is none left in the `ntdll!LdrpWorkQueue` linked list. Note that because thread 1 `LoadLibrary` never offloads (internally using the `ntdll!LdrpQueueWork` function) the work item for the top-level loading DLL (`shell32.dll` in this case), thread 2 will not be able to proceed until thread 1 is resumed (`~m` command). Thread 1 must do the mapping and snapping work for the inputted top-level DLL. The `LoadLibrary` on thread 2 will not start on any of its own mapping and snapping work (just on `dll-test.dll` in this case) while thread 1 is still undergoing its mapping and snapping work.
 
-When thread 2 `ntdll!LdrpDrainWorkQueue` sees that `ntdll!LdrpWorkInProgress` is already `1` and that there is no work left, it will try waiting on `ntdll!LdrpLoadCompleteEvent`. This will transition `ntdll!LdrpLoadCompleteEvent` to a waiting state and `ntdll!LdrpDrainQueue` will loop around in its inner `while` loop, if there is still no more work left then `ntdll!LdrpDrainWorkQueue` will end up waiting on `ntdll!LdrpLoadCompleteEvent`.
+When thread 2 `ntdll!LdrpDrainWorkQueue` sees that `ntdll!LdrpWorkInProgress` is already `1` and that there is no work left in `ntdll!LdrpWorkQueue`, it will try waiting on `ntdll!LdrpLoadCompleteEvent`. This will transition `ntdll!LdrpLoadCompleteEvent` from a [set state to a waiting state](/code/windows/event-experiment/event-experiment.c). `ntdll!LdrpDrainQueue` will then loop around in its inner `while` loop, if there is still no more work left on the second loop around then `ntdll!LdrpDrainWorkQueue` will end up waiting on `ntdll!LdrpLoadCompleteEvent`.
 
-The behavior of `ntdll!LdrpDrainWorkQueue` in regard to its waiting on `ntdll!LdrpLoadCompleteEvent` and when the loader sets `ntdll!LdrpLoadCompleteEvent` in the `ntdll!LdrpDropLastInProgressCount` function means module initialization cannot happen concurrently with module mapping and snapping. This method of working also extends to making a concurrent `LoadLibrary` unable to starts its own mapping and snapping work until a full load is complete. Although it would be desirable for performance and doable for module mapping and snapping to be entirely decoupled from module initialization, the current design of the loader does not allow for it.
+The behavior of `ntdll!LdrpDrainWorkQueue` in regard to its waiting on `ntdll!LdrpLoadCompleteEvent` and when the loader sets `ntdll!LdrpLoadCompleteEvent` in the `ntdll!LdrpDropLastInProgressCount` function means module initialization cannot happen concurrently with module mapping and snapping. This method of working also extends to making a concurrent `LoadLibrary` unable to start its own mapping and snapping work until a full load is complete. Although it would be desirable for performance and doable for module mapping and snapping to be entirely decoupled from module initialization, the current design of the loader does not allow for it.
 
 The `ntdll!LdrpQueueWork` function calls `ntdll!TpPostWork` (thread pool internals) to notify loader worker threads that there is work to pick up. A concurrent `LoadLibrary` never signs up for any such notifications, instead only helping out if work is immediately available for it to do, so on an ad-hoc basis. Loader worker threads access the `ntdll!LdrpWorkQueue` in the `ntdll!LdrpWorkCallback` function to get a work item (under the protection of `ntdll!LdrpWorkQueueLock`), then call `ntdll!LdrpProcessWork` on that work item to start processing it.
 

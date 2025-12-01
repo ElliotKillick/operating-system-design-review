@@ -1,0 +1,274 @@
+Microsoft (R) COFF/PE Dumper Version 14.30.30706.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file ADVAPI32.DLL
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    KERNEL32.dll
+              77F893FC Import Address Table
+              77F89064 Import Name Table
+              2C4865A0 time date stamp Sat Jul 17 16:48:32 1993
+                    26 Index of first forwarder reference
+
+      7787E6A0     16 CloseHandle
+      7787C340     20 CopyFileW
+      778899F0     26 CreateEventA
+      77889A70     27 CreateEventW
+      7787B1B0     29 CreateFileMappingA
+      7787CCD0     2B CreateFileW
+      77889F50     2E CreateMutexA
+      77889CD0     36 CreateSemaphoreA
+      7788A450     39 CreateThread
+      77880470     3A CreateVirtualBuffer
+      7787BA30     42 DeleteFileW
+      7788A6F0     54 ExitThread
+      77879E10     66 FindClose
+      77879760     6B FindFirstFileW
+      77880B10     7B FreeLibrary
+      778805C0     7D FreeVirtualBuffer
+      77873150     8B GetComputerNameA
+      77872DF0     8C GetComputerNameW
+      778883D0     AA GetCurrentProcess
+      778883E0     AB GetCurrentProcessId
+      7788A7C0     AC GetCurrentThread
+      7787B840     B9 GetFileAttributesW
+      77879520     C1 GetLastError
+      778765C0     DB GetPrivateProfileStringW
+      77880F60     DC GetProcAddress
+      77873670     EF GetSystemTime
+      77873820     FC GetTickCount
+      77883AF0    106 GetWindowsDirectoryW
+      77880950    136 LoadLibraryW
+      7787F440    139 LocalAlloc
+      7787FD70    13D LocalFree
+      7787F970    13E LocalHandle
+      7787F610    140 LocalReAlloc
+      7787FB50    142 LocalSize
+      7787B4A0    147 MapViewOfFile
+      77889BA0    151 OpenEventW
+      77878AE0    167 QueryWin31IniFilesMappedToRegistry
+      7787A380    172 ReadFile
+      FFFFFFFF    17F RtlUnwind
+      77879530    1B0 SetLastError
+      77882E30    1B3 SetNamedPipeHandleState
+      7788A3E0    1C5 Sleep
+      7788A740    1CA TerminateThread
+      7787B5E0    1D5 UnmapViewOfFile
+      7787E420    1DE VirtualAlloc
+      778805E0    1DF VirtualBufferExceptionHandler
+      7787E4E0    1E0 VirtualFree
+      7788A1D0    1EB WaitForSingleObject
+      778834F0    1EE WaitNamedPipeW
+      7787A570    1FC WriteFile
+      778766D0    201 WritePrivateProfileStringW
+      7787F250    211 lstrcatA
+      7787F330    218 lstrcmpiW
+      7787F220    21A lstrcpyA
+      7787F360    21B lstrcpyW
+      7787F3A0    21E lstrlenW
+
+    ntdll.dll
+              77F894E0 Import Address Table
+              77F89148 Import Name Table
+              2C4F15D7 time date stamp Thu Jul 22 18:33:59 1993
+              FFFFFFFF Index of first forwarder reference
+
+      771ACCA0     16 DbgBreakPoint
+      771ACCC0     17 DbgPrint
+      771AC1A0     32 NtAccessCheck
+      771AC1B0     33 NtAccessCheckAndAuditAlarm
+      771AC1C0     34 NtAdjustGroupsToken
+      771AC1D0     35 NtAdjustPrivilegesToken
+      771AC200     38 NtAllocateLocallyUniqueId
+      771AC240     3C NtClose
+      771AC250     3D NtCloseObjectAuditAlarm
+      771AC2A0     42 NtCreateEvent
+      771AC2C0     44 NtCreateFile
+      771AC2D0     45 NtCreateKey
+      771AC300     48 NtCreateNamedPipeFile
+      771AC350     4D NtCreateSection
+      771AC360     4E NtCreateSemaphore
+      771AC3C0     55 NtDeleteKey
+      771AC3D0     56 NtDeleteValueKey
+      771AC3E0     57 NtDeviceIoControlFile
+      771AC410     5A NtDuplicateToken
+      771AC420     5B NtEnumerateKey
+      771AC430     5C NtEnumerateValueKey
+      771AC470     60 NtFlushKey
+      771AC4AC     64 NtFsControlFile
+      771AC4BC     65 NtGetContextThread
+      771AC530     6D NtLoadKey
+      771AC570     71 NtMapViewOfSection
+      771AC590     73 NtNotifyChangeKey
+      771AC5D0     77 NtOpenFile
+      771AC5E0     78 NtOpenKey
+      771AC600     7A NtOpenObjectAuditAlarm
+      771AC610     7B NtOpenProcess
+      771AC620     7C NtOpenProcessToken
+      771AC650     7F NtOpenSymbolicLinkObject
+      771AC660     80 NtOpenThread
+      771AC670     81 NtOpenThreadToken
+      771AC690     83 NtPrivilegeCheck
+      771AC6B0     84 NtPrivilegeObjectAuditAlarm
+      771AC6A0     85 NtPrivilegedServiceAuditAlarm
+      771AC750     8F NtQueryInformationProcess
+      771AC760     90 NtQueryInformationThread
+      771AC770     91 NtQueryInformationToken
+      771AC790     93 NtQueryKey
+      771AC7B0     95 NtQueryObject
+      771AC7C0     96 NtQueryPerformanceCounter
+      771AC7E0     98 NtQuerySecurityObject
+      771AC800     9A NtQuerySymbolicLinkObject
+      771AC820     9C NtQuerySystemInformation
+      771AC830     9D NtQuerySystemTime
+      771AC850     9F NtQueryValueKey
+      771AC860     A0 NtQueryVirtualMemory
+      771AC870     A1 NtQueryVolumeInformationFile
+      771AC8A0     A4 NtReadFile
+      771AC8C0     A6 NtReadVirtualMemory
+      771AC8FC     AA NtReleaseSemaphore
+      771AC91C     AC NtReplaceKey
+      771AC98C     B3 NtRestoreKey
+      771AC9AC     B5 NtSaveKey
+      771AC9FC     BA NtSetEvent
+      771ACA60     C1 NtSetInformationThread
+      771ACA70     C2 NtSetInformationToken
+      771ACAC4     C8 NtSetSecurityObject
+      771ACB04     CC NtSetValueKey
+      771ACBB0     D7 NtUnloadKey
+      771ACC1C     DF NtWaitForSingleObject
+      771B2280     EB RtlAbsoluteToSelfRelativeSD
+      771B2850     EF RtlAddAccessAllowedAce
+      771B2920     F0 RtlAddAccessDeniedAce
+      771B2640     F1 RtlAddAce
+      771B29F0     F4 RtlAddAuditAccessAce
+      771B2F40     F6 RtlAllocateAndInitializeSid
+      771B5700     F7 RtlAllocateHeap
+      771B7CB0     FB RtlAnsiStringToUnicodeString
+      771B8A90     FE RtlAppendUnicodeStringToString
+      771B8A00     FF RtlAppendUnicodeToString
+      771B3B00    102 RtlAreAllAccessesGranted
+      771B3B20    103 RtlAreAnyAccessesGranted
+      771C8260    10D RtlCompareMemory
+      771B30F0    11B RtlCopySid
+      771B8990    11E RtlCopyUnicodeString
+      771B2430    11F RtlCreateAcl
+      771B3430    125 RtlCreateSecurityDescriptor
+      771B2730    12E RtlDeleteAce
+      771AA3A0    12F RtlDeleteCriticalSection
+      771AB5C0    133 RtlDeleteSecurityObject
+      771A2820    139 RtlDosPathNameToNtPathName_U
+      771C8014    13C RtlEnlargedIntegerMultiply
+      771AC0D0    13F RtlEnterCriticalSection
+      771B2E90    145 RtlEqualPrefixSid
+      771B2E30    146 RtlEqualSid
+      771C8144    14C RtlExtendedIntegerMultiply
+      771C804C    14D RtlExtendedLargeIntegerDivide
+      771B2AE0    158 RtlFirstFreeAce
+      771B6B40    15B RtlFreeHeap
+      771B3060    15D RtlFreeSid
+      771B85B0    15E RtlFreeUnicodeString
+      771B27C0    160 RtlGetAce
+      771B3760    162 RtlGetControlSecurityDescriptor
+      771B3810    164 RtlGetDaclSecurityDescriptor
+      771B3AA0    167 RtlGetGroupSecurityDescriptor
+      771B39F0    16C RtlGetOwnerSecurityDescriptor
+      771B3910    16D RtlGetSaclSecurityDescriptor
+      771B3090    16E RtlIdentifierAuthoritySid
+      771B3BA0    171 RtlImpersonateSelf
+      771B8C30    172 RtlInitAnsiString
+      771B8BF0    175 RtlInitString
+      771B8C70    176 RtlInitUnicodeString
+      771AA230    179 RtlInitializeCriticalSection
+      771B3020    17E RtlInitializeSid
+      771BA810    182 RtlIntegerToUnicodeString
+      771C8000    185 RtlLargeIntegerAdd
+      771C822C    18B RtlLargeIntegerSubtract
+      771AC130    18D RtlLeaveCriticalSection
+      771B2F20    18E RtlLengthRequiredSid
+      771B35B0    18F RtlLengthSecurityDescriptor
+      771B30D0    190 RtlLengthSid
+      771B2170    197 RtlMakeSelfRelativeSD
+      771B3B40    198 RtlMapGenericMask
+      771AEA30    19A RtlMultiByteToUnicodeN
+      771AA860    19E RtlNewSecurityObject
+      771C02E0    1A0 RtlNtStatusToDosError
+      771BB610    1A7 RtlOpenCurrentUser
+      771B2510    1AD RtlQueryInformationAcl
+      771AB360    1B3 RtlQuerySecurityObject
+      771B6500    1B8 RtlReAllocateHeap
+      771B1FD0    1C3 RtlSelfRelativeToAbsoluteSD
+      771B3790    1C8 RtlSetDaclSecurityDescriptor
+      771B3A40    1CA RtlSetGroupSecurityDescriptor
+      771B25F0    1CD RtlSetInformationAcl
+      771B3990    1CE RtlSetOwnerSecurityDescriptor
+      771B3890    1CF RtlSetSaclSecurityDescriptor
+      771AAF50    1D0 RtlSetSecurityObject
+      771B30C0    1D8 RtlSubAuthorityCountSid
+      771B30A0    1D9 RtlSubAuthoritySid
+      771BFD20    1DF RtlTimeToSecondsSince1970
+      771B7DD0    1E3 RtlUnicodeStringToAnsiString
+      771AF080    1E9 RtlUnicodeToMultiByteN
+      771B8540    1EF RtlUpcaseUnicodeChar
+      771B2490    1F9 RtlValidAcl
+      771B3480    1FA RtlValidSecurityDescriptor
+      771B2DB0    1FB RtlValidSid
+
+    RPCRT4.dll
+              77F89714 Import Address Table
+              77F8937C Import Name Table
+              2C850AE1 time date stamp Wed Sep  1 16:49:37 1993
+              FFFFFFFF Index of first forwarder reference
+
+      76EC5606      3 I_RpcBindingIsClientLocal
+      76EB6F76      7 I_RpcFreeBuffer
+      76EB6D56      9 I_RpcGetBuffer
+      76EC12C6      C I_RpcMapWin32Status
+      76EB6F96     12 I_RpcSendReceive
+      76EB1C40     27 NDRCContextBinding
+      76EB1CE0     28 NDRCContextMarshall
+      76EB1DB0     29 NDRCContextUnmarshall
+      76EB1EB0     2C NDRcopy
+      76EB7486     2E RpcBindingFree
+      76EB7A96     30 RpcBindingFromStringBindingW
+      76EC4B46     3B RpcBindingToStringBindingW
+      76EB9D46     44 RpcImpersonateClient
+      76EC0196     59 RpcRaiseException
+      76EBFB86     5A RpcRevertToSelf
+      76EB8566     6C RpcStringBindingComposeW
+      76EC49E6     6E RpcStringBindingParseW
+      76EB7B16     70 RpcStringFreeW
+      76EB1BC0     78 char_array_from_ndr
+      76EB1B70     79 char_from_ndr
+      76EB3DF0     7A data_from_ndr
+      76EB20B0     7E double_from_ndr
+      76EB5BA0     82 long_array_from_ndr
+      76EB5B40     83 long_from_ndr
+      76EB5A80     85 short_array_from_ndr
+      76EB5A30     86 short_from_ndr
+      76EB4C80     88 tree_into_ndr
+      76EB56F0     89 tree_peek_ndr
+      76EB5420     8A tree_size_ndr
+
+    USER32.dll
+              77F8978C Import Address Table
+              77F893F4 Import Name Table
+              2C90E4C8 time date stamp Fri Sep 10 16:34:16 1993
+              FFFFFFFF Index of first forwarder reference
+
+      76A06746    10F GetSystemMetrics
+
+  Summary
+
+        1000 .bss
+        5000 .data
+        2000 .edata
+        2000 .idata
+        1000 .rdata
+        4000 .reloc
+        1000 .rsrc
+       2E000 .text

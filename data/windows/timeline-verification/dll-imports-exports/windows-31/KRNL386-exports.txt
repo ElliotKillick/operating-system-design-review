@@ -255,4 +255,3 @@ ord seg offset name
 119   1  7db5  GETTASKQUEUEES exported
  60   3  0008  FINDRESOURCE exported
 
-
