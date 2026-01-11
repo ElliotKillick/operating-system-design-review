@@ -63,6 +63,7 @@ All of the information contained here covers Windows 10 22H2 and glibc 2.38 on L
   - [Exploring Fine-Grained Module Initialization Thread Safety](#exploring-fine-grained-module-initialization-thread-safety)
   - [The Problem with How Windows Uses Threads](#the-problem-with-how-windows-uses-threads)
   - [Thread Lifecycle Mismanagement Case Study with `ShellExecute`](#thread-lifecycle-mismanagement-case-study-with-shellexecute)
+  - [Broken Threads](#broken-threads)
   - [Process Meltdown](#process-meltdown)
     - [In-Process Inconsistencies](#in-process-inconsistencies)
     - [Process Hanging Open](#process-hanging-open)
@@ -985,11 +986,11 @@ A thread is the smallest unit of execution managed by an operating system. It ru
 
 How the Windows operating system uses threads is problematic because the Windows API does not impose a synchronization model for managing the lifecycle of threads in the scope of a process. Rather, Windows often controls thread lifetimes by leaving them created then abruptly terminating all but the exiting thread at process exit, which is not a valid synchronization model because permanently interrupting the execution of code by an arbitrary thread in a process at an unspecified time is always unsafe. This mismanagement of lifecycles inside a process, with the main thread often being oblivious to other threads operating concurrently in the process, leads to the abrupt termination of running code mid-operation thereby resulting in an inconsistent or potentially corrupted state when a process exits and after a process ceases to exist.
 
-This issue been apparent in Windows NT, what we know today simply as Windows, ever since its first release as Windows NT 3.1 in 1993: the same Windows release that introduced preemptive multitasking and threads to the operating system. In this original Windows version, the `ExitProcess` function called a routine named `NtTerminateProcess` that would abruptly terminate all threads except for the thread that called `NtTerminateProcess`. In the case of destructing a module due to library unload instead of process exit, core system libraries such as the Advanced Windows 32 Base API DLL or `advapi32.dll`, which still exists in modern Windows today, [explicitly called the `TerminateThread` function in its module destructor](data/windows/legacy-software-analysis.md#operating-systems) to kill a background thread owned by the module before unloading.
+This issue been apparent in Windows NT, what we know today simply as Windows, ever since its first release as Windows NT 3.1 in 1993: the same Windows release that introduced preemptive multitasking and threads to the operating system. In this original Windows version, the `ExitProcess` function called a routine named `NtTerminateProcess` that would abruptly terminate all threads except for the thread that called `NtTerminateProcess`. In the case of destructing a module due to library unload instead of process exit, a core system library would [explicitly call the `TerminateThread` function in its module destructor](data/windows/legacy-software-analysis.md#operating-systems) to kill a background thread owned by the module before unloading. For instance, the the Advanced Windows 32 Base API DLL or `advapi32.dll` module of Windows created a notification thread upon calling its `RegNotifyChangeKeyValue` interface which would be killed by the module at the end of its lifetime using `TerminateThread`.
 
 Ever since the inception of Window NT, dependency cycles baked into its API and the introduction of an [anti-feature known as DLL thread routines](#dll-thread-routines-anti-feature) have broken the library subsystem lifetime for threads or the library-thread lifetime. These defects in combination with Microsoft still trying to utilize the library-thread lifetime are what led to the implementation of thread termination hacks in Windows.
 
-Starting with Windows 2000, Microsoft inverted the traditional library-thread lifetime model to create the thread-library lifetime model whereby a thread can own a library.
+Starting with Windows 2000, Microsoft inverted the traditional library-thread lifetime model to create the thread-library lifetime model whereby a thread can own a library. Microsoft implements the use of this lifetime model in the Windows API through the [`FreeLibraryAndExitThread` function](https://learn.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-freelibraryandexitthread) or `Free­Library­When­Callback­Returns` for thread pools. An explicit `FreeLibraryAndExitThread` function call that combines `FreeLibrary` on the calling library before calling `ExitThread` is necessary for this lifetime model to work because the calling library may have been unloaded from memory after `FreeLibrary` returns.
 
 However, there are still many cases throughout the Windows API where it relies on the old thread ownership model, which is problematic becuase that lifetime model is broken on the Windows platform. Since the original Windows NT release, modules have stopped calling `TerminateThread` from their module destructors because that is completely untenable given the dependency cycles that are only grew more pervasive throughout the Windows API; instead, system libraries rely on staying loaded throughout the entire lifetime of the process. In contemporary renditions of this hack, a Windows module will typically create a thread then throw away its one and only handle to it thereby leaving it to be consumed via the thread termination procedure Windows does at process exit.
 
@@ -997,7 +998,13 @@ We will now give a quick walkthrough of thread misuse in common modules, core to
 
 **Examples instances to put in of CreateThread then immediately closing the thread object or never joining the thread back - not a valid design (WORK IN PROGRESS):**
 
-SECHOST, IMM32 (came out in NT 4.0), WINHTTP, DIRECTX, ShellExecute maybe
+```c
+CloseHandle( CreateThread( NULL, 0, &notify_thread, data, 0, NULL ) );
+```
+
+The Security Host (SECHOST) module introduced in Windows X has a `NotifyServiceStatusChangeW` interface that would [create a thread then delete its only reference to the thread](https://github.com/wine-mirror/wine/blob/a3d49dbc8db25fdd5907b497f7993d214bf8d0b8/dlls/sechost/service.c#L1403) thereby allowing it to run past the lifetime of the SECHOST module. The `notify_thread` function called on the new thread could modify global state such as by [acquiring a private critical section](https://github.com/wine-mirror/wine/blob/a3d49dbc8db25fdd5907b497f7993d214bf8d0b8/dlls/sechost/service.c#L1305-L1309), thereby leaving the process in a corrupted state if thread termination at process exit happens to occur before it is released. This code remains the same in modern Windows versions.
+
+ADVAPI32, SECHOST, WINHTTP, DIRECTX, ShellExecute maybe
 
 **Random blurbs (WORK IN PROGRESS):**
 
@@ -1007,11 +1014,13 @@ Additionally, an [anti-feature known as DLL thread routines](#dll-thread-routine
 
 ... library-thread vs thread-library
 
-On Windows, the [library subsystem lifetime](#the-process-lifetime) for threads is broken by the contention of `DLL_THREAD_DETACH` and `DLL_PROCESS_DETACH` synchronizing and are also be impacted by circular dependencies since a subsystem's worker thread could shutdown before while another dependency circularly depends on that subsystem.
+On Windows, the [library subsystem lifetime](#the-process-lifetime) for threads is broken by the contention of `DLL_THREAD_DETACH` and `DLL_PROCESS_DETACH` synchronizing and are also be impacted by circular dependencies because the library dependency of a subsystem could deinitialize before a worker thread owned by the subsystem shuts down, thus allowing that thread to call into an uninitialized dependency.
 
 In any case, a process is the container for threads, so process termination will cause forceful thread termination if threads do not operate within the scope of process lifetime.
 
-Continue to [*Process Meltdown*](#process-meltdown) to learn about how Windows attempts to cope with the fallout of having no established thread synchonization model when the process exits, including its affects after the process ceases to exist.
+The affects Process Meltdown has on an exiting process, including its affects after the process ceases to exist.
+
+The library-thread thread lifetime being unsupported on the Windows platform and the broken process exit implementation of Windows comes with a myriad of consequences for the operating system, the software running on it, its developers, and its users. Continue to [*Broken Threads*](#broken-threads) and [*Process Meltdown*](#process-meltdown) to learn about these poor outcomes.
 
 **WORK IN PROGRESS!**
 
@@ -1067,6 +1076,10 @@ Windows never joins these background threads back to the main thread or allows t
 At the center of a crucial Windows component, the Shell, lies one case where Windows fails to control a thread within the lifecycle of the application, instead leaving the thread running to be consumed by `NtTerminateProcess` if it doesn't happen to exit in time. Additionally, if a background thread is waiting on stimuli from outside the process to start working then an external process giving work could cause currently waiting threads to start working at any time. The `SHCORE!<lambda_9844335fc14345151eefcc3593dd6895>::<lambda_invoker_cdecl>` thread meets this criterion because it is listening to a window object in a [Windows message loop](https://en.wikipedia.org/wiki/Message_loop_in_Microsoft_Windows) (confirmed by decompling the code). The `combase!CRpcThreadCache::RpcWorkerThreadEntry` thread is waiting on a timer, which means it can also run at an arbitrary time past our initial `ShellExecute`. On Windows, waiting can be "alertable" thus allowing the kernel to run custom code (in the form of APCs) in a given process as it waits. The `SHCORE!<lambda_9844335fc14345151eefcc3593dd6895>::<lambda_invoker_cdecl>` thread's wait with [`MsgWaitForMultipleObjectsEx`](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-msgwaitformultipleobjectsex) passes the alertable flag, which is another means through which this wait is not guaranteed. Generally, a thread waiting on an intra-process synchronization mechanism is safe because an inter-process synchronization mechanism like a Win32 event object could be set by another process without regard to the process lifecycle if the application nevers joins the thread back. Information on thread running states can be gathered in Process Explorer (although this information doesn't include whether the waiting thread is alertable since that requires decompilation).
 
 One practice I've noticed in the Windows API is for it to be [holding a lock even while waiting](code/windows/ntterminateprocess-test-harness/ntterminateprocess-test-harness.c), presumably for a message. This means that even hypothetically if a programmer were to generously wait for some time to increase the "odds" that threads belonging to the Windows API are not working when `NtTerminateProcess` kills threads, locks will still become orphaned thereby always leaving the process in an inconsistent state. After sleeping for an extended amount of time—over a minute—some background threads will wind themselves down to save resoures (a stack memory allocation on Windows consumes at least 64 KiBs of physical memory). If this winding down happens to occur when process exit is happening, then these threads will be killed mid-operation. A significant time after the original call into a Windows API function, worker threads can also often be found lingering for some time in the process without regard to process lifetime. For instance the `RPCRT4!PerformGarbageCollection` thread, which is likely a mechanism for cleaning up idle asynchronous connections among other resources for the RPC subsystem.
+
+## Broken Threads
+
+WIP
 
 ## Process Meltdown
 
@@ -1132,7 +1145,7 @@ Beyond these scenarios, assuming applications respond correctly to Windows API f
 
 ### Out-of-Process Inconsistencies
 
-Here is a short list containing some of the out-of-process affects Process Meltdown could have on module cleanup and graceful shutdown routines:
+Here is a list containing some of the out-of-process affects Process Meltdown could have on module cleanup and graceful shutdown routines:
 
 - Thread termination could interrupt the process' communication with another process or endpoint leading to an inconsistent data stream when destructors run
   - If a destructor reuses that connection to communicate again (e.g. to gracefully send a connection end message) then undefined behavior outside the process could result. Buffered I/O provides a great example: When communicating in a [TLV protocol](https://en.wikipedia.org/wiki/Type%E2%80%93length%E2%80%93value), for instance, if transmission is interrupted midway sending a packet then the server will never receive the full packet length of data causing it wait until timeout or forever, which could leak the connection. A destructor trying to send new data over that socket would break the application-layer message boundary thus forfeiting or corrupting the connection.

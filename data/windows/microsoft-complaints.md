@@ -34,7 +34,7 @@ I've provided Microsoft lots of constructive criticism and ways to fix their sys
   - [Unix UGO \> Windows ACLs](#unix-ugo--windows-acls)
   - [Corporate Pseudointellectualism](#corporate-pseudointellectualism)
   - [Microsoft's Anti-Competitive Licensing Practices](#microsofts-anti-competitive-licensing-practices)
-  - [Microsoft is Back to Its Anti-Competitive Licensing Practices](#microsoft-is-back-to-its-anti-competitive-licensing-practices)
+  - [Microsoft is Back to Its Anti-Competitive Licensing Practices, Now in the Cloud!](#microsoft-is-back-to-its-anti-competitive-licensing-practices-now-in-the-cloud)
   - [RNDIS is the Kind of Garbage Technology Microsoft is Known For](#rndis-is-the-kind-of-garbage-technology-microsoft-is-known-for)
   - [Long-Time Microsoft Sycophant Larry Osterman Cobbles Together a BS Answer for "Why wasn't Windows built on top of Unix?"](#long-time-microsoft-sycophant-larry-osterman-cobbles-together-a-bs-answer-for-why-wasnt-windows-built-on-top-of-unix)
   - [Dave Cutler is a Cringe Unix Hater](#dave-cutler-is-a-cringe-unix-hater)
@@ -42,8 +42,9 @@ I've provided Microsoft lots of constructive criticism and ways to fix their sys
   - [Happy 50th Anniversary, Microsoft!](#happy-50th-anniversary-microsoft)
   - [Bill Gates Has Repeatedly Advocated for Policies that Help Big Pharma Monopolists Instead of Providing People with Lifesaving Drugs](#bill-gates-has-repeatedly-advocated-for-policies-that-help-big-pharma-monopolists-instead-of-providing-people-with-lifesaving-drugs)
   - [Microsoft's Office Open XML (OOXML) format Is An Attempt to Supplant Open Document Format (ODF), a Real Open Office Standard](#microsofts-office-open-xml-ooxml-format-is-an-attempt-to-supplant-open-document-format-odf-a-real-open-office-standard)
-  - [Windows 11 Broke Dual-Booting Into Some Linux Distros Then Conveniently Took 9 Months to Fix the Issue](#windows-11-broke-dual-booting-into-some-linux-distros-then-conveniently-took-9-months-to-fix-the-issue)
+  - [Windows 11 Broke Dual-Booting Into Some Linux Distros Then Conveniently Took Nine Months to Fix the Issue](#windows-11-broke-dual-booting-into-some-linux-distros-then-conveniently-took-9-months-to-fix-the-issue)
   - [Microsoft Moves to Extinguish Chrome](#microsoft-moves-to-extinguish-chrome)
+  - [Cookie Stuffing Malware in Microsoft Edge](#cookie-stuffing-malware-in-microsoft-edge)
   - [Bonus](#bonus)
 
 ## [Downloading Windows is Bloated](https://www.microsoft.com/en-us/software-download/windows11)
@@ -108,7 +109,8 @@ I've provided Microsoft lots of constructive criticism and ways to fix their sys
 
 ## [Okay—Great Idea—So, Get This: We Have GUI... Buttt We Put in the Kernel!!](https://stackoverflow.com/questions/28532190/why-does-windows-handle-scrollbars-in-kernel)
 
-- How is it that Windows GUI is still slower than it is on Mac or Linux even though the former two do not obliterate security by putting something as complex as [GUI infrastructure into the kernel](https://j00ru.vexillium.org/syscalls/win32k/64/) like Microsoft does? (speaking from experience)
+- How is it that the Windows GUI is still slower than it is on Mac or Linux even though the former two do not obliterate security by putting something as complex as [GUI infrastructure into the kernel](https://j00ru.vexillium.org/syscalls/win32k/64/) like Microsoft does?
+- You know what? It's fine. Microsoft is finally switching up their lazy loading tendencies for [preloading the graphical shell](https://www.techpowerup.com/343459/preloading-file-explorer-in-windows-11-doubles-ram-usage-offers-minimal-speed-boost)—definitely worth the 2x increase in memory usage
 
 ## [COM is a COMplexity Nightmare](https://devblogs.microsoft.com/oldnewthing/20220210-00/?p=106243)
 
@@ -207,7 +209,7 @@ I've provided Microsoft lots of constructive criticism and ways to fix their sys
 - These predatory licensing techniques, namely the company-wide vendor lock-in aspect their "per-processor" licensing deals, were hugely helpful in allowing Microsoft to lock out its competitors since most people will use the operating system that comes with an OEM-provided computer instead of buying an operating system separately
 - Microsoft began these shady licensing practices in 1988 when [MS-DOS 4.0](https://en.wikipedia.org/wiki/MS-DOS_4.0_(multitasking)) released and before [Windows 3.0](https://en.wikipedia.org/wiki/Windows_3.0) came out. The unfair licensing agreements ended in July 1994 upon being struck down by the Justice Department, which came after the first Windows NT release of Windows NT 3.1
 
-## [Microsoft is Back to Its Anti-Competitive Licensing Practices](https://cloud.google.com/blog/topics/inside-google-cloud/filing-eu-complaint-against-microsoft-licensing)
+## [Microsoft is Back to Its Anti-Competitive Licensing Practices, Now in the Cloud!](https://cloud.google.com/blog/topics/inside-google-cloud/filing-eu-complaint-against-microsoft-licensing)
 
 - Microsoft is screwing other cloud platforms by unfairly licesning Windows Server and SQL Server to be 5x more expensive on non-Azure platforms (Google complained at end of September in 2024)
 - Microsoft trying not to be anti-competitive challenge (impossible)
@@ -248,7 +250,7 @@ I've provided Microsoft lots of constructive criticism and ways to fix their sys
     - Even POSIX message queues are exposed as files in `/dev/mqueue`
   - Windows objects can be named objects (i.e. public objects) or unnamed objects (i.e. private objects). Named objects live in the object namespace (e.g. `\Sessions\0\BaseNamedObjects\MyEvent`). Unix systems do not have private files or objects but do have numbered file descriptors (e.g. `/proc/1/fd/0` is the standard output of PID 1), which achieve the same semantics. I think Unix does a better job at allowing a file to be the universal interface here because even the internal entitity of one process can easily be accessed by another process without any [confusing handle duplication](https://devblogs.microsoft.com/oldnewthing/20070829-00/?p=25363) or worrying about namespace collisions in the same session for named objects.
   - I just don't like the vibe of kernel resources being "objects". It just feels wrong to me. Like I rather call `pthread_join` than `WaitForSingleObject` on a thread. To me, the latter feels overly abstract. Unix systems do not have a special system call for joining threads (not that there would necessarily be anything wrong with that), either. Instead, `pthread_join` is implemented in user space through the use of a futex. Cases like these show how Windows objects promote centralization of system components in the kernel.
-    - This centralization has proven to be harmful due to the [dispatcher lock before Windows 7](https://www.youtube.com/watch?v=OAAiOEQhsK0&t=859s) and apparently [handle lookup cost](https://www.youtube.com/watch?v=xi1Lq79mLeE&t=6510s)
+    - This centralization of system components in the kernel has proven to be harmful due to the [dispatcher lock before Windows 7](https://www.youtube.com/watch?v=OAAiOEQhsK0&t=859s) and apparently [handle lookup cost](https://www.youtube.com/watch?v=xi1Lq79mLeE&t=6510s)
   - Dave Cutler could be taking ["everything is a file"](https://en.wikipedia.org/wiki/Everything_is_a_file) too literally, but I also want to know who these "grand poobahs of the academic world" are that Dave is referring to
 - In the end, it is clear that Dave Cutler intentionally designed Windows NT with the goal of making it not Unix-like and in doing so he created an operating system with a completely backwards and hypocritical design
 
@@ -267,6 +269,8 @@ I've provided Microsoft lots of constructive criticism and ways to fix their sys
 
 ## [Happy 50th Anniversary, Microsoft!](https://apnews.com/article/microsoft-build-israel-gaza-protest-worker-fired-a395ac137b74002886b2ad727b5ae5c2)
 
+- Let's take the time to look back fondly on the [disgusting circle jerk book of lies](https://www.amazon.ca/Inside-Out-Microsoft-Our-Words/dp/0446527394) that Microsoft put out on their 25th anniversary
+
 ## [Bill Gates Has Repeatedly Advocated for Policies that Help Big Pharma Monopolists Instead of Providing People with Lifesaving Drugs](https://www.wired.com/story/opinion-the-world-loses-under-bill-gates-vaccine-colonialism/)
 
 - "On top of steering the global health community towards Covax rather than patent-free technology sharing, last year Gates bragged about convincing Oxford University not to open-license its vaccine. Gates leveraged his $750 million donation to the university for vaccine research—even though its vaccine was developed in a publicly funded lab."
@@ -279,7 +283,7 @@ I've provided Microsoft lots of constructive criticism and ways to fix their sys
 - Microsoft keeps lying by claiming that current Microsoft 365 office programs produce documents that are compliant to the OOXML format by default when they do not. There are also many proprietary extensions conveniently left out of the standard that only Microsoft office programs know how to use.
 - Why has Microsoft not received more serious antitrust scrutiny over this move yet? Apparently, Microsoft has done a lot to pay their way. A high up court of law in the US, the EU, or elsewhere needs to see the OOXML format for what it is then ban it for being anti-competitive. Next, Microsoft should be mandated to move all their Office programs to using ODF. If Microsoft tries to pay their way again then keep extracting their money and set up the verdict so another Justice can re-raise the case soon after. In an ideal scenario, everybody wins except Microsoft and especially there many unethical decision makers.
 
-## [Windows 11 Broke Dual-Booting Into Some Linux Distros Then Conveniently Took 9 Months to Fix the Issue](https://www.neowin.net/news/linux-windows-11-dual-boot-to-finally-play-well-as-microsoft-fixes-nine-month-old-bug/)
+## [Windows 11 Broke Dual-Booting Into Some Linux Distros Then Conveniently Took Nine Months to Fix the Issue](https://www.neowin.net/news/linux-windows-11-dual-boot-to-finally-play-well-as-microsoft-fixes-nine-month-old-bug/)
 
 - This is so obviously the same FUD techniques Microsoft employed with the AARD code to take out DR-DOS. A blind man could see that.
 - Of course, Windows is already leveraging their control of secure boot to do enact any nasty business practice they can
@@ -289,7 +293,14 @@ I've provided Microsoft lots of constructive criticism and ways to fix their sys
 
 - Remember when Microsoft Edge moved to the Chromium engine and many people, including Google officials, rejoiced about how what a [nice](https://www.windowslatest.com/2020/11/19/new-data-proves-microsoft-is-the-best-thing-to-happen-to-chrome/) and [technologically progressive](https://www.theverge.com/2018/12/6/18129287/google-microsoft-edge-chromium-response) [move this was by Microsoft](https://learn.microsoft.com/en-us/shows/one-dev-minute/will-microsoft-contribute-back-to-the-chromium-project--one-dev-question)? Yeah, that time is over.
 - Microsoft's old AARD code playbook is coming into effect!
-- If I was Google, I would acknowledge this action by Microsoft for the blatant anti-competitive sabotage that it is then sue Microsoft before it is too late (Yeah, it could be argued that Google has a monopoly over web browsers, but that does not make Microsoft's actions any better. At least Google got there by engineering an incredibly technologically robust piece of open source software. Whereas Microsoft cheated and has caused far more collateral damage with Internet Explorer than Google ever has with Chrome.)
+- If I was a Google official for Chrome, I would acknowledge this action by Microsoft for the blatant anti-competitive sabotage that it is then sue Microsoft before it is too late
+  - It could also be argued that Google has a monopoly over web browsers which gives them an unfair advantage in the web browser market, but that does not make the actions of decision makers at Microsoft any better. At least Google got there by engineering a technologically robust piece of open source software. Whereas Microsoft cheated and has historically been responsible for the most collateral damage to the web of any company with Internet Explorer. It is justifiable to say that Microsoft is a much more nefarious company than Google.
+
+## Cookie Stuffing Malware in Microsoft Edge
+
+- [Microsoft ran an affiliate marketing commision scam natively in their web brower](https://www.youtube.com/watch?v=wwB3FmbcC88&t=2796s), stealing money from creators who make a living on affiliate commissions and consumers when business have to raise product prices due to thieving companies taking a cut of every sale
+- [On March 11, 2025, Google launched Chrome Web Store policy updates to curb affiliate marketing commission scams in their own Chrome Web Store](https://developer.chrome.com/blog/cws-policy-update-affiliate-ads-2025); however, Microsoft was unaffected by this policy change because they have their own Edge web browser (a browser that gained popularity due to being bundled with Windows). Also, Microsoft has their own Chrome Web Store clone, the the Edge Add-ons store.
+- Microsoft shut down their [cookie stuffing malware](https://en.wikipedia.org/wiki/Cookie_stuffing) on [May 31, 2025 only after creators filed lawsuits against Microsoft for engaging in this practice](https://hellopartner.com/2025/05/30/microsoft-discontinues-coupon-browser-extension-amid-legal-disputes/)
 
 ## [Bonus](https://en.wikipedia.org/wiki/Criticism_of_Microsoft)
 

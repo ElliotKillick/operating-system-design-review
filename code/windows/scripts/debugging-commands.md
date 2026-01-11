@@ -346,8 +346,6 @@ New Worker (0x34d0): ntdll!EtwpNotificationThread (00007ff8`d4235170)
 New Thread (0x5bfc): ntdll!DbgUiRemoteBreakin (00007ff8`d42bcab0)
 ```
 
-See the [List All Calls to Delay Loaded Imports](#list-all-calls-to-delay-loaded-imports) section for information on how the WinDbg command itself works.
-
 **Background Information:** On Windows, thread creation (e.g. the `CreateThread` API) allows for passing an `lpParameter` to the new thread. The thread pool internals use this parameter to pass the worker a `TP_WORK` structure. Thread startup happens in this sequence of events: `ntdll!LdrInitializeThunk` ➜ `ntdll!LdrpInitialize` (thread loader initialization, then back to `ntdll!LdrInitializeThunk`) -- `NtContinue` --> `ntdll!RtlUserThreadStart` ➜ `KERNEL32!BaseThreadInitThunk` ➜ `<thread entry point>`. To break on thread startup as early as possible, we set our breakpoint on `ntdll!LdrInitializeThunk`. `ntdll!LdrInitializeThunk` receives a `CONTEXT` structure as its first argument. Following `LdrpInitialize`, `ntdll!LdrInitializeThunk` runs the `NtContinue` system call. `NtContinue` swaps the CPU register values for what is inside the `CONTEXT` structure that it also receives at its first argument. This `CONTEXT` structure is what contains the thread entry point (first argument, `rcx`) and thread argument (second argument, `rdx`) that the thread uses to proceed with execution. Our WinDbg command reads from these values from the `CONTEXT` structure to generate log messages.
 
 If you attach to a process and want to find the last entry point of a given `ntdll!TppWorkerThread` worker thread:
